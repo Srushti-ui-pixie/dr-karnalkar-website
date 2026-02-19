@@ -63,7 +63,7 @@ const dbRun = (query, params = []) => new Promise((resolve, reject) => {
 });
 
 app.get('/', (req, res) => {
-  res.sendFile(path.join(__dirname, 'enhanced_website.html'));
+  res.sendFile(path.join(__dirname, 'index.html'));
 });
 
 app.get('/admin', (req, res) => {
