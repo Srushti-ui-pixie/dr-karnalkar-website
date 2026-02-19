@@ -1,0 +1,473 @@
+<div class="mobile-toggle" onclick="toggleMobileMenu()">
+                <span></span>
+                <span></span>
+                <span></span>
+            </div><!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Dr. Karnalkar Hospital - Our Doctors</title>
+    <style>
+         :root {
+                --primary-color: #2c5aa0;
+                --secondary-color: #4a90e2;
+                --accent-color: #00d4aa;
+                --dark-bg: #1a252f;
+                --light-bg: #f8f9fa;
+                --text-dark: #2c3e50;
+                --text-light: #6c757d;
+                --white: #ffffff;
+                --shadow: 0 10px 30px rgba(0,0,0,0.1);
+                --border-radius: 12px;
+                --transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+            }
+
+            * {
+                margin: 0;
+                padding: 0;
+                box-sizing: border-box;
+            }
+
+            body {
+                font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+                line-height: 1.6;
+                color: var(--text-dark);
+                overflow-x: hidden;
+            }
+
+            /* ENHANCED NAVBAR WITH ANIMATIONS */
+            .navbar {
+                background: linear-gradient(135deg, var(--dark-bg) 0%, #243447 100%) !important;
+                box-shadow: 0 2px 20px rgba(0,0,0,0.1);
+                transition: var(--transition);
+                backdrop-filter: blur(10px);
+            }
+
+            .navbar.scrolled {
+                background: rgba(26, 37, 47, 0.95) !important;
+                backdrop-filter: blur(15px);
+            }
+
+            .navbar-brand {
+                font-weight: 700;
+                font-size: 1.5rem;
+                color: var(--white) !important;
+                text-decoration: none;
+                transition: var(--transition);
+                animation: slideInLeft 0.8s ease-out;
+            }
+
+            .navbar-brand:hover {
+                transform: scale(1.05);
+                color: var(--accent-color) !important;
+            }
+
+            .nav-link {
+                color: rgba(255, 255, 255, 0.9) !important;
+                font-weight: 500;
+                margin: 0 8px;
+                padding: 8px 16px !important;
+                border-radius: 25px;
+                transition: var(--transition);
+                position: relative;
+                overflow: hidden;
+            }
+
+            .nav-link::before {
+                content: '';
+                position: absolute;
+                top: 0;
+                left: -100%;
+                width: 100%;
+                height: 100%;
+                background: linear-gradient(90deg, transparent, rgba(255,255,255,0.1), transparent);
+                transition: var(--transition);
+            }
+
+            .nav-link:hover {
+                color: var(--white) !important;
+                background: rgba(255, 255, 255, 0.1);
+                transform: translateY(-2px);
+            }
+
+            .nav-link:hover::before {
+                left: 100%;
+            }
+
+
+        /* Main Layout */
+        .container {
+            max-width: 1200px;
+            margin: 2rem auto;
+            padding: 0 2rem;
+        }
+
+        /* Main Content */
+        .main-content {
+            background: white;
+            border-radius: 12px;
+            padding: 2rem;
+            box-shadow: 0 4px 15px rgba(0,0,0,0.1);
+        }
+
+        .page-title {
+            color: #2c5aa0;
+            font-size: 2rem;
+            margin-bottom: 1rem;
+            text-align: center;
+        }
+
+        .page-subtitle {
+            text-align: center;
+            color: #666;
+            margin-bottom: 2rem;
+            font-size: 1.1rem;
+        }
+
+        /* Doctor Cards */
+        .doctors-grid {
+            display: grid;
+            gap: 2rem;
+        }
+
+        .doctor-card {
+            background: linear-gradient(135deg, #ffffff 0%, #f8f9fa 100%);
+            border-radius: 15px;
+            padding: 2rem;
+            box-shadow: 0 8px 25px rgba(0,0,0,0.1);
+            border: 1px solid #e9ecef;
+            transition: all 0.3s ease;
+        }
+
+        .doctor-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 12px 35px rgba(0,0,0,0.15);
+        }
+
+        .doctor-header {
+            display: flex;
+            align-items: center;
+            gap: 2rem;
+            margin-bottom: 2rem;
+        }
+
+        .doctor-photo {
+            width: 120px;
+            height: 120px;
+            border-radius: 50%;
+            background: linear-gradient(135deg, #2c5aa0, #1e3a8a);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: white;
+            font-size: 3rem;
+            font-weight: bold;
+            box-shadow: 0 4px 15px rgba(44,90,160,0.3);
+        }
+
+        .doctor-info h3 {
+            color: #2c5aa0;
+            font-size: 1.8rem;
+            margin-bottom: 0.5rem;
+        }
+
+        .doctor-info .specialty {
+            color: #dc2626;
+            font-weight: 600;
+            font-size: 1.1rem;
+            margin-bottom: 0.5rem;
+        }
+
+        .doctor-info .experience {
+            color: #059669;
+            font-weight: 500;
+        }
+
+        /* Stats Grid */
+        .stats-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 1.5rem;
+            margin-top: 2rem;
+        }
+
+        .stat-item {
+            background: linear-gradient(135deg, #e3f2fd 0%, #bbdefb 100%);
+            padding: 1.5rem;
+            border-radius: 12px;
+            text-align: center;
+            border-left: 4px solid #2c5aa0;
+        }
+
+        .stat-number {
+            font-size: 2.5rem;
+            font-weight: bold;
+            color: #2c5aa0;
+            margin-bottom: 0.5rem;
+        }
+
+        .stat-label {
+            color: #666;
+            font-weight: 500;
+            text-transform: uppercase;
+            font-size: 0.9rem;
+            letter-spacing: 0.5px;
+        }
+
+        /* Education Section */
+        .education-section {
+            margin-top: 2rem;
+            padding: 1.5rem;
+            background: #f8f9fa;
+            border-radius: 12px;
+            border-left: 4px solid #059669;
+        }
+
+        .education-section h4 {
+            color: #059669;
+            margin-bottom: 1rem;
+            font-size: 1.3rem;
+        }
+
+        .education-item {
+            margin-bottom: 1rem;
+            padding: 1rem;
+            background: white;
+            border-radius: 8px;
+            box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+        }
+
+        .education-item:last-child {
+            margin-bottom: 0;
+        }
+
+        .degree {
+            font-weight: 600;
+            color: #2c5aa0;
+            font-size: 1.1rem;
+        }
+
+        .institution {
+            color: #666;
+            margin-top: 0.25rem;
+        }
+
+        .year {
+            color: #059669;
+            font-weight: 500;
+            font-size: 0.9rem;
+        }
+
+        /* Responsive Design */
+        @media (max-width: 768px) {
+            .header-nav {
+                padding: 1rem;
+            }
+
+            .mobile-toggle {
+                display: flex;
+            }
+
+            .nav-menu {
+                display: none;
+                position: absolute;
+                top: 100%;
+                left: 0;
+                right: 0;
+                background: #2c3e50;
+                flex-direction: column;
+                box-shadow: 0 4px 20px rgba(0,0,0,0.2);
+            }
+
+            .nav-menu.mobile-open {
+                display: flex;
+            }
+
+            .nav-menu li a {
+                padding: 1rem 2rem;
+                border-bottom: 1px solid rgba(255,255,255,0.1);
+            }
+
+            .nav-menu li:last-child a {
+                border-bottom: none;
+            }
+
+            .doctor-header {
+                flex-direction: column;
+                text-align: center;
+            }
+
+            .stats-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .container {
+                padding: 0 1rem;
+            }
+        }
+
+        @media (max-width: 480px) {
+            .logo-text h1 {
+                font-size: 1.3rem;
+            }
+
+            .page-title {
+                font-size: 1.6rem;
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- Header with Integrated Navigation -->
+    <header>
+        <div class="header-nav">
+            <div class="logo">
+                <div class="logo-icon">♥+</div>
+                <div class="logo-text">
+                    <h1>Dr. Karnalkar Hospital</h1>
+                </div>
+            </div>
+
+            <nav>
+                <ul class="nav-menu ml-auto" id="navMenu">
+                    <li><a href="#" class="active">Home</a></li>
+                    <li><a href="#">About Dr. Karnalkar</a></li>
+                    <li><a href="#">Services</a></li>
+                    <li><a href="#">Testimonials</a></li>
+                    <li><a href="#">Contact</a></li>
+                </ul>
+            </nav>
+
+
+        </div>
+    </header>
+
+    <!-- Main Container -->
+    <div class="container">
+        <!-- Main Content -->
+        <main class="main-content">
+            <h1 class="page-title">Our Expert Doctors</h1>
+            <p class="page-subtitle">Meet our highly qualified medical professionals dedicated to your health and wellbeing</p>
+
+            <div class="doctors-grid">
+                <!-- Doctor 1 -->
+                <div class="doctor-card">
+                    <div class="doctor-header">
+                        <div class="doctor-photo">DK</div>
+                        <div class="doctor-info">
+                            <h3>Dr. Karnalkar</h3>
+                            <div class="specialty">Orthopedic Surgeon</div>
+                            <div class="experience">15 years of experience</div>
+                        </div>
+                    </div>
+
+                    <div class="stats-grid">
+                        <div class="stat-item">
+                            <div class="stat-number">850+</div>
+                            <div class="stat-label">Successful Surgeries</div>
+                        </div>
+                        <div class="stat-item">
+                            <div class="stat-number">15</div>
+                            <div class="stat-label">Years Experience</div>
+                        </div>
+                        <div class="stat-item">
+                            <div class="stat-number">98%</div>
+                            <div class="stat-label">Success Rate</div>
+                        </div>
+                    </div>
+
+                    <div class="education-section">
+                        <h4>Education & Qualifications</h4>
+                        <div class="education-item">
+                            <div class="degree">MBBS - Bachelor of Medicine</div>
+                            <div class="institution">Government Medical College</div>
+                            <div class="year">2008</div>
+                        </div>
+                        <div class="education-item">
+                            <div class="degree">MS - Master of Surgery (Orthopedics)</div>
+                            <div class="institution">KEM Hospital, Mumbai</div>
+                            <div class="year">2012</div>
+                        </div>
+                        <div class="education-item">
+                            <div class="degree">Fellowship in Joint Replacement Surgery</div>
+                            <div class="institution">Pune Orthopedic Institute</div>
+                            <div class="year">2013</div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Doctor 2 -->
+                <div class="doctor-card">
+                    <div class="doctor-header">
+                        <div class="doctor-photo">DR</div>
+                        <div class="doctor-info">
+                            <h3>Dr. Rajesh Sharma</h3>
+                            <div class="specialty">Associate Orthopedic Surgeon</div>
+                            <div class="experience">10 years of experience</div>
+                        </div>
+                    </div>
+
+                    <div class="stats-grid">
+                        <div class="stat-item">
+                            <div class="stat-number">600+</div>
+                            <div class="stat-label">Successful Surgeries</div>
+                        </div>
+                        <div class="stat-item">
+                            <div class="stat-number">10</div>
+                            <div class="stat-label">Years Experience</div>
+                        </div>
+                        <div class="stat-item">
+                            <div class="stat-number">96%</div>
+                            <div class="stat-label">Success Rate</div>
+                        </div>
+                    </div>
+
+                    <div class="education-section">
+                        <h4>Education & Qualifications</h4>
+                        <div class="education-item">
+                            <div class="degree">MBBS - Bachelor of Medicine</div>
+                            <div class="institution">Armed Forces Medical College</div>
+                            <div class="year">2012</div>
+                        </div>
+                        <div class="education-item">
+                            <div class="degree">MS - Master of Surgery (Orthopedics)</div>
+                            <div class="institution">All India Institute of Medical Sciences</div>
+                            <div class="year">2016</div>
+                        </div>
+                        <div class="education-item">
+                            <div class="degree">Fellowship in Sports Medicine</div>
+                            <div class="institution">Mumbai Sports Medicine Center</div>
+                            <div class="year">2017</div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </main>
+    </div>
+
+    <script>
+       // Navbar scroll effect
+            $(window).scroll(function() {
+                if ($(this).scrollTop() > 50) {
+                    $('#mainNavbar').addClass('scrolled');
+                } else {
+                    $('#mainNavbar').removeClass('scrolled');
+                }
+            });
+
+            // Smooth scrolling for anchor links
+            $('a[href^="#"]').on('click', function(event) {
+                var target = $(this.getAttribute('href'));
+                if( target.length ) {
+                    event.preventDefault();
+                    $('html, body').stop().animate({
+                        scrollTop: target.offset().top - 70
+                    }, 1000);
+                }
+            });
+
+       
+    </script>
+</body>
+</html>

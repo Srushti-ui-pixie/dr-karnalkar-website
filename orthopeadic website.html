@@ -1,0 +1,2408 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Dr. Karnalkar Orthopedic Hospital - Expert Care for Your Well-being</title>
+
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+
+    <!-- Font Awesome -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
+
+    <!-- Enhanced Styles with Animations and Modern Design -->
+    <style>
+        /* CSS Variables for consistent theming */
+        :root {
+            --primary-color: #2c5aa0;
+            --secondary-color: #4a90e2;
+            --accent-color: #00d4aa;
+            --dark-bg: #1a252f;
+            --light-bg: #f8f9fa;
+            --text-dark: #2c3e50;
+            --text-light: #6c757d;
+            --white: #ffffff;
+            --shadow: 0 10px 40px rgba(0, 0, 0, 0.08);
+            --border-radius: 20px;
+            --transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            line-height: 1.6;
+            color: var(--text-dark);
+            overflow-x: hidden;
+        }
+
+        html {
+            scroll-behavior: smooth;
+        }
+
+        /* ENHANCED NAVBAR WITH ANIMATIONS */
+        .navbar {
+            background: #ffffff !important;
+            box-shadow: 0 2px 20px rgba(0, 0, 0, 0.1);
+            transition: var(--transition);
+            backdrop-filter: blur(10px);
+        }
+
+        .navbar.scrolled {
+            background: rgba(255, 255, 255, 0.95) !important;
+            backdrop-filter: blur(15px);
+        }
+
+        .navbar-brand {
+            font-weight: 700;
+            font-size: 1.5rem;
+            color: var(--primary-color) !important;
+            text-decoration: none;
+            transition: var(--transition);
+            animation: slideInLeft 0.8s ease-out;
+        }
+
+        .navbar-brand:hover {
+            transform: scale(1.05);
+            color: var(--accent-color) !important;
+        }
+
+        .nav-link {
+            color: var(--text-dark) !important;
+            font-weight: 500;
+            margin: 0 8px;
+            padding: 8px 16px !important;
+            border-radius: 25px;
+            transition: var(--transition);
+            position: relative;
+            overflow: hidden;
+        }
+
+        .nav-link::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: -100%;
+            width: 100%;
+            height: 100%;
+            background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.1), transparent);
+            transition: var(--transition);
+        }
+
+        .nav-link:hover {
+            color: var(--primary-color) !important;
+            background: rgba(44, 90, 160, 0.1);
+            transform: translateY(-2px);
+        }
+
+        .nav-link:hover::before {
+            left: 100%;
+        }
+
+        /* HERO SECTION ENHANCEMENTS */
+        .hero-section {
+            position: relative;
+            min-height: 100vh;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            overflow: hidden;
+            background: linear-gradient(135deg, var(--primary-color) 0%, var(--secondary-color) 100%);
+        }
+
+        .hero-overlay {
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: linear-gradient(#111aee, #164ae9, #069ef9, #18b6e7);
+            z-index: 1;
+        }
+
+        .hero-content {
+            position: relative;
+            z-index: 2;
+            text-align: center;
+            color: var(--white);
+            max-width: 800px;
+            padding: 2rem;
+            animation: fadeInUp 1s ease-out;
+        }
+
+        .hero-title {
+            font-size: 3.5rem;
+            font-weight: 800;
+            margin-bottom: 1rem;
+            line-height: 1.2;
+            text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.3);
+            animation: slideInDown 0.8s ease-out;
+        }
+
+        .hero-subtitle {
+            font-size: 1.3rem;
+            margin-bottom: 2rem;
+            opacity: 0.95;
+            animation: fadeIn 1s ease-out 0.3s both;
+        }
+
+        /* ENHANCED APPOINTMENT BUTTON */
+        .btn-appointment {
+            background: linear-gradient(#59d42b 100%);
+            border: none;
+            border-radius: 50px;
+            padding: 15px 40px;
+            font-size: 1.1rem;
+            font-weight: 600;
+            color: var(--white);
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            transition: var(--transition);
+            position: relative;
+            overflow: hidden;
+            box-shadow: 0 8px 25px rgba(0, 212, 170, 0.3);
+            animation: pulse 2s infinite;
+        }
+
+        .btn-appointment::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: -100%;
+            width: 100%;
+            height: 100%;
+            background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.2), transparent);
+            transition: var(--transition);
+        }
+
+        .btn-appointment:hover {
+            transform: translateY(-3px) scale(1.05);
+            box-shadow: 0 15px 35px rgba(0, 212, 170, 0.4);
+            color: var(--white);
+        }
+
+        .btn-appointment:hover::before {
+            left: 100%;
+        }
+
+        /* CAROUSEL ENHANCEMENTS */
+        .carousel {
+            margin-top: 80px;
+            border-radius: var(--border-radius);
+            overflow: hidden;
+            box-shadow: var(--shadow);
+        }
+
+        .carousel-item img {
+            height: 70vh;
+            object-fit: cover;
+            filter: brightness(0.8);
+            transition: var(--transition);
+        }
+
+        .carousel-item:hover img {
+            filter: brightness(1);
+            transform: scale(1.05);
+        }
+
+        .carousel-caption {
+            background: rgba(0, 0, 0, 0.5);
+            border-radius: var(--border-radius);
+            backdrop-filter: blur(10px);
+        }
+
+        /* SERVICES SECTION */
+        .services-section {
+            padding: 80px 0;
+            background: var(--light-bg);
+        }
+
+        .service-card {
+            background: var(--white);
+            border-radius: var(--border-radius);
+            padding: 2.5rem 1.5rem;
+            margin: 0;
+            box-shadow: var(--shadow);
+            transition: var(--transition);
+            text-align: center;
+            height: 100%;
+            display: flex;
+            flex-direction: column;
+            justify-content: flex-start;
+            position: relative;
+            overflow: hidden;
+            border: 1px solid rgba(0, 0, 0, 0.03);
+        }
+
+        /* Removed gradient line for minimal look */
+
+        .service-card:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 20px 40px rgba(0, 0, 0, 0.15);
+        }
+
+        .service-card:hover::before {
+            transform: scaleX(1);
+        }
+
+        .service-icon-circle {
+            width: 80px;
+            height: 80px;
+            background: rgba(44, 90, 160, 0.1);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin: 0 auto 1.5rem;
+            transition: var(--transition);
+        }
+
+        .service-card:hover .service-icon-circle {
+            background: var(--primary-color);
+            transform: scale(1.1);
+        }
+
+        .service-card:hover .service-icon-circle i {
+            color: var(--white);
+        }
+
+        .service-icon {
+            font-size: 2.5rem;
+            color: var(--primary-color);
+            transition: var(--transition);
+            margin: 0;
+        }
+
+        /* SERVICES SECTION - HORIZONTAL SCROLLING */
+        .services-section {
+            padding: 5rem 0;
+            background: linear-gradient(135deg, #f8f9fa 0%, #ffffff 100%);
+            overflow: hidden;
+        }
+
+        .marquee-container {
+            width: 100%;
+            overflow: hidden;
+            padding: 2rem 0;
+            position: relative;
+        }
+
+        .marquee-track {
+            display: flex;
+            width: max-content;
+            animation: scroll 60s linear infinite;
+            gap: 2rem;
+        }
+
+        .marquee-track:hover {
+            animation-play-state: paused;
+        }
+
+        @keyframes scroll {
+            0% {
+                transform: translateX(0);
+            }
+
+            100% {
+                transform: translateX(-50%);
+            }
+        }
+
+        .service-card {
+            flex: 0 0 auto;
+            width: 320px;
+            height: 480px;
+            background: white;
+            border-radius: 15px;
+            padding: 2rem 1.5rem;
+            box-shadow: 0 5px 20px rgba(0, 0, 0, 0.08);
+            transition: all 0.3s ease;
+            display: flex;
+            flex-direction: column;
+            border: 1px solid rgba(0, 0, 0, 0.05);
+        }
+
+        .service-card:hover {
+            transform: translateY(-8px);
+            box-shadow: 0 15px 40px rgba(0, 0, 0, 0.15);
+        }
+
+        .service-icon-wrapper {
+            text-align: center;
+            margin-bottom: 1rem;
+        }
+
+        .service-icon-circle {
+            width: 60px;
+            height: 60px;
+            background: rgba(44, 90, 160, 0.1);
+            border-radius: 50%;
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            margin-bottom: 0.5rem;
+            transition: all 0.3s ease;
+        }
+
+        .service-card:hover .service-icon-circle {
+            background: var(--primary-color);
+            transform: scale(1.1);
+        }
+
+        .service-icon {
+            font-size: 1.8rem;
+            color: var(--primary-color);
+            transition: all 0.3s ease;
+        }
+
+        .service-card:hover .service-icon {
+            color: white;
+        }
+
+        .service-emoji {
+            font-size: 1.5rem;
+            display: block;
+            margin-bottom: 0.5rem;
+        }
+
+        .service-title {
+            font-size: 1.1rem;
+            font-weight: 700;
+            color: #2c3e50;
+            text-align: center;
+            margin-bottom: 1.5rem;
+            line-height: 1.3;
+        }
+
+        .service-card ul {
+            list-style: none;
+            padding: 0;
+            margin: 0 0 auto 0;
+            flex-grow: 1;
+        }
+
+        .service-card ul li {
+            font-size: 0.9rem;
+            color: #555;
+            margin-bottom: 0.75rem;
+            padding-left: 0;
+            line-height: 1.5;
+        }
+
+        .service-card ul li::before {
+            content: "•";
+            color: var(--primary-color);
+            font-weight: bold;
+            display: inline-block;
+            width: 1em;
+            margin-left: 0;
+        }
+
+        .service-card .btn {
+            margin-top: 1.5rem;
+            width: 100%;
+            padding: 0.75rem;
+            font-weight: 600;
+            border-radius: 8px;
+        }
+
+
+        /* MARQUEE STYLES */
+        .marquee-container {
+            width: 100%;
+            overflow: hidden;
+            padding: 2rem 0;
+            position: relative;
+            background: linear-gradient(to right, white, transparent 10%, transparent 90%, white);
+            z-index: 1;
+        }
+
+        .marquee-track {
+            display: flex;
+            width: max-content;
+            animation: scroll 30s linear infinite;
+        }
+
+        .marquee-track:hover {
+            animation-play-state: paused;
+        }
+
+        .service-card-wrapper {
+            flex: 0 0 auto;
+            width: 300px;
+            margin-right: 2rem;
+        }
+
+        @keyframes scroll {
+            0% {
+                transform: translateX(0);
+            }
+
+            100% {
+                /* We will adjust this dynamically via JS or ensure content is duplicated enough */
+                transform: translateX(-50%);
+            }
+        }
+
+        /* MODAL STYLES */
+        .modal-content {
+            border-radius: 20px;
+            border: none;
+            box-shadow: 0 15px 50px rgba(0, 0, 0, 0.1);
+        }
+
+        .modal-header {
+            border-bottom: 1px solid rgba(0, 0, 0, 0.05);
+            padding: 1.5rem;
+        }
+
+        .modal-body {
+            padding: 2rem;
+        }
+
+        .modal-title {
+            font-weight: 700;
+            color: var(--primary-color);
+        }
+
+
+
+        .service-title {
+            font-size: 1.3rem;
+            font-weight: 600;
+            margin-bottom: 0.5rem;
+            color: var(--text-dark);
+        }
+
+        /* ENHANCED MODAL */
+        .modal-content {
+            border-radius: var(--border-radius);
+            border: none;
+            box-shadow: 0 20px 60px rgba(0, 0, 0, 0.3);
+            animation: modalSlideIn 0.3s ease-out;
+        }
+
+        .modal-header {
+            background: linear-gradient(135deg, var(--primary-color), var(--secondary-color));
+            color: var(--white);
+            border-radius: var(--border-radius) var(--border-radius) 0 0;
+            padding: 1.5rem;
+        }
+
+        .modal-title {
+            font-weight: 600;
+            font-size: 1.5rem;
+        }
+
+        .close {
+            color: var(--white);
+            opacity: 0.8;
+            font-size: 1.5rem;
+            transition: var(--transition);
+        }
+
+        .close:hover {
+            opacity: 1;
+            transform: scale(1.1);
+        }
+
+        .form-control {
+            border: 2px solid #e9ecef;
+            border-radius: 8px;
+            padding: 12px 16px;
+            transition: var(--transition);
+            font-size: 1rem;
+        }
+
+        .form-control:focus {
+            border-color: var(--primary-color);
+            box-shadow: 0 0 0 0.2rem rgba(44, 90, 160, 0.25);
+            transform: translateY(-2px);
+        }
+
+        .form-label {
+            font-weight: 600;
+            color: var(--text-dark);
+            margin-bottom: 8px;
+        }
+
+        .btn-primary {
+            background: linear-gradient(135deg, var(--primary-color), var(--secondary-color));
+            border: none;
+            border-radius: 8px;
+            padding: 12px 30px;
+            font-weight: 600;
+            transition: var(--transition);
+        }
+
+        .btn-primary:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 8px 25px rgba(44, 90, 160, 0.3);
+        }
+
+        /* FOOTER ENHANCEMENTS */
+        .footer {
+            background: linear-gradient(135deg, var(--dark-bg) 0%, #243447 100%);
+            color: var(--white);
+            padding: 60px 0 0;
+        }
+
+        .footer-section h3 {
+            position: relative;
+            padding-bottom: 15px;
+            margin-bottom: 25px;
+        }
+
+        .footer-section h3::after {
+            content: '';
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            width: 50px;
+            height: 3px;
+            background: linear-gradient(90deg, var(--accent-color), var(--primary-color));
+        }
+
+        /* ANIMATIONS */
+        @keyframes fadeIn {
+            from {
+                opacity: 0;
+            }
+
+            to {
+                opacity: 1;
+            }
+        }
+
+        @keyframes fadeInUp {
+            from {
+                opacity: 0;
+                transform: translateY(30px);
+            }
+
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        @keyframes slideInDown {
+            from {
+                opacity: 0;
+                transform: translateY(-30px);
+            }
+
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        @keyframes slideInLeft {
+            from {
+                opacity: 0;
+                transform: translateX(-30px);
+            }
+
+            to {
+                opacity: 1;
+                transform: translateX(0);
+            }
+        }
+
+        @keyframes pulse {
+            0% {
+                box-shadow: 0 8px 25px rgba(0, 212, 170, 0.3);
+            }
+
+            50% {
+                box-shadow: 0 8px 35px rgba(0, 212, 170, 0.5);
+            }
+
+            100% {
+                box-shadow: 0 8px 25px rgba(0, 212, 170, 0.3);
+            }
+        }
+
+        @keyframes modalSlideIn {
+            from {
+                opacity: 0;
+                transform: translateY(-50px) scale(0.9);
+            }
+
+            to {
+                opacity: 1;
+                transform: translateY(0) scale(1);
+            }
+        }
+
+        /* FLOATING ELEMENTS */
+        .floating-shapes {
+            position: absolute;
+            width: 100%;
+            height: 100%;
+            overflow: hidden;
+            z-index: 0;
+        }
+
+        .shape {
+            position: absolute;
+            opacity: 0.1;
+            animation: float 6s ease-in-out infinite;
+        }
+
+        .shape:nth-child(1) {
+            top: 20%;
+            left: 10%;
+            animation-delay: 0s;
+        }
+
+        .shape:nth-child(2) {
+            top: 60%;
+            right: 10%;
+            animation-delay: 2s;
+        }
+
+        .shape:nth-child(3) {
+            bottom: 20%;
+            left: 20%;
+            animation-delay: 4s;
+        }
+
+        @keyframes float {
+
+            0%,
+            100% {
+                transform: translateY(0px) rotate(0deg);
+            }
+
+            50% {
+                transform: translateY(-20px) rotate(10deg);
+            }
+        }
+
+        /* RESPONSIVE DESIGN */
+        @media (max-width: 768px) {
+            .hero-title {
+                font-size: 2.5rem;
+            }
+
+            .hero-subtitle {
+                font-size: 1.1rem;
+            }
+
+            .service-card {
+                margin: 0.5rem;
+                height: auto;
+                padding: 1.5rem;
+            }
+
+            .btn-appointment {
+                padding: 12px 30px;
+                font-size: 1rem;
+            }
+        }
+
+        /* Loading Animation */
+        .loading {
+            display: inline-block;
+            width: 20px;
+            height: 20px;
+            border: 3px solid rgba(255, 255, 255, .3);
+            border-radius: 50%;
+            border-top-color: #fff;
+            animation: spin 1s ease-in-out infinite;
+        }
+
+        @keyframes spin {
+            to {
+                transform: rotate(360deg);
+            }
+        }
+    </style>
+
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+
+    <!-- jQuery and Bootstrap JS -->
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.1/dist/umd/popper.min.js"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+</head>
+
+<body>
+    <!-- ENHANCED NAVIGATION -->
+    <nav class="navbar navbar-expand-lg navbar-light fixed-top" id="mainNavbar">
+        <div class="container">
+            <a class="navbar-brand d-flex align-items-center" href="#home">
+                <img src="logo.png" alt="Knee Spine Revival Logo"
+                    style="height:50px;width:auto;margin-right:15px;object-fit:contain;" />
+                <div class="d-flex flex-column justify-content-center">
+                    <span style="line-height: 1.2; font-size: 1.5rem;">Knee Spine Revival</span>
+                </div>
+            </a>
+            <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav">
+                <span class="navbar-toggler-icon">
+                    <i class="fas fa-bars" style="color: var(--text-dark);"></i>
+                </span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarNav">
+                <ul class="navbar-nav ml-auto">
+                    <li class="nav-item">
+                        <a class="nav-link" href="#home">Home</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#services">Services</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#testimonials">Testimonials</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#doc_info">About Dr. Karnalkar</a>
+                    </li>
+
+
+
+
+                </ul>
+            </div>
+        </div>
+    </nav>
+
+    <!-- HERO SECTION -->
+    <section class="hero-section" id="home">
+        <div class="floating-shapes">
+            <div class="shape">
+                <i class="fas fa-plus-circle" style="font-size: 60px; color: var(--accent-color);"></i>
+            </div>
+            <div class="shape">
+                <i class="fas fa-heartbeat" style="font-size: 80px; color: var(--primary-color);"></i>
+            </div>
+            <div class="shape">
+                <i class="fas fa-user-md" style="font-size: 70px; color: var(--secondary-color);"></i>
+            </div>
+        </div>
+        <div class="hero-overlay"></div>
+        <div class="hero-content">
+            <h1 class="hero-title">Expert Orthopedic Care</h1>
+            <p class="hero-subtitle">Advanced treatments for Knee, Spine & Genriatic Orthopaedic Care</p>
+        </div>
+    </section>
+
+    <!-- CAROUSEL SECTION -->
+    <div class="container my-5">
+        <div id="hospitalCarousel" class="carousel slide" data-ride="carousel">
+            <div class="carousel-inner">
+                <div class="carousel-item active">
+                    <img class="d-block w-100"
+                        src="https://heeoe.hee.nhs.uk/sites/default/files/imagepicker/172/nhs_nnuh_entrance.jpg"
+                        alt="Hospital Entrance">
+                    <div class="carousel-caption">
+                        <h3>Modern Healthcare Facility</h3>
+                        <p>State-of-the-art equipment and comfortable environment</p>
+                    </div>
+                </div>
+                <div class="carousel-item">
+                    <img class="d-block w-100" src="https://cdn7.dissolve.com/p/D145_295_861/D145_295_861_1200.jpg"
+                        alt="Medical Team">
+                    <div class="carousel-caption">
+                        <h3>Lifestyle Improvement</h3>
+                        <p>Experienced professionals dedicated to your health</p>
+                    </div>
+                </div>
+                <div class="carousel-item active">
+                    <img class="d-block w-100"
+                        src="https://heeoe.hee.nhs.uk/sites/default/files/imagepicker/172/nhs_nnuh_entrance.jpg"
+                        alt="Hospital Entrance">
+                    <div class="carousel-caption">
+                        <h3>Personalized Treatment Plans</h3>
+                        <p>State-of-the-art equipment and comfortable environment</p>
+                    </div>
+                </div>
+                <div class="carousel-item active">
+                    <img class="d-block w-100"
+                        src="https://heeoe.hee.nhs.uk/sites/default/files/imagepicker/172/nhs_nnuh_entrance.jpg"
+                        alt="Hospital Entrance">
+                    <div class="carousel-caption">
+                        <h3>Expert Doctors & Skilled Team</h3>
+                        <p>State-of-the-art equipment and comfortable environment</p>
+                    </div>
+                </div>
+                <div class="carousel-item active">
+                    <img class="d-block w-100"
+                        src="https://heeoe.hee.nhs.uk/sites/default/files/imagepicker/172/nhs_nnuh_entrance.jpg"
+                        alt="Hospital Entrance">
+                    <div class="carousel-caption">
+                        <h3>Non-surgical Orthopaedic Solutions</h3>
+                        <p>State-of-the-art equipment and comfortable environment</p>
+                    </div>
+                </div>
+                <div class="carousel-item active">
+                    <img class="d-block w-100"
+                        src="https://heeoe.hee.nhs.uk/sites/default/files/imagepicker/172/nhs_nnuh_entrance.jpg"
+                        alt="Hospital Entrance">
+                    <div class="carousel-caption">
+                        <h3>Spine & Backache Disorders - Relief & Rehabilitation</h3>
+                        <p>State-of-the-art equipment and comfortable environment</p>
+                    </div>
+                </div>
+                <div class="carousel-item active">
+                    <img class="d-block w-100"
+                        src="https://heeoe.hee.nhs.uk/sites/default/files/imagepicker/172/nhs_nnuh_entrance.jpg"
+                        alt="Hospital Entrance">
+                    <div class="carousel-caption">
+                        <h3>Prevention of Knee Arthritis</h3>
+                        <p>State-of-the-art equipment and comfortable environment</p>
+                    </div>
+                </div>
+
+            </div>
+
+        </div>
+    </div>
+
+    <!-- SERVICES SECTION -->
+    <section class="services-section" id="services">
+        <div class="container">
+            <div class="text-center mb-5">
+                <h2 class="display-4 font-weight-bold text-primary mb-3">Our Services</h2>
+                <p class="lead text-muted">Comprehensive orthopedic care tailored to your needs</p>
+            </div>
+        </div>
+        <div class="marquee-container">
+            <div class="marquee-track" id="serviceMarquee">
+                <!-- Card 1: Knee Arthritis Care -->
+                <div class="service-card">
+                    <div class="service-icon-wrapper">
+                        <div class="service-icon-circle">
+                            <i class="service-icon fas fa-bone"></i>
+                        </div>
+                        <span class="service-emoji">🦴</span>
+                    </div>
+                    <h5 class="service-title">Knee Arthritis Care</h5>
+                    <ul>
+                        <li>Specialized prevention and management of knee arthritis.</li>
+                        <li>Focusing on pain reduction and mobility through non-surgical.</li>
+                        <li>Advanced therapeutic approaches.</li>
+                        <li>Helping patients regain active and confident movement.</li>
+                    </ul>
+                    <a href="https://wa.me/919881307084?text=Hi, I would like to enquire about Knee Arthritis Care services."
+                        target="_blank" class="btn btn-primary">Enquire</a>
+                </div>
+
+                <!-- Card 2: Spine & Backache Treatment -->
+                <div class="service-card">
+                    <div class="service-icon-wrapper">
+                        <div class="service-icon-circle">
+                            <i class="service-icon fas fa-running"></i>
+                        </div>
+                        <span class="service-emoji">🏃</span>
+                    </div>
+                    <h5 class="service-title">Spine & Backache Treatment</h5>
+                    <ul>
+                        <li>Comprehensive care for spondylosis and chronic backache.</li>
+                        <li>Root-cause based diagnosis and therapy.</li>
+                        <li>Advanced rehabilitation techniques.</li>
+                        <li>Restoring spinal health for long-term wellness.</li>
+                    </ul>
+                    <a href="https://wa.me/919881307084?text=Hi, I would like to enquire about Spine & Backache Treatment services."
+                        target="_blank" class="btn btn-primary">Enquire</a>
+                </div>
+
+                <!-- Card 3: Preventive Orthopedic Healthcare -->
+                <div class="service-card">
+                    <div class="service-icon-wrapper">
+                        <div class="service-icon-circle">
+                            <i class="service-icon fas fa-shield-alt"></i>
+                        </div>
+                        <span class="service-emoji">💡</span>
+                    </div>
+                    <h5 class="service-title">Preventive Orthopedic Healthcare</h5>
+                    <ul>
+                        <li>Early screening for joint and spine issues.</li>
+                        <li>Customized preventive plans for at-risk patients.</li>
+                        <li>Guidance on posture and lifestyle changes.</li>
+                        <li>Reducing future complications through awareness.</li>
+                    </ul>
+                    <a href="https://wa.me/919881307084?text=Hi, I would like to enquire about Preventive Orthopedic Healthcare services."
+                        target="_blank" class="btn btn-primary">Enquire</a>
+                </div>
+
+                <!-- Card 4: Non-Surgical Treatments -->
+                <div class="service-card">
+                    <div class="service-icon-wrapper">
+                        <div class="service-icon-circle">
+                            <i class="service-icon fas fa-hand-holding-medical"></i>
+                        </div>
+                        <span class="service-emoji">💡</span>
+                    </div>
+                    <h5 class="service-title">Non-Surgical Treatments</h5>
+                    <ul>
+                        <li>Targeted care for chronic and acute pain.</li>
+                        <li>Use of modern pain relief techniques.</li>
+                        <li>Personalized treatment based on patients needs.</li>
+                        <li>Aiming for pain free lifestyle.</li>
+                    </ul>
+                    <a href="https://wa.me/919881307084?text=Hi, I would like to enquire about Non-Surgical Treatments services."
+                        target="_blank" class="btn btn-primary">Enquire</a>
+                </div>
+
+                <!-- Card 5: Rehabilitation & Recovery -->
+                <div class="service-card">
+                    <div class="service-icon-wrapper">
+                        <div class="service-icon-circle">
+                            <i class="service-icon fas fa-user-md"></i>
+                        </div>
+                        <span class="service-emoji">🏃</span>
+                    </div>
+                    <h5 class="service-title">Rehabilitation & Recovery</h5>
+                    <ul>
+                        <li>Post-treatment rehabilitation programs.</li>
+                        <li>Physiotherapy and guided exercises.</li>
+                        <li>Strengthening joints and spine naturally.</li>
+                        <li>Ensuring patients return to normal life faster.</li>
+                    </ul>
+                    <a href="https://wa.me/919881307084?text=Hi, I would like to enquire about Rehabilitation & Recovery services."
+                        target="_blank" class="btn btn-primary">Enquire</a>
+                </div>
+
+                <!-- Card 6: Pain Management Clinic -->
+                <div class="service-card">
+                    <div class="service-icon-wrapper">
+                        <div class="service-icon-circle">
+                            <i class="service-icon fas fa-notes-medical"></i>
+                        </div>
+                        <span class="service-emoji">💡</span>
+                    </div>
+                    <h5 class="service-title">Pain Management Clinic</h5>
+                    <ul>
+                        <li>Targeted care for chronic and acute pain.</li>
+                        <li>Use of modern pain relief techniques.</li>
+                        <li>Personalized treatment based on patient needs.</li>
+                        <li>Aiming for a pain-free lifestyle.</li>
+                    </ul>
+                    <a href="https://wa.me/919881307084?text=Hi, I would like to enquire about Pain Management services."
+                        target="_blank" class="btn btn-primary">Enquire</a>
+                </div>
+
+                <!-- Card 7: Lifestyle & Wellness Guidance -->
+                <div class="service-card">
+                    <div class="service-icon-wrapper">
+                        <div class="service-icon-circle">
+                            <i class="service-icon fas fa-apple-alt"></i>
+                        </div>
+                        <span class="service-emoji">🌿</span>
+                    </div>
+                    <h5 class="service-title">Lifestyle & Wellness Guidance</h5>
+                    <ul>
+                        <li>Focus on healthy living for joint and spine.</li>
+                        <li>Advice on diet, posture, and exercise.</li>
+                        <li>Preventive lifestyle modifications.</li>
+                        <li>Supporting long-term health and vitality.</li>
+                    </ul>
+                    <a href="https://wa.me/919881307084?text=Hi, I would like to enquire about Lifestyle & Wellness services."
+                        target="_blank" class="btn btn-primary">Enquire</a>
+                </div>
+
+                <!-- Card 8: Advanced Diagnostic Facilities -->
+                <div class="service-card">
+                    <div class="service-icon-wrapper">
+                        <div class="service-icon-circle">
+                            <i class="service-icon fas fa-x-ray"></i>
+                        </div>
+                        <span class="service-emoji">🔬</span>
+                    </div>
+                    <h5 class="service-title">Advanced Diagnostic Facilities</h5>
+                    <ul>
+                        <li>Accurate diagnosis for knee & spine conditions.</li>
+                        <li>Use of modern medical equipment.</li>
+                        <li>Quick, reliable, and patient-friendly tests.</li>
+                        <li>Helping create precise treatment plans.</li>
+                    </ul>
+                    <a href="https://wa.me/919881307084?text=Hi, I would like to enquire about Advanced Diagnostic services."
+                        target="_blank" class="btn btn-primary">Enquire</a>
+                </div>
+
+                <!-- Card 9: Patient-Centric Care -->
+                <div class="service-card">
+                    <div class="service-icon-wrapper">
+                        <div class="service-icon-circle">
+                            <i class="service-icon fas fa-hands-helping"></i>
+                        </div>
+                        <span class="service-emoji">💛</span>
+                    </div>
+                    <h5 class="service-title">Patient-Centric Care</h5>
+                    <ul>
+                        <li>Compassionate and personalized approach.</li>
+                        <li>Individualized treatment strategies.</li>
+                        <li>Strong doctor-patient communication.</li>
+                        <li>Building trust and long-term relationships.</li>
+                    </ul>
+                    <a href="https://wa.me/919881307084?text=Hi, I would like to enquire about Patient-Centric Care services."
+                        target="_blank" class="btn btn-primary">Enquire</a>
+                </div>
+
+                <!-- Duplicate all 9 cards for seamless infinite scroll -->
+                <div class="service-card">
+                    <div class="service-icon-wrapper">
+                        <div class="service-icon-circle">
+                            <i class="service-icon fas fa-bone"></i>
+                        </div>
+                        <span class="service-emoji">🦴</span>
+                    </div>
+                    <h5 class="service-title">Knee Arthritis Care</h5>
+                    <ul>
+                        <li>Specialized prevention and management of knee arthritis.</li>
+                        <li>Focusing on pain reduction and mobility through non-surgical.</li>
+                        <li>Advanced therapeutic approaches.</li>
+                        <li>Helping patients regain active and confident movement.</li>
+                    </ul>
+                    <a href="https://wa.me/919881307084?text=Hi, I would like to enquire about Knee Arthritis Care services."
+                        target="_blank" class="btn btn-primary">Enquire</a>
+                </div>
+
+                <div class="service-card">
+                    <div class="service-icon-wrapper">
+                        <div class="service-icon-circle">
+                            <i class="service-icon fas fa-running"></i>
+                        </div>
+                        <span class="service-emoji">🏃</span>
+                    </div>
+                    <h5 class="service-title">Spine & Backache Treatment</h5>
+                    <ul>
+                        <li>Comprehensive care for spondylosis and chronic backache.</li>
+                        <li>Root-cause based diagnosis and therapy.</li>
+                        <li>Advanced rehabilitation techniques.</li>
+                        <li>Restoring spinal health for long-term wellness.</li>
+                    </ul>
+                    <a href="https://wa.me/919881307084?text=Hi, I would like to enquire about Spine & Backache Treatment services."
+                        target="_blank" class="btn btn-primary">Enquire</a>
+                </div>
+
+                <div class="service-card">
+                    <div class="service-icon-wrapper">
+                        <div class="service-icon-circle">
+                            <i class="service-icon fas fa-shield-alt"></i>
+                        </div>
+                        <span class="service-emoji">💡</span>
+                    </div>
+                    <h5 class="service-title">Orthopedic Healthcare</h5>
+                    <ul>
+                        <li>Early screening for joint and spine issues.</li>
+                        <li>Customized preventive plans for at-risk patients.</li>
+                        <li>Guidance on posture and lifestyle changes.</li>
+                        <li>Reducing future complications through awareness.</li>
+                    </ul>
+                    <a href="https://wa.me/919881307084?text=Hi, I would like to enquire about Preventive Orthopedic Healthcare services."
+                        target="_blank" class="btn btn-primary">Enquire</a>
+                </div>
+
+                <div class="service-card">
+                    <div class="service-icon-wrapper">
+                        <div class="service-icon-circle">
+                            <i class="service-icon fas fa-hand-holding-medical"></i>
+                        </div>
+                        <span class="service-emoji">💡</span>
+                    </div>
+                    <h5 class="service-title">Non-Surgical Treatments</h5>
+                    <ul>
+                        <li>Targeted care for chronic and acute pain.</li>
+                        <li>Use of modern pain relief techniques.</li>
+                        <li>Personalized treatment based on patients needs.</li>
+                        <li>Aiming for pain free lifestyle.</li>
+                    </ul>
+                    <a href="https://wa.me/919881307084?text=Hi, I would like to enquire about Non-Surgical Treatments services."
+                        target="_blank" class="btn btn-primary">Enquire</a>
+                </div>
+
+                <div class="service-card">
+                    <div class="service-icon-wrapper">
+                        <div class="service-icon-circle">
+                            <i class="service-icon fas fa-user-md"></i>
+                        </div>
+                        <span class="service-emoji">🏃</span>
+                    </div>
+                    <h5 class="service-title">Rehabilitation & Recovery</h5>
+                    <ul>
+                        <li>Post-treatment rehabilitation programs.</li>
+                        <li>Physiotherapy and guided exercises.</li>
+                        <li>Strengthening joints and spine naturally.</li>
+                        <li>Ensuring patients return to normal life faster.</li>
+                    </ul>
+                    <a href="https://wa.me/919881307084?text=Hi, I would like to enquire about Rehabilitation & Recovery services."
+                        target="_blank" class="btn btn-primary">Enquire</a>
+                </div>
+
+                <div class="service-card">
+                    <div class="service-icon-wrapper">
+                        <div class="service-icon-circle">
+                            <i class="service-icon fas fa-notes-medical"></i>
+                        </div>
+                        <span class="service-emoji">💡</span>
+                    </div>
+                    <h5 class="service-title">Pain Management Clinic</h5>
+                    <ul>
+                        <li>Targeted care for chronic and acute pain.</li>
+                        <li>Use of modern pain relief techniques.</li>
+                        <li>Personalized treatment based on patient needs.</li>
+                        <li>Aiming for a pain-free lifestyle.</li>
+                    </ul>
+                    <a href="https://wa.me/919881307084?text=Hi, I would like to enquire about Pain Management services."
+                        target="_blank" class="btn btn-primary">Enquire</a>
+                </div>
+
+                <div class="service-card">
+                    <div class="service-icon-wrapper">
+                        <div class="service-icon-circle">
+                            <i class="service-icon fas fa-apple-alt"></i>
+                        </div>
+                        <span class="service-emoji">🌿</span>
+                    </div>
+                    <h5 class="service-title">Lifestyle & Wellness Guidance</h5>
+                    <ul>
+                        <li>Focus on healthy living for joint and spine.</li>
+                        <li>Advice on diet, posture, and exercise.</li>
+                        <li>Preventive lifestyle modifications.</li>
+                        <li>Supporting long-term health and vitality.</li>
+                    </ul>
+                    <a href="https://wa.me/919881307084?text=Hi, I would like to enquire about Lifestyle & Wellness services."
+                        target="_blank" class="btn btn-primary">Enquire</a>
+                </div>
+
+                <div class="service-card">
+                    <div class="service-icon-wrapper">
+                        <div class="service-icon-circle">
+                            <i class="service-icon fas fa-x-ray"></i>
+                        </div>
+                        <span class="service-emoji">🔬</span>
+                    </div>
+                    <h5 class="service-title">Advanced Diagnostic Facilities</h5>
+                    <ul>
+                        <li>Accurate diagnosis for knee & spine conditions.</li>
+                        <li>Use of modern medical equipment.</li>
+                        <li>Quick, reliable, and patient-friendly tests.</li>
+                        <li>Helping create precise treatment plans.</li>
+                    </ul>
+                    <a href="https://wa.me/919881307084?text=Hi, I would like to enquire about Advanced Diagnostic services."
+                        target="_blank" class="btn btn-primary">Enquire</a>
+                </div>
+
+                <div class="service-card">
+                    <div class="service-icon-wrapper">
+                        <div class="service-icon-circle">
+                            <i class="service-icon fas fa-hands-helping"></i>
+                        </div>
+                        <span class="service-emoji">💛</span>
+                    </div>
+                    <h5 class="service-title">Patient-Centric Care</h5>
+                    <ul>
+                        <li>Compassionate and personalized approach.</li>
+                        <li>Individualized treatment strategies.</li>
+                        <li>Strong doctor-patient communication.</li>
+                        <li>Building trust and long-term relationships.</li>
+                    </ul>
+                    <a href="https://wa.me/919881307084?text=Hi, I would like to enquire about Patient-Centric Care services."
+                        target="_blank" class="btn btn-primary">Enquire</a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ENHANCED APPOINTMENT MODAL -->
+    <div class="modal fade" id="appointmentModal" tabindex="-1" role="dialog">
+        <div class="modal-dialog modal-lg" role="document">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title">
+                        <i class="fas fa-calendar-plus mr-2"></i>Book Your Appointment
+                    </h5>
+                    <button type="button" class="close" data-dismiss="modal">
+                        <span aria-hidden="true">&times;</span>
+                    </button>
+                </div>
+                <div class="modal-body" style="max-height: 50vh; overflow-y: auto;">
+                    <!-- SUCCESS/ERROR MESSAGES -->
+                    <div id="appointmentMessage" class="alert" style="display: none;"></div>
+
+                    <form id="appointmentForm" style="padding: 10px;">
+                        <div class="row">
+                            <div class="col-md-6">
+                                <div class="form-group">
+                                    <label class="form-label" for="patientName">
+                                        <i class="fas fa-user mr-1"></i>Full Name *
+                                    </label>
+                                    <input type="text" class="form-control form-control-sm" id="patientName"
+                                        placeholder="Enter your full name" required>
+                                </div>
+                            </div>
+                            <div class="col-md-6">
+                                <div class="form-group">
+                                    <label class="form-label" for="patientAge">
+                                        <i class="fas fa-birthday-cake mr-1"></i>Age *
+                                    </label>
+                                    <input type="number" class="form-control form-control-sm" id="patientAge"
+                                        placeholder="Enter your age" min="1" max="120" required>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="row">
+
+                            <div class="col-md-6">
+                                <div class="form-group">
+                                    <label class="form-label" for="patientPhone">
+                                        <i class="fas fa-phone mr-1"></i>Mobile Number *
+                                    </label>
+                                    <input type="tel" class="form-control form-control-sm" id="patientPhone"
+                                        placeholder="Enter your mobile number" required>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="row">
+                            <div class="col-md-6">
+                                <div class="form-group">
+                                    <label class="form-label" for="patientGender">
+                                        <i class="fas fa-venus-mars mr-1"></i>Gender *
+                                    </label>
+                                    <select class="form-control form-control-sm" id="patientGender" required>
+                                        <option value="">Select your gender</option>
+                                        <option value="male">Male</option>
+                                        <option value="female">Female</option>
+                                        <option value="other">Other</option>
+                                        <option value="prefer-not-to-say">Prefer not to say</option>
+                                    </select>
+                                </div>
+                            </div>
+                            <div class="col-md-6">
+                                <div class="form-group">
+                                    <label class="form-label" for="appointmentDate">
+                                        <i class="fas fa-calendar mr-1"></i>Preferred Date *
+                                    </label>
+                                    <input type="date" class="form-control form-control-sm" id="appointmentDate"
+                                        required>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="form-group">
+                            <label class="form-label" for="appointmentTime">
+                                <i class="fas fa-clock mr-1"></i>Preferred Time *
+                            </label>
+                            <select class="form-control form-control-sm" id="appointmentTime" required>
+                                <option value="">Select preferred time</option>
+                                <option value="09:00">09:00 AM</option>
+                                <option value="10:00">10:00 AM</option>
+                                <option value="11:00">11:00 AM</option>
+                                <option value="12:00">12:00 PM</option>
+                                <option value="14:00">02:00 PM</option>
+                                <option value="15:00">03:00 PM</option>
+                                <option value="16:00">04:00 PM</option>
+                                <option value="17:00">05:00 PM</option>
+                            </select>
+                        </div>
+
+                        <div class="form-group">
+                            <label class="form-label" for="consultationColumn">
+                                <i class="fas fa-columns mr-1"></i>Consultation Column *
+                            </label>
+                            <select class="form-control form-control-sm" id="consultationColumn" required>
+                                <option value="">Select consultation column</option>
+                                <option value="general">General Consultation</option>
+                                <option value="orthopedic">Orthopedic Consultation</option>
+                            </select>
+                        </div>
+
+                        <div class="form-group form-check">
+                            <input type="checkbox" class="form-check-input" id="termsCheck" required>
+                            <label class="form-check-label" for="termsCheck" style="font-size: 0.9rem;">
+                                I agree to the <a href="#" class="text-primary">terms and conditions</a> and
+                                <a href="#" class="text-primary">privacy policy</a>
+                            </label>
+                        </div>
+                    </form>
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-secondary btn-sm" data-dismiss="modal">
+                        <i class="fas fa-times mr-2"></i>Close
+                    </button>
+                    <button type="submit" form="appointmentForm" class="btn btn-primary btn-sm" id="submitAppointment">
+                        <i class="fas fa-paper-plane mr-2"></i>
+                        <span class="btn-text">Book Appointment</span>
+                    </button>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- ABOUT SECTION -->
+    <section class="py-5 bg-white" id="doc_info">
+        <div class="container">
+            <div class="text-center mb-5">
+                <h2 class="display-4 font-weight-bold text-primary mb-3">About Dr. Karnalkar</h2>
+                <p class="lead text-muted">Leading orthopedic specialist with years of experience</p>
+            </div>
+            <div class="row align-items-center">
+                <div class="col-lg-6">
+                    <div class="p-4">
+                        <h3 class="text-primary mb-3">Expert Orthopedic Care</h3>
+                        <p class="text-muted mb-4">
+                            Dr. Karnalkar brings over 15 years of experience in orthopedic surgery and rehabilitation.
+                            Specializing in joint replacement, sports medicine, and trauma care, our hospital is
+                            committed to providing world-class medical treatment with compassionate care.
+                        </p>
+                        <ul class="list-unstyled">
+                            <li class="mb-2"><i class="fas fa-check-circle text-success mr-2"></i>Board Certified
+                                Orthopedic Surgeon</li>
+                            <li class="mb-2"><i class="fas fa-check-circle text-success mr-2"></i>15+ Years of
+                                Experience</li>
+                            <li class="mb-2"><i class="fas fa-check-circle text-success mr-2"></i>500+ Successful
+                                Surgeries</li>
+                            <li class="mb-2"><i class="fas fa-check-circle text-success mr-2"></i>State-of-the-art
+                                Equipment</li>
+                        </ul>
+                    </div>
+                </div>
+                <div class="col-lg-6">
+                    <div class="text-center">
+                        <img src="image.jpg" alt="Dr. Karnalkar" class="img-fluid rounded shadow-lg h-25 w-50">
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <style>
+        #testimonials {
+            padding: 80px 0;
+            background: transparent;
+        }
+
+        .carousel-item video {
+            width: 100%;
+            border-radius: 10px;
+            /* box-shadow removed for seamless blend */
+        }
+
+        .carousel-control-prev,
+        .carousel-control-next {
+            width: 5%;
+        }
+
+        .carousel-control-prev-icon,
+        .carousel-control-next-icon {
+            background-color: var(--primary-color);
+            border-radius: 50%;
+            padding: 20px;
+        }
+    </style>
+    <section class="py-5" id="testimonials">
+        <div class="container">
+            <div class="text-center mb-5">
+                <h2 class="display-4 font-weight-bold text-primary mb-3">Testimonials</h2>
+                <p class="lead text-muted">Real experiences from our patients</p>
+            </div>
+
+            <div class="row justify-content-center">
+                <div class="col-12">
+                    <div id="videoCarousel" class="carousel slide" data-ride="carousel" data-interval="5000">
+                        <div class="carousel-inner">
+                            <div class="carousel-item active">
+                                <div class="embed-responsive embed-responsive-16by9">
+                                    <video class="embed-responsive-item" controls>
+                                        <source src="videos/VIDEO-2026-01-23-10-23-54.mp4" type="video/mp4">
+                                        Your browser does not support the video tag.
+                                    </video>
+                                </div>
+                                <div class="text-center mt-3">
+
+                                </div>
+                            </div>
+                            <div class="carousel-item">
+                                <div class="embed-responsive embed-responsive-16by9">
+                                    <video class="embed-responsive-item" controls>
+                                        <source src="videos/VIDEO-2026-01-23-10-23-54 (1).mp4" type="video/mp4">
+                                        Your browser does not support the video tag.
+                                    </video>
+                                </div>
+                                <div class="text-center mt-3">
+
+                                </div>
+                            </div>
+                            <div class="carousel-item">
+                                <div class="embed-responsive embed-responsive-16by9">
+                                    <video class="embed-responsive-item" controls>
+                                        <source src="videos/VIDEO-2026-01-23-10-23-54 (2).mp4" type="video/mp4">
+                                        Your browser does not support the video tag.
+                                    </video>
+                                </div>
+                                <div class="text-center mt-3">
+                                    <h5></h5>
+                                </div>
+                            </div>
+                            <div class="carousel-item">
+                                <div class="embed-responsive embed-responsive-16by9">
+                                    <video class="embed-responsive-item" controls>
+                                        <source src="videos/VIDEO-2026-01-23-10-23-54 (3).mp4" type="video/mp4">
+                                        Your browser does not support the video tag.
+                                    </video>
+                                </div>
+                                <div class="text-center mt-3">
+
+                                </div>
+                            </div>
+                        </div>
+                        <a class="carousel-control-prev" href="#videoCarousel" role="button" data-slide="prev">
+                            <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+                            <span class="sr-only">Previous</span>
+                        </a>
+                        <a class="carousel-control-next" href="#videoCarousel" role="button" data-slide="next">
+                            <span class="carousel-control-next-icon" aria-hidden="true"></span>
+                            <span class="sr-only">Next</span>
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+
+
+    <!-- CONTACT SECTION -->
+    <section class="py-5 bg-light" id="contact">
+        <div class="container">
+            <div class="text-center mb-5">
+                <h2 class="display-4 font-weight-bold text-primary mb-3">Contact Us</h2>
+                <p class="lead text-muted">Get in touch with our medical team</p>
+            </div>
+            <div class="row">
+                <div class="col-lg-8 mx-auto">
+                    <div class="row">
+                        <div class="col-md-4 text-center mb-4">
+                            <div class="contact-item p-4 bg-white rounded shadow-sm h-100">
+                                <i class="fas fa-map-marker-alt fa-2x text-primary mb-3"></i>
+                                <h5>Location</h5>
+                                <p class="text-muted">Near District General Hospital<br>Ganesh Peth, Sangli</p>
+                            </div>
+                        </div>
+                        <div class="col-md-4 text-center mb-4">
+                            <div class="contact-item p-4 bg-white rounded shadow-sm h-100">
+                                <i class="fas fa-phone fa-2x text-primary mb-3"></i>
+                                <h5>Phone</h5>
+                                <p class="text-muted">Appointments: 9420044076<br>Emergency: 9420044076</p>
+                            </div>
+                        </div>
+                        <div class="col-md-4 text-center mb-4">
+                            <div class="contact-item p-4 bg-white rounded shadow-sm h-100">
+                                <i class="fas fa-envelope fa-2x text-primary mb-3"></i>
+                                <h5>Email</h5>
+                                <p class="text-muted" style="font-size: x-small;">
+                                    info@karnalkarhospital.com<br>appointments@karnalkarhospital.com</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    <!-- Chat Icon 
+    <div class="chat-icon" id="chatIcon">
+        <svg viewBox="0 0 24 24">
+            <path d="M20,2H4A2,2 0 0,0 2,4V22L6,18H20A2,2 0 0,0 22,16V4C22,2.89 21.1,2 20,2Z"/>
+        </svg>
+        <div class="notification-badge" id="notificationBadge" style="display: none;">1</div>
+    </div>-->
+
+    <!-- Chat Container -->
+    <!-- <div class="chat-container" id="chatContainer">
+        <div class="chat-header">
+            <div class="chat-title">
+                <div class="message-avatar">🏥</div>
+                <div>
+                    <h3>🤖 OrthoBot Assistant</h3>
+                    <small>Online • Ready to help</small>
+                </div>
+                <div class="status-indicator"></div>
+            </div>
+            <button class="close-btn" id="closeBtn">×</button>
+        </div>
+        
+        <div class="chat-messages" id="chatMessages">
+            <div class="message bot">
+                <div class="bot-avatar">🤖</div>
+                <div class="message-content">
+                    Hello! I'm your OrthoBot assistant. I can help you with:
+                    <div class="quick-options">
+                        <div class="quick-option" onclick="selectQuickOption('appointment')">Book Appointment</div>
+                        <div class="quick-option" onclick="selectQuickOption('symptoms')">Check Symptoms</div>
+                        <div class="quick-option" onclick="selectQuickOption('services')">Our Services</div>
+                        <div class="quick-option" onclick="selectQuickOption('emergency')">Emergency Care</div>
+                    </div>
+                </div>
+            </div>
+            <div class="typing-indicator" id="typingIndicator">
+                OrthoBot is typing...
+            </div>
+        </div>
+        
+        <div class="chat-input-container">
+            <input type="text" class="chat-input" id="chatInput" placeholder="Ask about your orthopedic concerns...">
+            <button class="send-btn" id="sendBtn">
+                <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor">
+                    <path d="M2,21L23,12L2,3V10L17,12L2,14V21Z"/>
+                </svg>
+            </button>
+        </div>
+    </div> -->
+    <!-- COMPREHENSIVE FOOTER SECTION -->
+    <footer class="footer" id="footer">
+        <div class="container">
+            <div class="row">
+                <!-- HOSPITAL BRANDING & OVERVIEW -->
+                <div class="col-lg-4 col-md-6 mb-4">
+                    <div class="footer-section">
+                        <div class="footer-brand mb-4">
+                            <!-- Hospital Logo Placeholder -->
+                            <div class="logo-container mb-3">
+
+                                <!-- Alternative: Use icon instead of image -->
+                                <!-- <i class="fas fa-heartbeat fa-3x text-accent mb-2"></i> -->
+                            </div>
+                            <h4 class="footer-brand-name">Dr. Karnalkar Orthopedic Hospital</h4>
+                        </div>
+                        <p class="footer-description">
+                            Dr. Karnalkar Backache Hospital private limited has been delivering exceptional healthcare
+                            with
+                            compassion and innovation since 2008. We are committed to excellence in patient care,
+                            research,
+                            and medical education.
+                        </p>
+                        <!-- Social Media Icons -->
+                        <div class="social-icons mt-4 mr-1">
+                            <a href="https://www.facebook.com/p/Dr-Karnalkar-Backache-Hospital-100087248852849/"
+                                class="social-icon" aria-label="Facebook">
+                                <i class="fab fa-facebook-f"></i>
+                            </a>
+                            <!-- <a href="#" class="social-icon" aria-label="Twitter">
+                                    <i class="fab fa-twitter"></i>
+                                </a> -->
+                            <a href="https://www.instagram.com/karnalkar_hospital?igsh=MWdjcWF5Nm9iNmdwNQ=="
+                                class="social-icon" aria-label="Instagram">
+                                <i class="fab fa-instagram"></i>
+                            </a>
+                            <!-- <a href="#" class="social-icon" aria-label="LinkedIn">
+                                    <i class="fab fa-linkedin-in"></i>
+                                </a> -->
+                            <a href="https://youtube.com/@karnalkarpb?si=Y14CXv6ryvjbYO8j" class="social-icon"
+                                aria-label="YouTube" target="_blank">
+                                <i class="fab fa-youtube"></i>
+                            </a>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- CLINICAL SERVICES AND TREATMENT -->
+                <div class="col-lg-4 col-md-6 mb-4">
+                    <div class="footer-section">
+                        <h3>Clinical Services and Treatment</h3>
+                        <div class="row">
+                            <div class="col-6">
+                                <h5 class="service-category-title">Treatments</h5>
+                                <ul class="footer-links service-links">
+                                    <li><a href="#">Knee arthritis </a></li>
+                                    <li><a href="#">Survival spondylosis </a></li>
+                                    <li><a href="#">Lumber spondylosis </a></li>
+                                    <li><a href="#">Prolapse of intervertebral disk</a></li>
+                                    <li><a href="#">Pain blocks</a></li>
+                                    <li><a href="#">Osteoporosis management</a></li>
+                                </ul>
+                            </div>
+
+                        </div>
+                    </div>
+                </div>
+
+                <!-- CONTACT INFORMATION & LOCATION -->
+                <div class="col-lg-4 col-md-6 mb-4">
+                    <div class="footer-section">
+                        <h3>Contact Information</h3>
+                        <div class="contact-info">
+                            <div class="contact-item">
+                                <i class="fas fa-map-marker-alt contact-icon"></i>
+                                <div class="contact-details">
+                                    <span>Near District General Hospital Ganesh Peth Sangli</span>
+                                </div>
+                            </div>
+                            <div class="contact-item">
+                                <i class="fas fa-phone contact-icon"></i>
+                                <div class="contact-details">
+                                    <div>Main: 9420044076</div>
+                                    <div>Emergency: 9420044076</div>
+                                    <div>Appointments: <span id="footerAppointmentPhone">9420044076</span></div>
+                                </div>
+                            </div>
+                            <div class="contact-item">
+                                <i class="fas fa-envelope contact-icon"></i>
+                                <div class="contact-details">
+                                    <a href="mailto:karnalkar@gmail.com">karnalkar@gmail.com</a>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- OUR LOCATION -->
+                        <!-- Inside the Contact Section -->
+                        <div class="location-section mt-4">
+                            <h4>Our Location</h4>
+                            <div class="map-container embed-responsive embed-responsive-16by9">
+                                <iframe
+                                    src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3818.489197734292!2d74.57048127461574!3d16.85167811801784!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3bc11982258c23a3%3A0xcc6e87645c45a46a!2sDr.%20Karnalkar%20Backache%20Hospital%20Pvt.%20Ltd.!5e0!3m2!1sen!2sin!4v1750578782045!5m2!1sen!2sin"
+                                    width="600" height="450" style="border:0;" allowfullscreen="" loading="lazy"
+                                    class="embed-responsive-item"> referrerpolicy="no-referrer-when-downgrade"></iframe>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- FOOTER BOTTOM -->
+            <div class="footer-bottom">
+                <div class="row align-items-center">
+                    <div class="col-md-6">
+                        <p class="copyright">
+                            &copy; 2024 Dr. Karnalkar Orthopedic Hospital. All rights reserved.
+                        </p>
+                    </div>
+                    <div class="col-md-6 text-md-right">
+                        <div class="footer-bottom-links">
+                            <a href="#">Privacy Policy</a>
+                            <span class="separator">|</span>
+                            <a href="#">Terms of Service</a>
+                            <span class="separator">|</span>
+                            <a href="#">Sitemap</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <!-- APPOINTMENT MODAL -->
+    <div class="modal fade" id="appointmentModal" tabindex="-1" role="dialog" aria-hidden="true"
+        style="z-index: 10001;">
+        <div class="modal-dialog modal-dialog-centered modal-lg" role="document">
+            <div class="modal-content border-0 shadow-lg" style="border-radius: 20px; overflow: hidden;">
+                <div class="modal-header bg-primary text-white p-4">
+                    <h5 class="modal-title font-weight-bold"><i class="fas fa-calendar-plus mr-2"></i>Book Your
+                        Appointment</h5>
+                    <button type="button" class="close text-white" data-dismiss="modal" aria-label="Close">
+                        <span aria-hidden="true">&times;</span>
+                    </button>
+                </div>
+                <div class="modal-body p-4 p-md-5">
+                    <form id="appointmentForm">
+                        <div id="appointmentMessage" class="alert mb-4" style="display: none;"></div>
+
+                        <div class="row">
+                            <div class="col-md-6 mb-3">
+                                <label class="font-weight-bold">Full Name <span class="text-danger">*</span></label>
+                                <input type="text" id="patientName"
+                                    class="form-control rounded-pill border-light bg-light"
+                                    placeholder="Enter your name" required>
+                            </div>
+                            <div class="col-md-3 mb-3">
+                                <label class="font-weight-bold">Age <span class="text-danger">*</span></label>
+                                <input type="number" id="patientAge"
+                                    class="form-control rounded-pill border-light bg-light" placeholder="Age" required>
+                            </div>
+                            <div class="col-md-3 mb-3">
+                                <label class="font-weight-bold">Gender <span class="text-danger">*</span></label>
+                                <select id="patientGender" class="form-control rounded-pill border-light bg-light"
+                                    required>
+                                    <option value="">Select</option>
+                                    <option value="Male">Male</option>
+                                    <option value="Female">Female</option>
+                                    <option value="Other">Other</option>
+                                </select>
+                            </div>
+                        </div>
+
+                        <div class="row">
+                            <div class="col-md-6 mb-3">
+                                <label class="font-weight-bold">WhatsApp Number <span
+                                        class="text-danger">*</span></label>
+                                <input type="tel" id="patientPhone"
+                                    class="form-control rounded-pill border-light bg-light"
+                                    placeholder="Your mobile number" required>
+                            </div>
+                            <div class="col-md-6 mb-3">
+                                <label class="font-weight-bold">Email Address</label>
+                                <input type="email" id="patientEmail"
+                                    class="form-control rounded-pill border-light bg-light"
+                                    placeholder="email@example.com">
+                            </div>
+                        </div>
+
+                        <div class="row">
+                            <div class="col-md-6 mb-3">
+                                <label class="font-weight-bold">Preferred Date <span
+                                        class="text-danger">*</span></label>
+                                <input type="date" id="appointmentDate"
+                                    class="form-control rounded-pill border-light bg-light" required>
+                            </div>
+                            <div class="col-md-6 mb-3">
+                                <label class="font-weight-bold">Preferred Time <span
+                                        class="text-danger">*</span></label>
+                                <select id="appointmentTime" class="form-control rounded-pill border-light bg-light"
+                                    required>
+                                    <option value="">Select Slot</option>
+                                    <option value="Morning (9 AM - 12 PM)">Morning (9 AM - 12 PM)</option>
+                                    <option value="Afternoon (2 PM - 5 PM)">Afternoon (2 PM - 5 PM)</option>
+                                    <option value="Evening (6 PM - 9 PM)">Evening (6 PM - 9 PM)</option>
+                                </select>
+                            </div>
+                        </div>
+
+                        <div class="mb-4">
+                            <label class="font-weight-bold">Reason for Visit / Symptoms</label>
+                            <textarea id="consultationColumn" class="form-control border-light bg-light" rows="3"
+                                style="border-radius: 15px;" placeholder="Briefly describe your concern"></textarea>
+                        </div>
+
+                        <button type="submit" id="submitAppointment"
+                            class="btn btn-primary btn-block btn-lg rounded-pill font-weight-bold py-3 shadow">
+                            <span class="btn-text">Book Appointment Now</span>
+                        </button>
+                        <div class="text-center mt-3">
+                            <span class="text-muted mr-2">Or call us directly:</span>
+                            <a href="tel:9420044076" id="modalCallBtn"
+                                class="btn btn-outline-success rounded-pill font-weight-bold px-4">
+                                <i class="fas fa-phone-alt mr-2"></i><span id="modalCallNumber">9420044076</span>
+                            </a>
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- SERVICE DETAILS MODAL -->
+    <div class="modal fade" id="serviceModal" tabindex="-1" role="dialog" aria-hidden="true" style="z-index: 10000;">
+        <div class="modal-dialog modal-dialog-centered" role="document">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title" id="serviceModalTitle">Service Name</h5>
+                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                        <span aria-hidden="true">&times;</span>
+                    </button>
+                </div>
+                <div class="modal-body">
+                    <p id="serviceModalDescription" class="mb-4 text-muted" style="font-size: 1.1rem;">Description goes
+                        here...</p>
+                    <h6 class="font-weight-bold mb-3 text-dark">Key Benefits</h6>
+                    <ul id="serviceModalPoints" class="mb-4 text-secondary">
+                        <!-- Points will be injected here -->
+                    </ul>
+                    <a href="#" id="serviceModalLink"
+                        class="btn btn-primary btn-block rounded-pill py-3 font-weight-bold shadow-sm"
+                        target="_blank">Enquire on WhatsApp</a>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- jQuery (required for Bootstrap) -->
+    <script src="https://code.jquery.com/jquery-3.5.1.min.js"></script>
+
+    <!-- Bootstrap JS -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.5.2/dist/js/bootstrap.bundle.min.js"></script>
+
+    <!-- ENHANCED JAVASCRIPT -->
+    <!-- Floating Contact Buttons -->
+    <div class="position-fixed"
+        style="bottom: 30px; right: 30px; z-index: 10001; display: flex; flex-direction: column; gap: 15px;">
+        <a href="tel:9420044076" id="floatingCallBtn"
+            class="btn btn-success btn-lg rounded-pill shadow-lg d-flex align-items-center justify-content-center"
+            style="width: 60px; height: 60px; padding: 0; box-shadow: 0 4px 15px rgba(0,0,0,0.3);">
+            <i class="fas fa-phone-alt fa-lg"></i>
+        </a>
+        <button class="btn btn-appointment btn-lg shadow-lg" data-toggle="modal" data-target="#appointmentModal"
+            style="box-shadow: 0 4px 15px rgba(0,0,0,0.3);">
+            <i class="fas fa-calendar-check mr-2"></i>Book Appointment
+        </button>
+    </div>
+
+    <script>
+        // Navbar scroll effect
+        $(window).scroll(function () {
+            if ($(this).scrollTop() > 50) {
+                $('#mainNavbar').addClass('scrolled');
+            } else {
+                $('#mainNavbar').removeClass('scrolled');
+            }
+        });
+
+        // Smooth scrolling for anchor links
+        $('a[href^="#"]').on('click', function (event) {
+            var target = $(this.getAttribute('href'));
+            if (target.length) {
+                event.preventDefault();
+                $('html, body').stop().animate({
+                    scrollTop: target.offset().top - 70
+                }, 1000);
+            }
+        });
+
+        // Set minimum date to today for appointment form
+        $(document).ready(function () {
+            var today = new Date();
+            var dd = today.getDate();
+            var mm = today.getMonth() + 1;
+            var yyyy = today.getFullYear();
+
+            if (dd < 10) {
+                dd = '0' + dd;
+            }
+            if (mm < 10) {
+                mm = '0' + mm;
+            }
+
+            today = yyyy + '-' + mm + '-' + dd;
+            $('#appointmentDate').attr('min', today);
+        });
+
+        // Enhanced appointment form submission
+        $('#appointmentForm').on('submit', function (e) {
+            e.preventDefault();
+
+            // Get form data
+            var formData = {
+                patientName: $('#patientName').val(),
+                patientAge: $('#patientAge').val(),
+                patientEmail: $('#patientEmail').val() || '',
+                patientPhone: $('#patientPhone').val(),
+                patientGender: $('#patientGender').val(),
+                appointmentDate: $('#appointmentDate').val(),
+                appointmentTime: $('#appointmentTime').val(),
+                consultationColumn: $('#consultationColumn').val()
+            };
+
+            var submitBtn = $('#submitAppointment');
+            var originalText = submitBtn.text();
+
+            submitBtn.prop('disabled', true).html('<i class="fas fa-spinner fa-spin mr-2"></i>Processing...');
+
+            // 1. Submit to API to store in DB
+            fetch('http://localhost:5000/api/appointments', {
+                method: 'POST',
+                headers: { 'Content-Type': 'application/json' },
+                body: JSON.stringify(formData)
+            })
+                .then(res => {
+                    if (!res.ok) throw new Error('Database submission failed');
+                    return res.json();
+                })
+                .then(data => {
+                    const appointmentId = data.appointment._id;
+
+                    // 2. Trigger Confirmation (Sends Email/WhatsApp) via API
+                    return fetch(`http://localhost:5000/api/appointments/${appointmentId}/confirm`, {
+                        method: 'POST'
+                    });
+                })
+                .then(res => {
+                    if (!res.ok) throw new Error('Notification trigger failed');
+                    return res.json();
+                })
+                .then(data => {
+                    let alertClass = 'alert-success';
+                    let message = '<i class="fas fa-check-circle mr-2"></i>Appointment Booked!';
+
+                    if (data.warning) {
+                        alertClass = 'alert-warning';
+                        message += `<br/><small class="d-block mt-2 mb-3"><i class="fas fa-exclamation-triangle mr-1"></i> ${data.warning}</small>`;
+
+                        // Add Manual WhatsApp Fallback Button
+                        const waMessage = encodeURIComponent(`Hi Dr. Karnalkar, I just booked an appointment via the website.\n\nName: ${formData.patientName}\nDate: ${formData.appointmentDate}\nTime: ${formData.appointmentTime}`);
+                        message += `<a href="https://wa.me/919881307084?text=${waMessage}" target="_blank" class="btn btn-success btn-sm rounded-pill"><i class="fab fa-whatsapp mr-1"></i> Notify Doctor on WhatsApp Now</a>`;
+                    } else {
+                        message += ' Dr. Karnalkar has been notified via WhatsApp & Email.';
+                    }
+
+                    $('#appointmentMessage')
+                        .removeClass('alert-danger alert-success alert-warning')
+                        .addClass(alertClass)
+                        .html(message)
+                        .fadeIn();
+
+                    $('#appointmentForm')[0].reset();
+
+                    // Optional: Close modal after success if everything went well
+                    if (!data.warning) {
+                        setTimeout(() => {
+                            $('#appointmentModal').modal('hide');
+                            $('#appointmentMessage').hide();
+                        }, 5000);
+                    }
+                })
+                .catch(err => {
+                    console.error('Error:', err);
+                    $('#appointmentMessage')
+                        .removeClass('alert-success')
+                        .addClass('alert-danger')
+                        .html('<i class="fas fa-times-circle mr-2"></i>Failed to notify doctor. Please check if server is running or try direct WhatsApp.')
+                        .fadeIn();
+                })
+                .finally(() => {
+                    submitBtn.prop('disabled', false).text(originalText);
+                });
+        });
+
+
+        // Form validation enhancement
+        $('.form-control').on('blur', function () {
+            if ($(this).is(':invalid')) {
+                $(this).addClass('is-invalid');
+            } else {
+                $(this).removeClass('is-invalid').addClass('is-valid');
+            }
+        });
+
+        // Auto-hide alerts
+        $('.alert').delay(5000).fadeOut();
+
+        // Initialize tooltips (if using Bootstrap tooltips)
+        $('[data-toggle="tooltip"]').tooltip();
+
+        // Social media link tracking (for analytics)
+        $('.social-icon').on('click', function (e) {
+            var platform = $(this).find('i').attr('class').split('fa-')[1];
+            console.log('Social media click:', platform);
+            // Add your analytics tracking code here
+        });
+
+        // Footer links hover effect enhancement
+        $('.footer-links a').hover(
+            function () {
+                $(this).addClass('hovered');
+            },
+            function () {
+                $(this).removeClass('hovered');
+            }
+        );
+
+        async function fetchSettings() {
+            try {
+                const res = await fetch('/api/settings');
+                const settings = await res.json();
+                if (settings.appointment_phone) {
+                    const phone = settings.appointment_phone;
+                    const telLink = 'tel:' + phone;
+
+                    // Update floating button
+                    $('#floatingCallBtn').attr('href', telLink);
+
+                    // Update modal button
+                    $('#modalCallBtn').attr('href', telLink);
+                    $('#modalCallNumber').text(phone);
+
+                    // Update footer
+                    $('#footerAppointmentPhone').text(phone);
+                }
+            } catch (err) {
+                console.error('Error fetching settings:', err);
+            }
+        }
+
+        $(document).ready(function () {
+            fetchSettings();
+            const chatIcon = document.getElementById('chatIcon');
+            const chatContainer = document.getElementById('chatContainer');
+            const closeBtn = document.getElementById('closeBtn');
+            const chatInput = document.getElementById('chatInput');
+            const sendBtn = document.getElementById('sendBtn');
+            const chatMessages = document.getElementById('chatMessages');
+            const typingIndicator = document.getElementById('typingIndicator');
+
+            let isOpen = false;
+
+            const orthopedicResponses = {
+                appointment: {
+                    response: "I'd be happy to help you book an appointment! Our orthopedic specialists are available Monday-Saturday. Please call us at 9420044076 or visit our online booking portal. What type of orthopedic concern would you like to discuss?",
+                    followUp: ["Available doctors", "Insurance info", "Preparation tips"]
+                },
+                symptoms: {
+                    response: "I can help identify common orthopedic symptoms. Please describe your pain, discomfort, or mobility issues. Common symptoms we treat include joint pain, back pain, sports injuries, and fractures.",
+                    followUp: ["Joint pain", "Back pain", "Sports injury", "Fracture care"]
+                },
+                services: {
+                    response: "Our comprehensive orthopedic services include: Joint Replacement Surgery, Sports Medicine, Spine Care, Pediatric Orthopedics, Hand & Wrist Surgery, Foot & Ankle Care, and Physical Therapy. Which service interests you?",
+                    followUp: ["Joint replacement", "Sports medicine", "Spine care", "Physical therapy"]
+                },
+                emergency: {
+                    response: "For orthopedic emergencies like severe fractures, dislocations, or acute injuries, please call 911 or visit our ER immediately. For urgent but non-emergency issues, call our orthopedic hotline: (555) 123-URGENT",
+                    followUp: ["What counts as emergency", "Urgent care hours", "After-hours contact"]
+                },
+                "joint pain": {
+                    response: "Joint pain can affect knees, hips, shoulders, or other joints. Common causes include arthritis, injury, or overuse. Our specialists can diagnose and treat with medications, therapy, or surgery if needed. When did your joint pain start?",
+                    followUp: ["Knee pain", "Hip pain", "Shoulder pain", "Treatment options"]
+                },
+                "back pain": {
+                    response: "Back pain is very common and can range from muscle strain to serious spinal conditions. We offer comprehensive spine care including physical therapy, injections, and surgery when necessary. How long have you had back pain?",
+                    followUp: ["Lower back pain", "Upper back pain", "Spine surgery", "Physical therapy"]
+                },
+                "sports injury": {
+                    response: "Our sports medicine team treats athletes of all levels. Common injuries include ACL tears, rotator cuff injuries, tennis elbow, and stress fractures. We focus on getting you back to your sport safely. What sport were you playing when injured?",
+                    followUp: ["ACL injury", "Rotator cuff", "Recovery timeline", "Prevention tips"]
+                }
+            };
+
+            function toggleChat() {
+                isOpen = !isOpen;
+                chatContainer.style.display = isOpen ? 'flex' : 'none';
+
+                if (isOpen) {
+                    chatInput.focus();
+                }
+            }
+
+            function addMessage(content, isBot = false, hasFollowUp = false) {
+                const messageDiv = document.createElement('div');
+                messageDiv.className = `message ${isBot ? 'bot' : 'user'}`;
+
+                if (isBot) {
+                    messageDiv.innerHTML = `
+                    <div class="bot-avatar">🤖</div>
+                    <div class="message-content">${content}</div>
+                `;
+                } else {
+                    messageDiv.innerHTML = `<div class="message-content">${content}</div>`;
+                }
+
+                const typingIndicator = document.getElementById('typingIndicator');
+                chatMessages.insertBefore(messageDiv, typingIndicator);
+                chatMessages.scrollTop = chatMessages.scrollHeight;
+            }
+
+            function addFollowUpOptions(options) {
+                const lastBotMessage = chatMessages.querySelector('.message.bot:last-of-type .message-content');
+                if (lastBotMessage && options.length > 0) {
+                    const quickOptionsDiv = document.createElement('div');
+                    quickOptionsDiv.className = 'quick-options';
+                    quickOptionsDiv.style.marginTop = '10px';
+
+                    options.forEach(option => {
+                        const optionBtn = document.createElement('div');
+                        optionBtn.className = 'quick-option';
+                        optionBtn.textContent = option;
+                        optionBtn.onclick = () => selectQuickOption(option.toLowerCase().replace(/\s+/g, ''));
+                        quickOptionsDiv.appendChild(optionBtn);
+                    });
+
+                    lastBotMessage.appendChild(quickOptionsDiv);
+                }
+            }
+
+            function showTyping() {
+                typingIndicator.style.display = 'block';
+                chatMessages.scrollTop = chatMessages.scrollHeight;
+            }
+
+            function hideTyping() {
+                typingIndicator.style.display = 'none';
+            }
+
+            function getBotResponse(userMessage) {
+                const lowerMessage = userMessage.toLowerCase();
+
+                // Check for specific keywords
+                for (const [key, data] of Object.entries(orthopedicResponses)) {
+                    if (lowerMessage.includes(key) || lowerMessage.includes(key.replace(/\s+/g, ''))) {
+                        return data;
+                    }
+                }
+
+                // Default responses for common questions
+                if (lowerMessage.includes('pain')) {
+                    return {
+                        response: "I understand you're experiencing pain. Can you tell me more about the location and type of pain? Is it in your joints, back, or elsewhere? This will help me provide better guidance.",
+                        followUp: ["Joint pain", "Back pain", "Muscle pain", "Book appointment"]
+                    };
+                }
+
+                if (lowerMessage.includes('doctor') || lowerMessage.includes('specialist')) {
+                    return {
+                        response: "Our orthopedic specialists include Dr. Smith (Joint Replacement), Dr. Johnson (Sports Medicine), Dr. Williams (Spine Care), and Dr. Brown (Pediatric Orthopedics). Would you like to book with a specific specialist?",
+                        followUp: ["View all doctors", "Book appointment", "Insurance accepted"]
+                    };
+                }
+
+                // Default response
+                return {
+                    response: "I'm here to help with your orthopedic concerns! You can ask me about appointments, symptoms, our services, or emergency care. What would you like to know more about?",
+                    followUp: ["Book appointment", "Check symptoms", "Our services", "Emergency care"]
+                };
+            }
+
+            function selectQuickOption(option) {
+                const optionText = option.replace(/([a-z])([A-Z])/g, '$1 $2').toLowerCase();
+                sendMessage(optionText, true);
+            }
+
+            function sendMessage(message = null, isQuickOption = false) {
+                const userMessage = message || chatInput.value.trim();
+                if (!userMessage) return;
+
+                // Add user message
+                if (!isQuickOption) {
+                    addMessage(userMessage, false);
+                    chatInput.value = '';
+                }
+
+                // Show typing indicator
+                showTyping();
+                sendBtn.disabled = true;
+
+                // Simulate AI thinking time
+                setTimeout(() => {
+                    hideTyping();
+                    const botData = getBotResponse(userMessage);
+                    addMessage(botData.response, true);
+
+                    // Add follow-up options if available
+                    if (botData.followUp && botData.followUp.length > 0) {
+                        setTimeout(() => {
+                            addFollowUpOptions(botData.followUp);
+                        }, 500);
+                    }
+
+                    sendBtn.disabled = false;
+                }, 1000 + Math.random() * 1000);
+            }
+
+            // Event listeners
+            chatIcon.addEventListener('click', toggleChat);
+            closeBtn.addEventListener('click', toggleChat);
+            sendBtn.addEventListener('click', () => sendMessage());
+
+            chatInput.addEventListener('keypress', (e) => {
+                if (e.key === 'Enter' && !e.shiftKey) {
+                    e.preventDefault();
+                    sendMessage();
+                }
+            });
+
+            // Close chat when clicking outside
+            document.addEventListener('click', (e) => {
+                if (isOpen && !chatContainer.contains(e.target) && !chatIcon.contains(e.target)) {
+                    toggleChat();
+                }
+            });
+
+            // Service Data & Modal Logic
+            const serviceData = {
+                'rehab-recovery': {
+                    title: 'Rehabilitation & Recovery',
+                    description: 'Helping patients recover and return to normal life after treatment.',
+                    points: ['Post-treatment rehabilitation programs.', 'Physiotherapy and guided exercises.', 'Strengthening joints and spine naturally.', 'Ensuring patients return to normal life faster.'],
+                    link: 'https://wa.me/919881307084?text=Hi, I would like to enquire about Rehabilitation services.'
+                },
+                'pain-management': {
+                    title: 'Pain Management Clinic',
+                    description: 'Comprehensive care for chronic and acute pain.',
+                    points: ['Targeted care for chronic and acute pain.', 'Use of modern pain relief techniques.', 'Personalized treatment based on patient needs.', 'Aiming for a pain-free lifestyle.'],
+                    link: 'https://wa.me/919881307084?text=Hi, I would like to enquire about Pain Management services.'
+                },
+                'lifestyle-wellness': {
+                    title: 'Lifestyle & Wellness Guidance',
+                    description: 'Promoting healthy habits for long-term joint and spine health.',
+                    points: ['Focus on healthy living for joint and spine.', 'Advice on diet, posture, and exercise.', 'Preventive lifestyle modifications.', 'Supporting long-term health and vitality.'],
+                    link: 'https://wa.me/919881307084?text=Hi, I would like to enquire about Wellness services.'
+                },
+                'diagnostic': {
+                    title: 'Advanced Diagnostic Facilities',
+                    description: 'Accurate and timely diagnosis using modern technology.',
+                    points: ['Accurate diagnosis for knee & spine conditions.', 'Use of modern medical equipment.', 'Quick, reliable, and patient-friendly tests.', 'Helping create precise treatment plans.'],
+                    link: 'https://wa.me/919881307084?text=Hi, I would like to enquire about Diagnostic services.'
+                },
+                'patient-centric': {
+                    title: 'Patient-Centric Care',
+                    description: 'Putting patients first in every step of the treatment.',
+                    points: ['Compassionate and personalized approach.', 'Individualized treatment strategies', 'Strong doctor-patient communication.', 'Building trust and long-term relationships.'],
+                    link: 'https://wa.me/919881307084?text=Hi, I would like to enquire about Patient Care services.'
+                },
+                'geriatric': {
+                    title: 'Geriatric Orthopedic Care',
+                    description: 'Specialized care for elderly patients.',
+                    points: ['Special focus on elderly patients.', 'Managing age-related arthritis & spine problems.', 'Gentle and effective treatment options.', 'Enhancing comfort and quality of life.'],
+                    link: 'https://wa.me/919881307084?text=Hi, I would like to enquire about Geriatric services.'
+                },
+                'physiotherapy': {
+                    title: 'Physiotherapy & Exercise Therapy',
+                    description: 'Restoring movement and function through expert therapy.',
+                    points: ['Restorative exercises for knee and spine.', 'Strengthening, flexibility, and balance training.', 'Preventing recurrence of pain.', 'Guided by skilled physiotherapists.'],
+                    link: 'https://wa.me/919881307084?text=Hi, I would like to enquire about Physiotherapy services.'
+                },
+                'holistic-wellness': {
+                    title: 'Holistic Wellness Approach',
+                    description: 'A complete approach to health and well-being.',
+                    points: ['Treating root cause, not just symptoms', 'Combination of medical and lifestyle care.', 'Focus on physical and mental well-being.', 'Encouraging long-term healthy living.'],
+                    link: 'https://wa.me/919881307084?text=Hi, I would like to enquire about Holistic Wellness services.'
+                },
+                'infrastructure': {
+                    title: 'Modern Medical Infrastructure',
+                    description: 'State-of-the-art facilities for world-class care.',
+                    points: ['State-of-the-art hospital facilities.', 'Comfortable and patient-friendly environment.', 'Equipped with advanced medical tools.', 'Delivering safe and efficient healthcare.'],
+                    link: 'https://wa.me/919881307084?text=Hi, I would like to enquire about Hospital Facilities.'
+                },
+                'knee-arthritis': {
+                    title: 'Knee Arthritis Care',
+                    description: 'We provide special care to prevent and manage knee arthritis. Our aim is to reduce pain and improve movement without surgery.',
+                    points: ['Reduce knee pain', 'Improve movement without surgery', 'Move confidently again'],
+                    link: 'https://wa.me/919881307084?text=Hi, I would like to enquire about Knee Arthritis Care services.'
+                },
+                'spine-backache': {
+                    title: 'Spine & Backache Treatment',
+                    description: 'Complete care for spine and back problems with focus on finding the root cause.',
+                    points: ['Care for spondylosis and chronic backache', 'Root-cause diagnosis and therapy', 'Advanced rehabilitation methods', 'Long-term spinal wellness'],
+                    link: 'https://wa.me/919881307084?text=Hi, I would like to enquire about Spine & Backache Treatment services.'
+                },
+                'preventive-care': {
+                    title: 'Preventive Orthopedic Healthcare',
+                    description: 'Early care to prevent joint and spine problems.',
+                    points: ['Early screening for joint and spine issues', 'Custom prevention plans', 'Posture and lifestyle guidance', 'Reduce future complications'],
+                    link: 'https://wa.me/919881307084?text=Hi, I would like to enquire about Preventive Orthopeadic Healthcare services.'
+                },
+                'non-surgical': {
+                    title: 'Non-Surgical Treatments',
+                    description: 'Modern non-surgical solutions for pain relief.',
+                    points: ['Care for chronic and acute pain', 'Modern pain relief techniques', 'Personalized treatment plans', 'Aim for pain-free living'],
+                    link: 'https://wa.me/919881307084?text=Hi, I would like to enquire about Non-Surgical Treatments.'
+                }
+            };
+
+            window.openServiceModal = function (serviceId) {
+                const data = serviceData[serviceId];
+                if (!data) return;
+
+                $('#serviceModalTitle').text(data.title);
+                $('#serviceModalDescription').text(data.description);
+
+                const pointsHtml = data.points.map(point => `<li>${point}</li>`).join('');
+                $('#serviceModalPoints').html(pointsHtml);
+
+                $('#serviceModalLink').attr('href', data.link);
+                $('#serviceModal').modal('show');
+            };
+            // Service Icons Matching (Helper object)
+            const serviceIcons = {
+                'knee-arthritis': 'fa-bone',
+                'spine-backache': 'fa-running',
+                'preventive-care': 'fa-lightbulb',
+                'non-surgical': 'fa-hand-holding-medical',
+                'rehab-recovery': 'fa-user-md',
+                'pain-management': 'fa-user-friends',
+                'lifestyle-wellness': 'fa-user-friends',
+                'diagnostic': 'fa-microscope',
+                'patient-centric': 'fa-user-friends',
+                'geriatric': 'fa-user-friends',
+                'physiotherapy': 'fa-user-friends',
+                'holistic-wellness': 'fa-user-friends',
+                'infrastructure': 'fa-user-friends'
+            };
+
+            // Service Emojis
+            const serviceEmojis = {
+                'knee-arthritis': '🦴',
+                'spine-backache': '🏃',
+                'preventive-care': '💡',
+                'non-surgical': '💡',
+                'rehab-recovery': '🏃',
+                'pain-management': '💡',
+                'lifestyle-wellness': '🌿',
+                'diagnostic': '🔬',
+                'patient-centric': '💛',
+                'geriatric': '👴 👵',
+                'physiotherapy': '🔥',
+                'holistic-wellness': '✨',
+                'infrastructure': '🏥'
+            };
+
+            // renderServices Function
+            function renderServices() {
+                console.log('renderServices called');
+                const container = document.getElementById('serviceMarquee');
+                console.log('Container element:', container);
+                if (!container) {
+                    console.error('serviceMarquee container not found!');
+                    return;
+                }
+
+                // All services in order
+                const renderOrder = [
+                    'knee-arthritis',
+                    'spine-backache',
+                    'preventive-care',
+                    'non-surgical',
+                    'rehab-recovery',
+                    'pain-management',
+                    'lifestyle-wellness',
+                    'diagnostic',
+                    'patient-centric',
+                    'geriatric',
+                    'physiotherapy',
+                    'holistic-wellness',
+                    'infrastructure'
+                ];
+
+                let cardsHtml = '';
+
+                renderOrder.forEach(key => {
+                    const data = serviceData[key];
+                    if (!data) {
+                        console.warn(`No data found for service: ${key}`);
+                        return;
+                    }
+
+                    const iconClass = serviceIcons[key] || 'fa-notes-medical';
+                    const emoji = serviceEmojis[key] || '';
+
+                    // Create bullet list
+                    const pointsList = data.points.map(p => `<li>${p}</li>`).join('');
+
+                    cardsHtml += `
+                        <div class="service-card">
+                            <div class="service-icon-wrapper">
+                                <div class="service-icon-circle">
+                                    <i class="service-icon fas ${iconClass}"></i>
+                                </div>
+                                <span class="service-emoji">${emoji}</span>
+                            </div>
+                            <h5 class="service-title">${data.title}</h5>
+                            <ul>
+                                ${pointsList}
+                            </ul>
+                            <a href="${data.link}" target="_blank" class="btn btn-primary">Enquire</a>
+                        </div>
+                    `;
+                });
+
+                console.log(`Generated HTML for ${renderOrder.length} cards`);
+                // Duplicate cards for seamless infinite scroll
+                container.innerHTML = cardsHtml + cardsHtml;
+                console.log('Cards rendered successfully');
+            }
+
+            // Initialize Services
+            console.log('About to call renderServices');
+            renderServices();
+        });
+    </script>
+</body>
+
+</html>

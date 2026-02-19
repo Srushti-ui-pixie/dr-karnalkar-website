@@ -1,0 +1,779 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Dr. Karnalkar Hospital - Our Doctors</title>
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" integrity="sha384-JcKb8q3iqJ61gNV9KGb8thSsNjpSL0n8PARn9HuZOnIxN0hoP+VmmDGMN5t9UJ0Z" crossorigin="anonymous"/>
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js" integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.1/dist/umd/popper.min.js" integrity="sha384-9/reFTGAW83EW2RDu2S0VKaIzap3H66lZH81PoYlFhbGU+6BZp6G7niu735Sk7lN" crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js" integrity="sha384-B4gt1jrGC7Jh4AgTPSdUtOBvfO8shuf57BaghqFfPlYxofvL8/KUEfYiJOMMV+rV" crossorigin="anonymous"></script>
+    <script src="https://kit.fontawesome.com/fac54f0bd8.js" crossorigin="anonymous"></script>
+  </head>
+    <style>
+        
+        :root {
+            --primary-color: #2c5aa0;
+            --secondary-color: #4a90e2;
+            --accent-color: #00d4aa;
+            --dark-bg: #1a252f;
+            --light-bg: #f8f9fa;
+            --text-dark: #2c3e50;
+            --text-light: #6c757d;
+            --white: #ffffff;
+            --shadow: 0 10px 30px rgba(0,0,0,0.1);
+            --border-radius: 10px;
+            --transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+            --navbar-height: 30px; /* Minimized height */
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            line-height: 1.4;
+            color: #333;
+            background-color: #f8f9fa;
+            padding-top: var(--navbar-height); /* Using minimized height */
+        }
+
+        /* MINIMIZED NAVBAR STYLES */
+        .navbar {
+            background: linear-gradient(135deg, var(--dark-bg) 0%, #243447 100%) !important;
+            box-shadow: 0 2px 20px rgba(0,0,0,0.1);
+            transition: var(--transition);
+            backdrop-filter: blur(10px);
+            position: fixed;
+            top: 0;
+            left: 0;
+            right: 0;
+            z-index: 1000;
+            min-height: var(--navbar-height);
+            padding: 0.25rem 1rem; /* Reduced padding */
+        }
+
+        .navbar.scrolled {
+            background: rgba(26, 37, 47, 0.95) !important;
+            backdrop-filter: blur(15px);
+        }
+
+        .navbar-brand {
+            font-weight: 700;
+            font-size: 1.0rem; /* Smaller font */
+            color: var(--white) !important;
+            text-decoration: none;
+            transition: var(--transition);
+            padding: 0.25rem 0; /* Minimal padding */
+        }
+
+        .navbar-brand:hover {
+            transform: scale(1.05);
+            color: var(--accent-color) !important;
+        }
+
+        .nav-link {
+            color: rgba(255, 255, 255, 0.9) !important;
+            font-weight: 500;
+            margin: 0 5px;
+            padding: 0.4rem 0.8rem !important; /* Compact padding */
+            border-radius: 25px;
+            transition: var(--transition);
+            position: relative;
+            overflow: hidden;
+            font-size: 0.75rem; /* Smaller font */
+        }
+
+        .nav-link::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: -100%;
+            width: 100%;
+            height: 100%;
+            background: linear-gradient(90deg, transparent, rgba(255,255,255,0.1), transparent);
+            transition: var(--transition);
+        }
+
+        .nav-link:hover {
+            color: var(--white) !important;
+            background: rgba(255, 255, 255, 0.1);
+            transform: translateY(-2px);
+        }
+
+        .nav-link:hover::before {
+            left: 100%;
+        }
+
+        .nav-link.active {
+            background: rgba(255, 255, 255, 0.2);
+        }
+
+        /* Rest of your styles remain the same */
+        .container {
+            max-width: 1000px;
+            margin: 1.5rem auto; /* Adjusted margin */
+            padding: 0 2rem;
+        }
+        /* Main Layout */
+        .container {
+            max-width: 1200px;
+            margin: 2rem auto;
+            padding: 0 2rem;
+        }
+
+        /* Main Content */
+        .main-content {
+            background: white;
+            border-radius: 12px;
+            padding: 2rem;
+            box-shadow: 0 4px 15px rgba(0,0,0,0.1);
+        }
+
+        .page-title {
+            color: #2c5aa0;
+            font-size: 2rem;
+            margin-bottom: 1rem;
+            text-align: center;
+        }
+
+        .page-subtitle {
+            text-align: center;
+            color: #666;
+            margin-bottom: 2rem;
+            font-size: 1.1rem;
+        }
+
+        /* Doctor Cards */
+        .doctors-grid {
+            display: grid;
+            gap: 2rem;
+        }
+
+        .doctor-card {
+            background: linear-gradient(135deg, #ffffff 0%, #f8f9fa 100%);
+            border-radius: 15px;
+            padding: 2rem;
+            box-shadow: 0 8px 25px rgba(0,0,0,0.1);
+            border: 1px solid #e9ecef;
+            transition: all 0.3s ease;
+        }
+
+        .doctor-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 12px 35px rgba(0,0,0,0.15);
+        }
+
+        .doctor-header {
+            display: flex;
+            align-items: center;
+            gap: 2rem;
+            margin-bottom: 2rem;
+        }
+
+        .doctor-photo {
+            width: 120px;
+            height: 120px;
+            border-radius: 50%;
+            background: linear-gradient(135deg, #2c5aa0, #1e3a8a);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: white;
+            font-size: 3rem;
+            font-weight: bold;
+            box-shadow: 0 4px 15px rgba(44,90,160,0.3);
+        }
+
+        .doctor-info h3 {
+            color: #2c5aa0;
+            font-size: 1.8rem;
+            margin-bottom: 0.5rem;
+        }
+
+        .doctor-info .specialty {
+            color: #dc2626;
+            font-weight: 600;
+            font-size: 1.1rem;
+            margin-bottom: 0.5rem;
+        }
+
+        .doctor-info .experience {
+            color: #059669;
+            font-weight: 500;
+        }
+
+        /* Stats Grid */
+        .stats-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 1.5rem;
+            margin-top: 2rem;
+        }
+
+        .stat-item {
+            background: linear-gradient(135deg, #e3f2fd 0%, #bbdefb 100%);
+            padding: 1.5rem;
+            border-radius: 12px;
+            text-align: center;
+            border-left: 4px solid #2c5aa0;
+        }
+
+        .stat-number {
+            font-size: 2.5rem;
+            font-weight: bold;
+            color: #2c5aa0;
+            margin-bottom: 0.5rem;
+        }
+
+        .stat-label {
+            color: #666;
+            font-weight: 500;
+            text-transform: uppercase;
+            font-size: 0.9rem;
+            letter-spacing: 0.5px;
+        }
+
+        /* Education Section */
+        .education-section {
+            margin-top: 2rem;
+            padding: 1.5rem;
+            background: #f8f9fa;
+            border-radius: 12px;
+            border-left: 4px solid #059669;
+        }
+
+        .education-section h4 {
+            color: #059669;
+            margin-bottom: 1rem;
+            font-size: 1.3rem;
+        }
+
+        .education-item {
+            margin-bottom: 1rem;
+            padding: 1rem;
+            background: white;
+            border-radius: 8px;
+            box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+        }
+
+        .education-item:last-child {
+            margin-bottom: 0;
+        }
+
+        .degree {
+            font-weight: 600;
+            color: #2c5aa0;
+            font-size: 1.1rem;
+        }
+
+        .institution {
+            color: #666;
+            margin-top: 0.25rem;
+        }
+
+        .year {
+            color: #059669;
+            font-weight: 500;
+            font-size: 0.9rem;
+        }
+
+        /* Animations */
+        @keyframes fadeIn {
+            from { opacity: 0; }
+            to { opacity: 1; }
+        }
+
+        @keyframes fadeInUp {
+            from {
+                opacity: 0;
+                transform: translateY(30px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        @keyframes slideInDown {
+            from {
+                opacity: 0;
+                transform: translateY(-30px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        @keyframes slideInLeft {
+            from {
+                opacity: 0;
+                transform: translateX(-30px);
+            }
+            to {
+                opacity: 1;
+                transform: translateX(0);
+            }
+        }
+
+        @keyframes pulse {
+            0% { box-shadow: 0 8px 25px rgba(0, 212, 170, 0.3); }
+            50% { box-shadow: 0 8px 35px rgba(0, 212, 170, 0.5); }
+            100% { box-shadow: 0 8px 25px rgba(0, 212, 170, 0.3); }
+        }
+
+        @keyframes modalSlideIn {
+            from {
+                opacity: 0;
+                transform: translateY(-50px) scale(0.9);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0) scale(1);
+            }
+        }
+
+        /* Responsive Design */
+        @media (max-width: 768px) {
+            .doctor-header {
+                flex-direction: column;
+                text-align: center;
+                gap: 1rem;
+            }
+            
+            .doctor-photo {
+                width: 100px;
+                height: 100px;
+                font-size: 2rem;
+            }
+            
+            .stats-grid {
+                grid-template-columns: 1fr;
+            }
+            
+            .page-title {
+                font-size: 1.8rem;
+            }
+        }
+
+        @media (max-width: 576px) {
+            .container {
+                padding: 0 1rem;
+            }
+            
+            .main-content {
+                padding: 1.5rem;
+            }
+            
+            .doctor-info h3 {
+                font-size: 1.5rem;
+            }
+        }
+        
+            /* ENHANCED APPOINTMENT BUTTON */
+            .btn-appointment {
+                background: linear-gradient( #59d42b 100%);
+                border: none;
+                border-radius: 50px;
+                padding: 15px 40px;
+                font-size: 1.1rem;
+                font-weight: 600;
+                color: var(--white);
+                text-transform: uppercase;
+                letter-spacing: 1px;
+                transition: var(--transition);
+                position: relative;
+                overflow: hidden;
+                box-shadow: 0 8px 25px rgba(0, 212, 170, 0.3);
+                animation: pulse 2s infinite;
+            }
+
+            .btn-appointment::before {
+                content: '';
+                position: absolute;
+                top: 0;
+                left: -100%;
+                width: 100%;
+                height: 100%;
+                background: linear-gradient(90deg, transparent, rgba(255,255,255,0.2), transparent);
+                transition: var(--transition);
+            }
+
+            .btn-appointment:hover {
+                transform: translateY(-3px) scale(1.05);
+                box-shadow: 0 15px 35px rgba(0, 212, 170, 0.4);
+                color: var(--white);
+            }
+
+            .btn-appointment:hover::before {
+                left: 100%;
+            }
+             /* ENHANCED MODAL */
+            .modal-content {
+                border-radius: var(--border-radius);
+                border: none;
+                box-shadow: 0 20px 60px rgba(0,0,0,0.3);
+                animation: modalSlideIn 0.3s ease-out;
+            }
+
+            .modal-header {
+                background: linear-gradient(135deg, var(--primary-color), var(--secondary-color));
+                color: var(--white);
+                border-radius: var(--border-radius) var(--border-radius) 0 0;
+                padding: 1.5rem;
+            }
+
+            .modal-title {
+                font-weight: 600;
+                font-size: 1.5rem;
+            }
+
+            .close {
+                color: var(--white);
+                opacity: 0.8;
+                font-size: 1.5rem;
+                transition: var(--transition);
+            }
+
+            .close:hover {
+                opacity: 1;
+                transform: scale(1.1);
+            }
+
+            .form-control {
+                border: 2px solid #e9ecef;
+                border-radius: 8px;
+                padding: 12px 16px;
+                transition: var(--transition);
+                font-size: 1rem;
+            }
+
+            .form-control:focus {
+                border-color: var(--primary-color);
+                box-shadow: 0 0 0 0.2rem rgba(44, 90, 160, 0.25);
+                transform: translateY(-2px);
+            }
+
+            .form-label {
+                font-weight: 600;
+                color: var(--text-dark);
+                margin-bottom: 8px;
+            }
+
+            .btn-primary {
+                background: linear-gradient(135deg, var(--primary-color), var(--secondary-color));
+                border: none;
+                border-radius: 8px;
+                padding: 12px 30px;
+                font-weight: 600;
+                transition: var(--transition);
+            }
+
+            .btn-primary:hover {
+                transform: translateY(-2px);
+                box-shadow: 0 8px 25px rgba(44, 90, 160, 0.3);
+            }
+             
+                .btn-appointment {
+                    padding: 12px 30px;
+                    font-size: 1rem;
+                }
+
+    </style>
+</head>
+<body>
+    <!-- Enhanced Navbar -->
+     <nav class="navbar navbar-expand-lg fixed-top " id="mainNavbar">
+        <div class="container ">
+            <a class="navbar-brand" href="#">
+                 <i class="fas fa-heartbeat mr-2"></i> <!-- Reduced margin -->
+                Dr. Karnalkar Backache Hospital
+            </a>
+           
+            <div class="collapse navbar-collapse" id="navbarNav">
+                <ul class="navbar-nav ml-auto">
+                    <li class="nav-item">
+                        <a class="nav-link" href="D:\website dr.kalnarkar\enhanced_website.html" style="font-size: small;">Home</a>  
+                    </li>
+                      <li class="nav-item">
+                        <a class="nav-link" href="D:\website dr.kalnarkar\services.html" style="font-size: small;">Services</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="D:\website dr.kalnarkar\doc_info.html" class="active" style="font-size: small;">About Dr.Karnalkar</a>
+                    </li>
+                  
+                    
+                    
+                </ul>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Main Container -->
+    <div class="container">
+        <!-- Main Content -->
+        <main class="main-content">
+            <h1 class="page-title pt-4">Our Expert Doctors</h1>
+            <p class="page-subtitle">Meet our highly qualified medical professionals dedicated to your health and wellbeing</p>
+
+            <div class="doctors-grid">
+                <!-- Doctor 1 -->
+                <div class="doctor-card">
+                    <div class="doctor-header">
+                        <div class="doctor-photo">DK</div>
+                        <div class="doctor-info">
+                            <h3>Dr. Karnalkar</h3>
+                            <div class="specialty">Orthopedic Surgeon</div>
+                            <div class="experience">15 years of experience</div>
+                        </div>
+                    </div>
+
+                    <div class="stats-grid">
+                        <div class="stat-item">
+                            <div class="stat-number">850+</div>
+                            <div class="stat-label">Successful Surgeries</div>
+                        </div>
+                        <div class="stat-item">
+                            <div class="stat-number">15</div>
+                            <div class="stat-label">Years Experience</div>
+                        </div>
+                        <div class="stat-item">
+                            <div class="stat-number">98%</div>
+                            <div class="stat-label">Success Rate</div>
+                        </div>
+                    </div>
+
+                    <div class="education-section">
+                        <h4>Education & Qualifications</h4>
+                        <div class="education-item">
+                            <div class="degree">MBBS - Bachelor of Medicine</div>
+                            <div class="institution">Government Medical College</div>
+                            <div class="year">2008</div>
+                        </div>
+                        <div class="education-item">
+                            <div class="degree">MS - Master of Surgery (Orthopedics)</div>
+                            <div class="institution">KEM Hospital, Mumbai</div>
+                            <div class="year">2012</div>
+                        </div>
+                        <div class="education-item">
+                            <div class="degree">Fellowship in Joint Replacement Surgery</div>
+                            <div class="institution">Pune Orthopedic Institute</div>
+                            <div class="year">2013</div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Doctor 2 -->
+                <div class="doctor-card">
+                    <div class="doctor-header">
+                        <div class="doctor-photo">DR</div>
+                        <div class="doctor-info">
+                            <h3>Dr. Rajesh Sharma</h3>
+                            <div class="specialty">Associate Orthopedic Surgeon</div>
+                            <div class="experience">10 years of experience</div>
+                        </div>
+                    </div>
+
+                    <div class="stats-grid">
+                        <div class="stat-item">
+                            <div class="stat-number">600+</div>
+                            <div class="stat-label">Successful Surgeries</div>
+                        </div>
+                        <div class="stat-item">
+                            <div class="stat-number">10</div>
+                            <div class="stat-label">Years Experience</div>
+                        </div>
+                        <div class="stat-item">
+                            <div class="stat-number">96%</div>
+                            <div class="stat-label">Success Rate</div>
+                        </div>
+                    </div>
+
+                    <div class="education-section">
+                        <h4>Education & Qualifications</h4>
+                        <div class="education-item">
+                            <div class="degree">MBBS - Bachelor of Medicine</div>
+                            <div class="institution">Armed Forces Medical College</div>
+                            <div class="year">2012</div>
+                        </div>
+                        <div class="education-item">
+                            <div class="degree">MS - Master of Surgery (Orthopedics)</div>
+                            <div class="institution">All India Institute of Medical Sciences</div>
+                            <div class="year">2016</div>
+                        </div>
+                        <div class="education-item">
+                            <div class="degree">Fellowship in Sports Medicine</div>
+                            <div class="institution">Mumbai Sports Medicine Center</div>
+                            <div class="year">2017</div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </main>
+        <div class="position-fixed" style="bottom: 30px; right: 30px; z-index: 1000;">
+    <button class="btn btn-appointment btn-lg" data-toggle="modal" data-target="#appointmentModal">
+        <i class="fas fa-calendar-check mr-2"></i>Book Appointment
+    </button>
+</div>
+    </div>
+    <!-- ENHANCED APPOINTMENT MODAL -->
+<div class="modal fade" id="appointmentModal" tabindex="-1" role="dialog">
+    <div class="modal-dialog modal-lg" role="document">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h5 class="modal-title">
+                    <i class="fas fa-calendar-plus mr-2"></i>Book Your Appointment
+                </h5>
+                <button type="button" class="close" data-dismiss="modal">
+                    <span aria-hidden="true">&times;</span>
+                </button>
+            </div>
+            <div class="modal-body" style="max-height: 50vh; overflow-y: auto;">
+                <!-- SUCCESS/ERROR MESSAGES -->
+                <div id="appointmentMessage" class="alert" style="display: none;"></div>
+
+                <form id="appointmentForm" style="padding: 10px;">
+                    <div class="row">
+                        <div class="col-md-6">
+                            <div class="form-group">
+                                <label class="form-label" for="patientName">
+                                    <i class="fas fa-user mr-1"></i>Full Name *
+                                </label>
+                                <input type="text" class="form-control form-control-sm" id="patientName" 
+                                       placeholder="Enter your full name" required>
+                            </div>
+                        </div>
+                        <div class="col-md-6">
+                            <div class="form-group">
+                                <label class="form-label" for="patientAge">
+                                    <i class="fas fa-birthday-cake mr-1"></i>Age *
+                                </label>
+                                <input type="number" class="form-control form-control-sm" id="patientAge" 
+                                       placeholder="Enter your age" min="1" max="120" required>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="row">
+                    
+                        <div class="col-md-6">
+                            <div class="form-group">
+                                <label class="form-label" for="patientPhone">
+                                    <i class="fas fa-phone mr-1"></i>Mobile Number *
+                                </label>
+                                <input type="tel" class="form-control form-control-sm" id="patientPhone" 
+                                       placeholder="Enter your mobile number" required>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="row">
+                        <div class="col-md-6">
+                            <div class="form-group">
+                                <label class="form-label" for="patientGender">
+                                    <i class="fas fa-venus-mars mr-1"></i>Gender *
+                                </label>
+                                <select class="form-control form-control-sm" id="patientGender" required>
+                                    <option value="">Select your gender</option>
+                                    <option value="male">Male</option>
+                                    <option value="female">Female</option>
+                                    <option value="other">Other</option>
+                                    <option value="prefer-not-to-say">Prefer not to say</option>
+                                </select>
+                            </div>
+                        </div>
+                        <div class="col-md-6">
+                            <div class="form-group">
+                                <label class="form-label" for="appointmentDate">
+                                    <i class="fas fa-calendar mr-1"></i>Preferred Date *
+                                </label>
+                                <input type="date" class="form-control form-control-sm" id="appointmentDate" required>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="form-group">
+                        <label class="form-label" for="appointmentTime">
+                            <i class="fas fa-clock mr-1"></i>Preferred Time *
+                        </label>
+                        <select class="form-control form-control-sm" id="appointmentTime" required>
+                            <option value="">Select preferred time</option>
+                            <option value="09:00">09:00 AM</option>
+                            <option value="10:00">10:00 AM</option>
+                            <option value="11:00">11:00 AM</option>
+                            <option value="12:00">12:00 PM</option>
+                            <option value="14:00">02:00 PM</option>
+                            <option value="15:00">03:00 PM</option>
+                            <option value="16:00">04:00 PM</option>
+                            <option value="17:00">05:00 PM</option>
+                        </select>
+                    </div>
+                    
+                    <div class="form-group">
+                        <label class="form-label" for="consultationColumn">
+                            <i class="fas fa-columns mr-1"></i>Consultation Column *
+                        </label>
+                        <select class="form-control form-control-sm" id="consultationColumn" required>
+                            <option value="">Select consultation column</option>
+                            <option value="general">General Consultation</option>
+                            <option value="orthopedic">Orthopedic Consultation</option>
+                        </select>
+                    </div>
+                    
+                    <div class="form-group form-check">
+                        <input type="checkbox" class="form-check-input" id="termsCheck" required>
+                        <label class="form-check-label" for="termsCheck" style="font-size: 0.9rem;">
+                            I agree to the <a href="#" class="text-primary">terms and conditions</a> and 
+                            <a href="#" class="text-primary">privacy policy</a>
+                        </label>
+                    </div>
+                </form>
+            </div>
+            <div class="modal-footer">
+                <button type="button" class="btn btn-secondary btn-sm" data-dismiss="modal">
+                    <i class="fas fa-times mr-2"></i>Close
+                </button>
+                <button type="submit" form="appointmentForm" class="btn btn-primary btn-sm" id="submitAppointment">
+                    <i class="fas fa-paper-plane mr-2"></i>
+                    <span class="btn-text">Book Appointment</span>
+                </button>
+            </div>
+        </div>
+    </div>
+</div>
+
+    <!-- jQuery and Bootstrap JS -->
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.1/dist/umd/popper.min.js"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+
+    <script>
+        // Navbar scroll effect
+        $(window).scroll(function() {
+            if ($(this).scrollTop() > 50) {
+                $('#mainNavbar').addClass('scrolled');
+            } else {
+                $('#mainNavbar').removeClass('scrolled');
+            }
+        });
+
+        // Smooth scrolling for anchor links
+        $('a[href^="#"]').on('click', function(event) {
+            var target = $(this.getAttribute('href'));
+            if( target.length ) {
+                event.preventDefault();
+                $('html, body').stop().animate({
+                    scrollTop: target.offset().top - 70
+                }, 1000);
+            }
+        });
+    </script>
+</body>
+</html>

@@ -1,0 +1,622 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Orthopedic Hospital - AI Chat Assistant</title>
+    <style>
+      
+
+        /* Chat Icon */
+        .chat-icon {
+            position: fixed;
+            bottom: 30px;
+            right: 30px;
+            width: 70px;
+            height: 70px;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            cursor: pointer;
+            box-shadow: 0 8px 25px rgba(102, 126, 234, 0.4);
+            transition: all 0.3s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+            z-index: 1000;
+            animation: pulse 2s infinite;
+        }
+
+        .chat-icon:hover {
+            transform: scale(1.1);
+            box-shadow: 0 15px 35px rgba(102, 126, 234, 0.6);
+        }
+
+        .chat-icon svg {
+            width: 35px;
+            height: 35px;
+            fill: white;
+        }
+
+        @keyframes pulse {
+            0% { box-shadow: 0 8px 25px rgba(102, 126, 234, 0.4); }
+            50% { box-shadow: 0 8px 25px rgba(102, 126, 234, 0.8); }
+            100% { box-shadow: 0 8px 25px rgba(102, 126, 234, 0.4); }
+        }
+
+        /* Chat Container */
+        .chat-container {
+            position: fixed;
+            bottom: 30px;
+            right: 30px;
+            width: 60vw;
+            height: 70vh;
+            background: white;
+            border-radius: 20px;
+            box-shadow: 0 25px 50px rgba(0,0,0,0.15);
+            display: none;
+            flex-direction: column;
+            z-index: 1001;
+            overflow: hidden;
+            animation: slideUp 0.4s ease-out;
+        }
+
+        @keyframes slideUp {
+            from {
+                opacity: 0;
+                transform: translateY(30px) scale(0.9);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0) scale(1);
+            }
+        }
+
+        .chat-header {
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            color: white;
+            padding: 20px;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+        }
+
+        .chat-title {
+            display: flex;
+            align-items: center;
+            gap: 12px;
+        }
+
+        .chat-title h3 {
+            font-size: 1.2rem;
+            font-weight: 600;
+        }
+
+        .status-indicator {
+            width: 8px;
+            height: 8px;
+            background: #48bb78;
+            border-radius: 50%;
+            animation: blink 1.5s infinite;
+        }
+
+        @keyframes blink {
+            0%, 100% { opacity: 1; }
+            50% { opacity: 0.3; }
+        }
+
+        .close-btn {
+            background: none;
+            border: none;
+            color: white;
+            font-size: 24px;
+            cursor: pointer;
+            width: 30px;
+            height: 30px;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            transition: background 0.3s;
+        }
+
+        .close-btn:hover {
+            background: rgba(255,255,255,0.2);
+        }
+
+        .chat-messages {
+            flex: 1;
+            padding: 20px;
+            overflow-y: auto;
+            background: #f8fafc;
+        }
+
+        .message {
+            margin-bottom: 15px;
+            display: flex;
+            align-items: flex-start;
+            gap: 10px;
+            animation: fadeIn 0.3s ease-out;
+        }
+
+        @keyframes fadeIn {
+            from { opacity: 0; transform: translateY(10px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+
+        .message.user {
+            flex-direction: row-reverse;
+        }
+
+        .message-content {
+            max-width: 80%;
+            padding: 12px 16px;
+            border-radius: 18px;
+            line-height: 1.4;
+        }
+
+        .message.bot .message-content {
+            background: white;
+            color: #2d3748;
+            border: 1px solid #e2e8f0;
+            box-shadow: 0 2px 8px rgba(0,0,0,0.05);
+        }
+
+        .message.user .message-content {
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            color: white;
+        }
+
+        .message-avatar {
+            width: 32px;
+            height: 32px;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 14px;
+            font-weight: 600;
+            flex-shrink: 0;
+        }
+
+        .message.bot .message-avatar {
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            color: white;
+        }
+
+        .message.user .message-avatar {
+            background: #e2e8f0;
+            color: #4a5568;
+        }
+
+        .quick-options {
+            padding: 15px 20px;
+            background: white;
+            border-top: 1px solid #e2e8f0;
+        }
+
+        .quick-options h4 {
+            margin-bottom: 10px;
+            color: #2d3748;
+            font-size: 0.9rem;
+        }
+
+        .option-buttons {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 8px;
+        }
+
+        .option-btn {
+            background: #f7fafc;
+            border: 1px solid #e2e8f0;
+            padding: 8px 12px;
+            border-radius: 20px;
+            font-size: 0.85rem;
+            cursor: pointer;
+            transition: all 0.3s;
+            color: #4a5568;
+        }
+
+        .option-btn:hover {
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            color: white;
+            transform: translateY(-1px);
+        }
+
+        .chat-input {
+            padding: 20px;
+            background: white;
+            border-top: 1px solid #e2e8f0;
+            display: flex;
+            gap: 10px;
+        }
+
+        .input-field {
+            flex: 1;
+            padding: 12px 16px;
+            border: 2px solid #e2e8f0;
+            border-radius: 25px;
+            outline: none;
+            font-size: 14px;
+            transition: border-color 0.3s;
+        }
+
+        .input-field:focus {
+            border-color: #667eea;
+        }
+
+        .send-btn {
+            width: 45px;
+            height: 45px;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            border: none;
+            border-radius: 50%;
+            color: white;
+            cursor: pointer;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            transition: all 0.3s;
+        }
+
+        .send-btn:hover {
+            transform: scale(1.05);
+            box-shadow: 0 5px 15px rgba(102, 126, 234, 0.4);
+        }
+
+        .typing-indicator {
+            display: none;
+            align-items: center;
+            gap: 5px;
+            color: #718096;
+            font-style: italic;
+            margin-bottom: 10px;
+        }
+
+        .typing-dots {
+            display: flex;
+            gap: 3px;
+        }
+
+        .typing-dot {
+            width: 6px;
+            height: 6px;
+            background: #cbd5e0;
+            border-radius: 50%;
+            animation: typing 1.4s infinite ease-in-out;
+        }
+
+        .typing-dot:nth-child(1) { animation-delay: -0.32s; }
+        .typing-dot:nth-child(2) { animation-delay: -0.16s; }
+
+        @keyframes typing {
+            0%, 80%, 100% { transform: scale(0.8); opacity: 0.5; }
+            40% { transform: scale(1); opacity: 1; }
+        }
+
+        .notification-badge {
+            position: absolute;
+            top: -5px;
+            right: -5px;
+            background: #e53e3e;
+            color: white;
+            border-radius: 50%;
+            width: 20px;
+            height: 20px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 12px;
+            font-weight: 600;
+        }
+
+        @media (max-width: 768px) {
+            .chat-container {
+                width: 90vw;
+                height: 80vh;
+                bottom: 15px;
+                right: 15px;
+            }
+            
+            .chat-icon {
+                bottom: 15px;
+                right: 15px;
+                width: 60px;
+                height: 60px;
+            }
+        }
+    </style>
+</head>
+<body>
+
+
+
+    <!-- Chat Icon -->
+    <div class="chat-icon" id="chatIcon">
+        <svg viewBox="0 0 24 24">
+            <path d="M20,2H4A2,2 0 0,0 2,4V22L6,18H20A2,2 0 0,0 22,16V4C22,2.89 21.1,2 20,2Z"/>
+        </svg>
+        <div class="notification-badge" id="notificationBadge" style="display: none;">1</div>
+    </div>
+
+    <!-- Chat Container -->
+    <div class="chat-container" id="chatContainer">
+        <div class="chat-header">
+            <div class="chat-title">
+                <div class="message-avatar">🏥</div>
+                <div>
+                    <h3>OrthoCare Assistant</h3>
+                    <small>Online • Ready to help</small>
+                </div>
+                <div class="status-indicator"></div>
+            </div>
+            <button class="close-btn" id="closeBtn">×</button>
+        </div>
+
+        <div class="chat-messages" id="chatMessages">
+            <div class="message bot">
+                <div class="message-avatar">🏥</div>
+                <div class="message-content">
+                    Hello! I'm your OrthoCare assistant. I'm here to help you with orthopedic questions, appointment scheduling, and information about our services. How can I assist you today?
+                </div>
+            </div>
+        </div>
+
+        <div class="quick-options">
+            <h4>Quick Options:</h4>
+            <div class="option-buttons">
+                <div class="option-btn" onclick="selectOption('Schedule appointment')">📅 Schedule Appointment</div>
+                <div class="option-btn" onclick="selectOption('Joint pain help')">🦴 Joint Pain</div>
+                <div class="option-btn" onclick="selectOption('Sports injury')">⚽ Sports Injury</div>
+                <div class="option-btn" onclick="selectOption('Back pain relief')">🏃 Back Pain</div>
+            </div>
+        </div>
+
+        <div class="typing-indicator" id="typingIndicator">
+            <span>Assistant is typing</span>
+            <div class="typing-dots">
+                <div class="typing-dot"></div>
+                <div class="typing-dot"></div>
+                <div class="typing-dot"></div>
+            </div>
+        </div>
+
+        <div class="chat-input">
+            <input type="text" class="input-field" id="messageInput" placeholder="Type your message..." maxlength="500">
+            <button class="send-btn" id="sendBtn">
+                <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor">
+                    <path d="M2,21L23,12L2,3V10L17,12L2,14V21Z"/>
+                </svg>
+            </button>
+        </div>
+    </div>
+
+    <script>
+        class OrthopedicChatbot {
+            constructor() {
+                this.isOpen = false;
+                this.responses = {
+                    'schedule appointment': {
+                        text: "I'd be happy to help you schedule an appointment! 📅\n\nOur orthopedic specialists are available:\n• Monday-Friday: 8:00 AM - 6:00 PM\n• Saturday: 9:00 AM - 2:00 PM\n\nPlease call us at (555) 123-ORTHO or would you like me to connect you with our online booking system?",
+                        followUp: ['Call now', 'Online booking', 'Available doctors']
+                    },
+                    'joint pain': {
+                        text: "I understand you're experiencing joint pain. 🦴 Joint pain can have various causes including:\n\n• Arthritis (osteoarthritis, rheumatoid)\n• Injury or overuse\n• Inflammation\n• Age-related wear\n\nFor proper diagnosis and treatment, I recommend scheduling a consultation with our orthopedic specialists. Would you like to book an appointment?",
+                        followUp: ['Book appointment', 'Pain management tips', 'Symptoms checker']
+                    },
+                    'sports injury': {
+                        text: "Sports injuries require prompt attention! ⚽ Our sports medicine specialists treat:\n\n• Sprains and strains\n• Fractures\n• Ligament tears (ACL, MCL)\n• Tendon injuries\n• Concussions\n\nFor acute injuries, consider our urgent care. For chronic issues, schedule with our sports medicine team. What type of injury are you dealing with?",
+                        followUp: ['Urgent care', 'Sports medicine', 'Injury prevention']
+                    },
+                    'back pain': {
+                        text: "Back pain affects millions of people. 🏃 Our spine specialists can help with:\n\n• Lower back pain\n• Herniated discs\n• Sciatica\n• Spinal stenosis\n• Posture-related issues\n\nWe offer both surgical and non-surgical treatments. Many patients find relief through physical therapy, injections, or minimally invasive procedures. Would you like to schedule a spine consultation?",
+                        followUp: ['Spine consultation', 'Non-surgical options', 'Physical therapy']
+                    },
+                    'default': {
+                        text: "Thank you for reaching out to OrthoCare Hospital! 🏥 I'm here to help with:\n\n• Appointment scheduling\n• Information about our orthopedic services\n• General questions about bone and joint health\n• Connecting you with the right specialist\n\nWhat specific orthopedic concern can I help you with today?",
+                        followUp: ['Our services', 'Find a doctor', 'Insurance info']
+                    }
+                };
+                
+                this.init();
+            }
+
+            init() {
+                const chatIcon = document.getElementById('chatIcon');
+                const chatContainer = document.getElementById('chatContainer');
+                const closeBtn = document.getElementById('closeBtn');
+                const sendBtn = document.getElementById('sendBtn');
+                const messageInput = document.getElementById('messageInput');
+
+                chatIcon.addEventListener('click', () => this.toggleChat());
+                closeBtn.addEventListener('click', () => this.closeChat());
+                sendBtn.addEventListener('click', () => this.sendMessage());
+                messageInput.addEventListener('keypress', (e) => {
+                    if (e.key === 'Enter') this.sendMessage();
+                });
+
+                // Show initial notification after 3 seconds
+                setTimeout(() => {
+                    this.showNotification();
+                }, 3000);
+            }
+
+            toggleChat() {
+                const chatContainer = document.getElementById('chatContainer');
+                const chatIcon = document.getElementById('chatIcon');
+                
+                if (this.isOpen) {
+                    this.closeChat();
+                } else {
+                    chatContainer.style.display = 'flex';
+                    chatIcon.style.display = 'none';
+                    this.isOpen = true;
+                    this.hideNotification();
+                    
+                    // Focus on input
+                    setTimeout(() => {
+                        document.getElementById('messageInput').focus();
+                    }, 300);
+                }
+            }
+
+            closeChat() {
+                const chatContainer = document.getElementById('chatContainer');
+                const chatIcon = document.getElementById('chatIcon');
+                
+                chatContainer.style.display = 'none';
+                chatIcon.style.display = 'flex';
+                this.isOpen = false;
+            }
+
+            showNotification() {
+                const badge = document.getElementById('notificationBadge');
+                badge.style.display = 'flex';
+            }
+
+            hideNotification() {
+                const badge = document.getElementById('notificationBadge');
+                badge.style.display = 'none';
+            }
+
+            sendMessage() {
+                const input = document.getElementById('messageInput');
+                const message = input.value.trim();
+                
+                if (message) {
+                    this.addMessage(message, 'user');
+                    input.value = '';
+                    
+                    // Show typing indicator
+                    this.showTyping();
+                    
+                    // Simulate response delay
+                    setTimeout(() => {
+                        this.hideTyping();
+                        this.generateResponse(message);
+                    }, 1500);
+                }
+            }
+
+            addMessage(text, sender) {
+                const messagesContainer = document.getElementById('chatMessages');
+                const messageDiv = document.createElement('div');
+                messageDiv.className = `message ${sender}`;
+                
+                const avatar = document.createElement('div');
+                avatar.className = 'message-avatar';
+                avatar.textContent = sender === 'bot' ? '🏥' : 'You';
+                
+                const content = document.createElement('div');
+                content.className = 'message-content';
+                content.innerHTML = text.replace(/\n/g, '<br>');
+                
+                messageDiv.appendChild(avatar);
+                messageDiv.appendChild(content);
+                
+                messagesContainer.appendChild(messageDiv);
+                messagesContainer.scrollTop = messagesContainer.scrollHeight;
+            }
+
+            showTyping() {
+                const typingIndicator = document.getElementById('typingIndicator');
+                typingIndicator.style.display = 'flex';
+                
+                const messagesContainer = document.getElementById('chatMessages');
+                messagesContainer.scrollTop = messagesContainer.scrollHeight;
+            }
+
+            hideTyping() {
+                const typingIndicator = document.getElementById('typingIndicator');
+                typingIndicator.style.display = 'none';
+            }
+
+            generateResponse(userMessage) {
+                const message = userMessage.toLowerCase();
+                let response = this.responses.default;
+                
+                // Simple keyword matching
+                if (message.includes('appointment') || message.includes('schedule') || message.includes('book')) {
+                    response = this.responses['schedule appointment'];
+                } else if (message.includes('joint') || message.includes('arthritis') || message.includes('knee') || message.includes('hip')) {
+                    response = this.responses['joint pain'];
+                } else if (message.includes('sport') || message.includes('injury') || message.includes('sprain') || message.includes('strain')) {
+                    response = this.responses['sports injury'];
+                } else if (message.includes('back') || message.includes('spine') || message.includes('disc')) {
+                    response = this.responses['back pain'];
+                }
+                
+                this.addMessage(response.text, 'bot');
+                
+                // Add follow-up options
+                if (response.followUp) {
+                    setTimeout(() => {
+                        this.addFollowUpOptions(response.followUp);
+                    }, 500);
+                }
+            }
+
+            addFollowUpOptions(options) {
+                const messagesContainer = document.getElementById('chatMessages');
+                const optionsDiv = document.createElement('div');
+                optionsDiv.className = 'message bot';
+                
+                const avatar = document.createElement('div');
+                avatar.className = 'message-avatar';
+                avatar.textContent = '🏥';
+                
+                const content = document.createElement('div');
+                content.className = 'message-content';
+                content.innerHTML = '<strong>How else can I help?</strong><br><br>';
+                
+                options.forEach(option => {
+                    const btn = document.createElement('button');
+                    btn.className = 'option-btn';
+                    btn.textContent = option;
+                    btn.style.margin = '2px';
+                    btn.onclick = () => this.selectFollowUp(option);
+                    content.appendChild(btn);
+                });
+                
+                optionsDiv.appendChild(avatar);
+                optionsDiv.appendChild(content);
+                
+                messagesContainer.appendChild(optionsDiv);
+                messagesContainer.scrollTop = messagesContainer.scrollHeight;
+            }
+
+            selectFollowUp(option) {
+                this.addMessage(option, 'user');
+                
+                setTimeout(() => {
+                    this.showTyping();
+                    setTimeout(() => {
+                        this.hideTyping();
+                        
+                        let response = "Thank you for your interest! Our team will be happy to assist you with that. For immediate assistance, please call us at (555) 123-ORTHO or visit our website's appointment section. Is there anything else I can help you with?";
+                        
+                        if (option.toLowerCase().includes('appointment') || option.toLowerCase().includes('book')) {
+                            response = "Perfect! To schedule your appointment:\n\n📞 Call: (555) 123-ORTHO\n🌐 Online: Visit our booking portal\n📍 Walk-in: Available for urgent cases\n\nOur scheduling team is available Monday-Friday, 8 AM - 6 PM. What type of appointment would you like to schedule?";
+                        }
+                        
+                        this.addMessage(response, 'bot');
+                    }, 1000);
+                }, 500);
+            }
+        }
+
+        // Global function for quick options
+        function selectOption(option) {
+            const chatbot = window.orthoChatbot;
+            const input = document.getElementById('messageInput');
+            input.value = option;
+            chatbot.sendMessage();
+        }
+
+        // Initialize chatbot when page loads
+        document.addEventListener('DOMContentLoaded', () => {
+            window.orthoChatbot = new OrthopedicChatbot();
+        });
+    </script>
+</body>
+</html>

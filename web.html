@@ -1,0 +1,1670 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Dr. Karnalkar Orthopedic Hospital - Expert Care for Your Well-being</title>
+        
+        <!-- Enhanced Styles with Animations and Modern Design -->
+        <style>
+            /* CSS Variables for consistent theming */
+            :root {
+                --primary-color: #2c5aa0;
+                --secondary-color: #4a90e2;
+                --accent-color: #00d4aa;
+                --dark-bg: #1a252f;
+                --light-bg: #f8f9fa;
+                --text-dark: #2c3e50;
+                --text-light: #6c757d;
+                --white: #ffffff;
+                --shadow: 0 10px 30px rgba(0,0,0,0.1);
+                --border-radius: 12px;
+                --transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+            }
+
+            * {
+                margin: 0;
+                padding: 0;
+                box-sizing: border-box;
+            }
+
+            body {
+                font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+                line-height: 1.6;
+                color: var(--text-dark);
+                overflow-x: hidden;
+            }
+
+            /* ENHANCED NAVBAR WITH ANIMATIONS */
+            .navbar {
+                background: linear-gradient(135deg, var(--dark-bg) 0%, #243447 100%) !important;
+                box-shadow: 0 2px 20px rgba(0,0,0,0.1);
+                transition: var(--transition);
+                backdrop-filter: blur(10px);
+            }
+
+            .navbar.scrolled {
+                background: rgba(26, 37, 47, 0.95) !important;
+                backdrop-filter: blur(15px);
+            }
+
+            .navbar-brand {
+                font-weight: 700;
+                font-size: 1.5rem;
+                color: var(--white) !important;
+                text-decoration: none;
+                transition: var(--transition);
+                animation: slideInLeft 0.8s ease-out;
+            }
+
+            .navbar-brand:hover {
+                transform: scale(1.05);
+                color: var(--accent-color) !important;
+            }
+
+            .nav-link {
+                color: rgba(255, 255, 255, 0.9) !important;
+                font-weight: 500;
+                margin: 0 8px;
+                padding: 8px 16px !important;
+                border-radius: 25px;
+                transition: var(--transition);
+                position: relative;
+                overflow: hidden;
+            }
+
+            .nav-link::before {
+                content: '';
+                position: absolute;
+                top: 0;
+                left: -100%;
+                width: 100%;
+                height: 100%;
+                background: linear-gradient(90deg, transparent, rgba(255,255,255,0.1), transparent);
+                transition: var(--transition);
+            }
+
+            .nav-link:hover {
+                color: var(--white) !important;
+                background: rgba(255, 255, 255, 0.1);
+                transform: translateY(-2px);
+            }
+
+            .nav-link:hover::before {
+                left: 100%;
+            }
+
+            /* HERO SECTION ENHANCEMENTS */
+            .hero-section {
+                position: relative;
+                min-height: 100vh;
+                display: flex;
+                align-items: center;
+                justify-content: center;
+                overflow: hidden;
+                background: linear-gradient(135deg, var(--primary-color) 0%, var(--secondary-color) 100%);
+            }
+
+            .hero-overlay {
+                position: absolute;
+                top: 0;
+                left: 0;
+                right: 0;
+                bottom: 0;
+                background: linear-gradient(45deg, rgba(44, 90, 160, 0.8), rgba(74, 144, 226, 0.6));
+                z-index: 1;
+            }
+
+            .hero-content {
+                position: relative;
+                z-index: 2;
+                text-align: center;
+                color: var(--white);
+                max-width: 800px;
+                padding: 2rem;
+                animation: fadeInUp 1s ease-out;
+            }
+
+            .hero-title {
+                font-size: 3.5rem;
+                font-weight: 800;
+                margin-bottom: 1rem;
+                line-height: 1.2;
+                text-shadow: 2px 2px 4px rgba(0,0,0,0.3);
+                animation: slideInDown 0.8s ease-out;
+            }
+
+            .hero-subtitle {
+                font-size: 1.3rem;
+                margin-bottom: 2rem;
+                opacity: 0.95;
+                animation: fadeIn 1s ease-out 0.3s both;
+            }
+
+            /* ENHANCED APPOINTMENT BUTTON */
+            .btn-appointment {
+                background: linear-gradient(135deg, var(--accent-color) 0%, #00b894 100%);
+                border: none;
+                border-radius: 50px;
+                padding: 15px 40px;
+                font-size: 1.1rem;
+                font-weight: 600;
+                color: var(--white);
+                text-transform: uppercase;
+                letter-spacing: 1px;
+                transition: var(--transition);
+                position: relative;
+                overflow: hidden;
+                box-shadow: 0 8px 25px rgba(0, 212, 170, 0.3);
+                animation: pulse 2s infinite;
+            }
+
+            .btn-appointment::before {
+                content: '';
+                position: absolute;
+                top: 0;
+                left: -100%;
+                width: 100%;
+                height: 100%;
+                background: linear-gradient(90deg, transparent, rgba(255,255,255,0.2), transparent);
+                transition: var(--transition);
+            }
+
+            .btn-appointment:hover {
+                transform: translateY(-3px) scale(1.05);
+                box-shadow: 0 15px 35px rgba(0, 212, 170, 0.4);
+                color: var(--white);
+            }
+
+            .btn-appointment:hover::before {
+                left: 100%;
+            }
+
+            /* CAROUSEL ENHANCEMENTS */
+            .carousel {
+                margin-top: 80px;
+                border-radius: var(--border-radius);
+                overflow: hidden;
+                box-shadow: var(--shadow);
+            }
+
+            .carousel-item img {
+                height: 70vh;
+                object-fit: cover;
+                filter: brightness(0.8);
+                transition: var(--transition);
+            }
+
+            .carousel-item:hover img {
+                filter: brightness(1);
+                transform: scale(1.05);
+            }
+
+            .carousel-caption {
+                background: rgba(0,0,0,0.5);
+                border-radius: var(--border-radius);
+                backdrop-filter: blur(10px);
+            }
+
+            /* SERVICES SECTION */
+            .services-section {
+                padding: 80px 0;
+                background: var(--light-bg);
+            }
+
+            .service-card {
+                background: var(--white);
+                border-radius: var(--border-radius);
+                padding: 2rem;
+                margin: 1rem;
+                box-shadow: var(--shadow);
+                transition: var(--transition);
+                text-align: center;
+                height: 250px;
+                display: flex;
+                flex-direction: column;
+                justify-content: center;
+                position: relative;
+                overflow: hidden;
+            }
+
+            .service-card::before {
+                content: '';
+                position: absolute;
+                top: 0;
+                left: 0;
+                width: 100%;
+                height: 4px;
+                background: linear-gradient(90deg, var(--primary-color), var(--accent-color));
+                transform: scaleX(0);
+                transition: var(--transition);
+            }
+
+            .service-card:hover {
+                transform: translateY(-10px);
+                box-shadow: 0 20px 40px rgba(0,0,0,0.15);
+            }
+
+            .service-card:hover::before {
+                transform: scaleX(1);
+            }
+
+            .service-icon {
+                font-size: 3rem;
+                color: var(--primary-color);
+                margin-bottom: 1rem;
+                transition: var(--transition);
+            }
+
+            .service-card:hover .service-icon {
+                color: var(--accent-color);
+                transform: scale(1.1);
+            }
+
+            .service-title {
+                font-size: 1.3rem;
+                font-weight: 600;
+                margin-bottom: 0.5rem;
+                color: var(--text-dark);
+            }
+
+            /* ENHANCED MODAL */
+            .modal-content {
+                border-radius: var(--border-radius);
+                border: none;
+                box-shadow: 0 20px 60px rgba(0,0,0,0.3);
+                animation: modalSlideIn 0.3s ease-out;
+            }
+
+            .modal-header {
+                background: linear-gradient(135deg, var(--primary-color), var(--secondary-color));
+                color: var(--white);
+                border-radius: var(--border-radius) var(--border-radius) 0 0;
+                padding: 1.5rem;
+            }
+
+            .modal-title {
+                font-weight: 600;
+                font-size: 1.5rem;
+            }
+
+            .close {
+                color: var(--white);
+                opacity: 0.8;
+                font-size: 1.5rem;
+                transition: var(--transition);
+            }
+
+            .close:hover {
+                opacity: 1;
+                transform: scale(1.1);
+            }
+
+            .form-control {
+                border: 2px solid #e9ecef;
+                border-radius: 8px;
+                padding: 12px 16px;
+                transition: var(--transition);
+                font-size: 1rem;
+            }
+
+            .form-control:focus {
+                border-color: var(--primary-color);
+                box-shadow: 0 0 0 0.2rem rgba(44, 90, 160, 0.25);
+                transform: translateY(-2px);
+            }
+
+            .form-label {
+                font-weight: 600;
+                color: var(--text-dark);
+                margin-bottom: 8px;
+            }
+
+            .btn-primary {
+                background: linear-gradient(135deg, var(--primary-color), var(--secondary-color));
+                border: none;
+                border-radius: 8px;
+                padding: 12px 30px;
+                font-weight: 600;
+                transition: var(--transition);
+            }
+
+            .btn-primary:hover {
+                transform: translateY(-2px);
+                box-shadow: 0 8px 25px rgba(44, 90, 160, 0.3);
+            }
+
+            /* FOOTER ENHANCEMENTS */
+            .footer {
+                background: linear-gradient(135deg, var(--dark-bg) 0%, #243447 100%);
+                color: var(--white);
+                padding: 60px 0 0;
+            }
+
+            .footer-section h3 {
+                position: relative;
+                padding-bottom: 15px;
+                margin-bottom: 25px;
+            }
+
+            .footer-section h3::after {
+                content: '';
+                position: absolute;
+                bottom: 0;
+                left: 0;
+                width: 50px;
+                height: 3px;
+                background: linear-gradient(90deg, var(--accent-color), var(--primary-color));
+            }
+
+            /* ANIMATIONS */
+            @keyframes fadeIn {
+                from { opacity: 0; }
+                to { opacity: 1; }
+            }
+
+            @keyframes fadeInUp {
+                from {
+                    opacity: 0;
+                    transform: translateY(30px);
+                }
+                to {
+                    opacity: 1;
+                    transform: translateY(0);
+                }
+            }
+
+            @keyframes slideInDown {
+                from {
+                    opacity: 0;
+                    transform: translateY(-30px);
+                }
+                to {
+                    opacity: 1;
+                    transform: translateY(0);
+                }
+            }
+
+            @keyframes slideInLeft {
+                from {
+                    opacity: 0;
+                    transform: translateX(-30px);
+                }
+                to {
+                    opacity: 1;
+                    transform: translateX(0);
+                }
+            }
+
+            @keyframes pulse {
+                0% { box-shadow: 0 8px 25px rgba(0, 212, 170, 0.3); }
+                50% { box-shadow: 0 8px 35px rgba(0, 212, 170, 0.5); }
+                100% { box-shadow: 0 8px 25px rgba(0, 212, 170, 0.3); }
+            }
+
+            @keyframes modalSlideIn {
+                from {
+                    opacity: 0;
+                    transform: translateY(-50px) scale(0.9);
+                }
+                to {
+                    opacity: 1;
+                    transform: translateY(0) scale(1);
+                }
+            }
+
+            /* FLOATING ELEMENTS */
+            .floating-shapes {
+                position: absolute;
+                width: 100%;
+                height: 100%;
+                overflow: hidden;
+                z-index: 0;
+            }
+
+            .shape {
+                position: absolute;
+                opacity: 0.1;
+                animation: float 6s ease-in-out infinite;
+            }
+
+            .shape:nth-child(1) {
+                top: 20%;
+                left: 10%;
+                animation-delay: 0s;
+            }
+
+            .shape:nth-child(2) {
+                top: 60%;
+                right: 10%;
+                animation-delay: 2s;
+            }
+
+            .shape:nth-child(3) {
+                bottom: 20%;
+                left: 20%;
+                animation-delay: 4s;
+            }
+
+            @keyframes float {
+                0%, 100% { transform: translateY(0px) rotate(0deg); }
+                50% { transform: translateY(-20px) rotate(10deg); }
+            }
+
+            /* RESPONSIVE DESIGN */
+            @media (max-width: 768px) {
+                .hero-title {
+                    font-size: 2.5rem;
+                }
+                
+                .hero-subtitle {
+                    font-size: 1.1rem;
+                }
+                
+                .service-card {
+                    margin: 0.5rem;
+                    height: auto;
+                    padding: 1.5rem;
+                }
+                
+                .btn-appointment {
+                    padding: 12px 30px;
+                    font-size: 1rem;
+                }
+            }
+
+            /* Loading Animation */
+            .loading {
+                display: inline-block;
+                width: 20px;
+                height: 20px;
+                border: 3px solid rgba(255,255,255,.3);
+                border-radius: 50%;
+                border-top-color: #fff;
+                animation: spin 1s ease-in-out infinite;
+            }
+
+            @keyframes spin {
+                to { transform: rotate(360deg); }
+            }
+
+            /* CHATBOT STYLES */
+            .chat-icon {
+                position: fixed;
+                bottom: 30px;
+                right: 30px;
+                width: 70px;
+                height: 70px;
+                background: linear-gradient(135deg, var(--primary-color) 0%, var(--secondary-color) 100%);
+                border-radius: 50%;
+                display: flex;
+                align-items: center;
+                justify-content: center;
+                cursor: pointer;
+                box-shadow: var(--shadow);
+                transition: var(--transition);
+                z-index: 1000;
+                animation: pulse 2s infinite;
+            }
+
+            .chat-icon:hover {
+                transform: scale(1.1);
+                box-shadow: 0 15px 35px rgba(44, 90, 160, 0.4);
+            }
+
+            .chat-icon svg {
+                width: 35px;
+                height: 35px;
+                fill: white;
+            }
+
+            .notification-badge {
+                position: absolute;
+                top: -5px;
+                right: -5px;
+                background: #e53e3e;
+                color: white;
+                border-radius: 50%;
+                width: 20px;
+                height: 20px;
+                display: flex;
+                align-items: center;
+                justify-content: center;
+                font-size: 12px;
+                font-weight: 600;
+            }
+
+            .chat-container {
+                position: fixed;
+                bottom: 30px;
+                right: 30px;
+                width: 400px;
+                max-width: 90vw;
+                height: 500px;
+                max-height: 70vh;
+                background: white;
+                border-radius: var(--border-radius);
+                box-shadow: var(--shadow);
+                display: none;
+                flex-direction: column;
+                z-index: 1001;
+                overflow: hidden;
+                animation: slideUp 0.4s ease-out;
+            }
+
+            .chat-header {
+                background: linear-gradient(135deg, var(--primary-color), var(--secondary-color));
+                color: white;
+                padding: 1rem;
+                display: flex;
+                align-items: center;
+                justify-content: space-between;
+            }
+
+            .chat-title {
+                display: flex;
+                align-items: center;
+                gap: 10px;
+            }
+
+            .chat-title h3 {
+                font-size: 1.2rem;
+                font-weight: 600;
+                margin: 0;
+            }
+
+            .status-indicator {
+                width: 8px;
+                height: 8px;
+                background: #48bb78;
+                border-radius: 50%;
+                animation: blink 1.5s infinite;
+            }
+
+            @keyframes blink {
+                0%, 100% { opacity: 1; }
+                50% { opacity: 0.3; }
+            }
+
+            .close-btn {
+                background: none;
+                border: none;
+                color: white;
+                font-size: 1.5rem;
+                cursor: pointer;
+                width: 30px;
+                height: 30px;
+                border-radius: 50%;
+                display: flex;
+                align-items: center;
+                justify-content: center;
+                transition: var(--transition);
+            }
+
+            .close-btn:hover {
+                background: rgba(255,255,255,0.2);
+                transform: scale(1.1);
+            }
+
+            .chat-messages {
+                flex: 1;
+                padding: 1rem;
+                overflow-y: auto;
+                background: var(--light-bg);
+            }
+
+            .message {
+                margin-bottom: 15px;
+                display: flex;
+                align-items: flex-start;
+                gap: 10px;
+                animation: fadeIn 0.3s ease-out;
+            }
+
+            .message.bot {
+                justify-content: flex-start;
+            }
+
+            .message.user {
+                justify-content: flex-end;
+            }
+
+            .message-content {
+                max-width: 80%;
+                padding: 12px 16px;
+                border-radius: 18px;
+                font-size: 0.95rem;
+                line-height: 1.4;
+            }
+
+            .message.bot .message-content {
+                background: white;
+                color: var(--text-dark);
+                border: 1px solid #e9ecef;
+                border-bottom-left-radius: 5px;
+                box-shadow: 0 2px 8px rgba(0,0,0,0.05);
+            }
+
+            .message.user .message-content {
+                background: linear-gradient(135deg, var(--primary-color), var(--secondary-color));
+                color: white;
+                border-bottom-right-radius: 5px;
+            }
+
+            .message-avatar {
+                width: 32px;
+                height: 32px;
+                border-radius: 50%;
+                display: flex;
+                align-items: center;
+                justify-content: center;
+                font-size: 14px;
+                font-weight: 600;
+                flex-shrink: 0;
+            }
+
+            .message.bot .message-avatar {
+                background: linear-gradient(135deg, var(--primary-color), var(--secondary-color));
+                color: white;
+            }
+
+            .message.user .message-avatar {
+                background: #e2e8f0;
+                color: #4a5568;
+            }
+
+            .chat-input-container {
+                padding: 1rem;
+                background: white;
+                border-top: 1px solid #e9ecef;
+                display: flex;
+                gap: 10px;
+            }
+
+            .chat-input {
+                flex: 1;
+                padding: 12px 16px;
+                border: 2px solid #e9ecef;
+                border-radius: 25px;
+                outline: none;
+                font-size: 0.95rem;
+                transition: var(--transition);
+            }
+
+            .chat-input:focus {
+                border-color: var(--primary-color);
+                box-shadow: 0 0 0 0.2rem rgba(44, 90, 160, 0.1);
+            }
+
+            .send-btn {
+                background: linear-gradient(135deg, var(--primary-color), var(--secondary-color));
+                border: none;
+                border-radius: 50%;
+                width: 45px;
+                height: 45px;
+                color: white;
+                cursor: pointer;
+                display: flex;
+                align-items: center;
+                justify-content: center;
+                transition: var(--transition);
+            }
+
+            .send-btn:hover {
+                transform: scale(1.05);
+                box-shadow: 0 5px 15px rgba(44, 90, 160, 0.3);
+            }
+
+            .send-btn:disabled {
+                opacity: 0.7;
+                cursor: not-allowed;
+            }
+
+            .typing-indicator {
+                display: none;
+                padding: 12px 16px;
+                background: white;
+                color: var(--text-light);
+                border-radius: 18px;
+                border-bottom-left-radius: 5px;
+                max-width: 80%;
+                font-style: italic;
+                animation: fadeIn 0.3s ease-out;
+                margin-bottom: 15px;
+            }
+
+            .quick-options {
+                display: flex;
+                flex-wrap: wrap;
+                gap: 8px;
+                margin-top: 10px;
+            }
+
+            .quick-option {
+                background: #f8f9fa;
+                border: 1px solid #e9ecef;
+                border-radius: 20px;
+                padding: 8px 15px;
+                font-size: 0.85rem;
+                cursor: pointer;
+                transition: var(--transition);
+            }
+
+            .quick-option:hover {
+                background: linear-gradient(135deg, var(--primary-color), var(--secondary-color));
+                color: white;
+                border-color: var(--primary-color);
+            }
+
+            @media (max-width: 576px) {
+                .chat-container {
+                    width: calc(100vw - 20px);
+                    right: 10px;
+                    bottom: 80px;
+                    height: 60vh;
+                }
+                
+                .chat-icon {
+                    bottom: 15px;
+                    right: 15px;
+                    width: 60px;
+                    height: 60px;
+                }
+            }
+        </style>
+        
+        <!-- Bootstrap CSS -->
+        <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+        
+        <!-- jQuery and Bootstrap JS -->
+        <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+        <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.1/dist/umd/popper.min.js"></script>
+        <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+    </head>
+    
+    <body>
+        <!-- ENHANCED NAVIGATION -->
+        <nav class="navbar navbar-expand-lg fixed-top" id="mainNavbar">
+            <div class="container">
+                <a class="navbar-brand" href="#home">
+                    <i class="fas fa-heartbeat mr-2"></i>
+                    Dr. Karnalkar Hospital
+                </a>
+                <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav">
+                    <span class="navbar-toggler-icon">
+                        <i class="fas fa-bars" style="color: white;"></i>
+                    </span>
+                </button>
+                <div class="collapse navbar-collapse" id="navbarNav">
+                    <ul class="navbar-nav ml-auto">
+                        <li class="nav-item">
+                            <a class="nav-link" href="#home">Home</a>  
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="D:\website dr.kalnarkar\doc_info.html">About Dr. Karnalkar</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="#services">Services</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="#contact">Contact</a>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </nav>
+
+        <!-- HERO SECTION -->
+        <section class="hero-section" id="home">
+            <div class="floating-shapes">
+                <div class="shape">
+                    <i class="fas fa-plus-circle" style="font-size: 60px; color: var(--accent-color);"></i>
+                </div>
+                <div class="shape">
+                    <i class="fas fa-heartbeat" style="font-size: 80px; color: var(--primary-color);"></i>
+                </div>
+                <div class="shape">
+                    <i class="fas fa-user-md" style="font-size: 70px; color: var(--secondary-color);"></i>
+                </div>
+            </div>
+            <div class="hero-overlay"></div>
+            <div class="hero-content">
+                <h1 class="hero-title">Expert Orthopedic Care</h1>
+                <p class="hero-subtitle">Advanced treatments for joints, spine & sports injuries with compassionate care</p>
+                <div class="mt-4">
+                    <button class="btn btn-appointment btn-lg mr-3" data-toggle="modal" data-target="#appointmentModal">
+                        <i class="fas fa-calendar-check mr-2"></i>Book Appointment
+                    </button>
+                </div>
+            </div>
+        </section>
+
+        <!-- CAROUSEL SECTION -->
+        <div class="container my-5">
+            <div id="hospitalCarousel" class="carousel slide" data-ride="carousel">
+                <div class="carousel-inner">
+                    <div class="carousel-item active">
+                        <img class="d-block w-100" src="https://heeoe.hee.nhs.uk/sites/default/files/imagepicker/172/nhs_nnuh_entrance.jpg" alt="Hospital Entrance">
+                        <div class="carousel-caption">
+                            <h3>Modern Healthcare Facility</h3>
+                            <p>State-of-the-art equipment and comfortable environment</p>
+                        </div>
+                    </div>
+                    <div class="carousel-item">
+                        <img class="d-block w-100" src="https://cdn7.dissolve.com/p/D145_295_861/D145_295_861_1200.jpg" alt="Medical Team">
+                        <div class="carousel-caption">
+                            <h3>Expert Medical Team</h3>
+                            <p>Experienced professionals dedicated to your health</p>
+                        </div>
+                    </div>
+                </div>
+                <a class="carousel-control-prev" href="#hospitalCarousel" role="button" data-slide="prev">
+                    <span class="carousel-control-prev-icon"></span>
+                </a>
+                <a class="carousel-control-next" href="#hospitalCarousel" role="button" data-slide="next">
+                    <span class="carousel-control-next-icon"></span>
+                </a>
+            </div>
+        </div>
+
+        <!-- SERVICES SECTION -->
+        <section class="services-section" id="services">
+            <div class="container">
+                <div class="text-center mb-5">
+                    <h2 class="display-4 font-weight-bold text-primary mb-3">Our Services</h2>
+                    <p class="lead text-muted">Comprehensive orthopedic care tailored to your needs</p>
+                </div>
+                <div class="row">
+                    <div class="col-md-4 col-sm-6">
+                        <div class="service-card">
+                            <div class="service-icon">
+                                <i class="fas fa-bone"></i>
+                            </div>
+                            <h4 class="service-title">Joint Replacement</h4>
+                            <p>Advanced joint replacement procedures with minimal recovery time</p>
+                        </div>
+                    </div>
+                    <div class="col-md-4 col-sm-6">
+                        <div class="service-card">
+                            <div class="service-icon">
+                                <i class="fas fa-running"></i>
+                            </div>
+                            <h4 class="service-title">Sports Medicine</h4>
+                            <p>Specialized treatment for sports-related injuries and rehabilitation</p>
+                        </div>
+                    </div>
+                    <div class="col-md-4 col-sm-6">
+                        <div class="service-card">
+                            <div class="service-icon">
+                                <i class="fas fa-bone"></i>
+                            </div>
+                            <h4 class="service-title">Spine Care</h4>
+                            <p>Comprehensive spine treatments from conservative to surgical options</p>
+                        </div>
+                    </div>
+                    <div class="col-md-4 col-sm-6">
+                        <div class="service-card">
+                            <div class="service-icon">
+                                <i class="fas fa-hand-paper"></i>
+                            </div>
+                            <h4 class="service-title">Hand Surgery</h4>
+                            <p>Precision hand and wrist surgery for optimal function restoration</p>
+                        </div>
+                    </div>
+                    <div class="col-md-4 col-sm-6">
+                        <div class="service-card">
+                            <div class="service-icon">
+                                <i class="fas fa-user-injured"></i>
+                            </div>
+                            <h4 class="service-title">Trauma Care</h4>
+                            <p>Emergency orthopedic trauma care with 24/7 availability</p>
+                        </div>
+                    </div>
+                    <div class="col-md-4 col-sm-6">
+                        <div class="service-card">
+                            <div class="service-icon">
+                                <i class="fas fa-child"></i>
+                            </div>
+                            <h4 class="service-title">Pediatric Orthopedics</h4>
+                            <p>Specialized care for children's bone and joint conditions</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- ENHANCED APPOINTMENT MODAL -->
+        <div class="modal fade" id="appointmentModal" tabindex="-1" role="dialog">
+            <div class="modal-dialog modal-lg" role="document">
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <h5 class="modal-title">
+                            <i class="fas fa-calendar-plus mr-2"></i>Book Your Appointment
+                        </h5>
+                        <button type="button" class="close" data-dismiss="modal">
+                            <span aria-hidden="true">&times;</span>
+                        </button>
+                    </div>
+                    <div class="modal-body">
+                        <!-- SUCCESS/ERROR MESSAGES -->
+                        <div id="appointmentMessage" class="alert" style="display: none;"></div>
+                        
+                        <form id="appointmentForm">
+                            <div class="row">
+                                <div class="col-md-6">
+                                    <div class="form-group">
+                                        <label class="form-label" for="patientName">
+                                            <i class="fas fa-user mr-1"></i>Full Name *
+                                        </label>
+                                        <input type="text" class="form-control" id="patientName" 
+                                               placeholder="Enter your full name" required>
+                                    </div>
+                                </div>
+                                <div class="col-md-6">
+                                    <div class="form-group">
+                                        <label class="form-label" for="patientAge">
+                                            <i class="fas fa-birthday-cake mr-1"></i>Age *
+                                        </label>
+                                        <input type="number" class="form-control" id="patientAge" 
+                                               placeholder="Enter your age" min="1" max="120" required>
+                                    </div>
+                                </div>
+                            </div>
+                            
+                            <div class="row">
+                                <div class="col-md-6">
+                                    <div class="form-group">
+                                        <label class="form-label" for="patientEmail">
+                                            <i class="fas fa-envelope mr-1"></i>Email *
+                                        </label>
+                                        <input type="email" class="form-control" id="patientEmail" 
+                                               placeholder="Enter your email address" required>
+                                    </div>
+                                </div>
+                                <div class="col-md-6">
+                                    <div class="form-group">
+                                        <label class="form-label" for="patientPhone">
+                                            <i class="fas fa-phone mr-1"></i>Mobile Number *
+                                        </label>
+                                        <input type="tel" class="form-control" id="patientPhone" 
+                                               placeholder="Enter your mobile number" required>
+                                    </div>
+                                </div>
+                            </div>
+                            
+                            <div class="row">
+                                <div class="col-md-6">
+                                    <div class="form-group">
+                                        <label class="form-label" for="patientGender">
+                                            <i class="fas fa-venus-mars mr-1"></i>Gender *
+                                        </label>
+                                        <select class="form-control" id="patientGender" required>
+                                            <option value="">Select your gender</option>
+                                            <option value="male">Male</option>
+                                            <option value="female">Female</option>
+                                            <option value="other">Other</option>
+                                            <option value="prefer-not-to-say">Prefer not to say</option>
+                                        </select>
+                                    </div>
+                                </div>
+                                <div class="col-md-6">
+                                    <div class="form-group">
+                                        <label class="form-label" for="appointmentDate">
+                                            <i class="fas fa-calendar mr-1"></i>Preferred Date *
+                                        </label>
+                                        <input type="date" class="form-control" id="appointmentDate" required>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div class="form-group">
+                                <label class="form-label" for="appointmentTime">
+                                    <i class="fas fa-clock mr-1"></i>Preferred Time *
+                                </label>
+                                <select class="form-control" id="appointmentTime" required>
+                                    <option value="">Select preferred time</option>
+                                    <option value="09:00">09:00 AM</option>
+                                    <option value="10:00">10:00 AM</option>
+                                    <option value="11:00">11:00 AM</option>
+                                    <option value="12:00">12:00 PM</option>
+                                    <option value="14:00">02:00 PM</option>
+                                    <option value="15:00">03:00 PM</option>
+                                    <option value="16:00">04:00 PM</option>
+                                    <option value="17:00">05:00 PM</option>
+                                </select>
+                            </div>
+                            
+                            <div class="form-group">
+                                <label class="form-label" for="medicalIssues">
+                                    <i class="fas fa-stethoscope mr-1"></i>Medical Issues/Symptoms
+                                </label>
+                                <textarea class="form-control" id="medicalIssues" rows="3" 
+                                          placeholder="Describe your symptoms or medical concerns"></textarea>
+                            </div>
+                            
+                            <div class="form-group">
+                                <label class="form-label" for="appointmentReason">
+                                    <i class="fas fa-clipboard-list mr-1"></i>Reason for Visit
+                                </label>
+                                <select class="form-control" id="appointmentReason">
+                                    <option value="">Select reason for visit</option>
+                                    <option value="consultation">General Consultation</option>
+                                    <option value="follow-up">Follow-up Visit</option>
+                                    <option value="joint-pain">Joint Pain</option>
+                                    <option value="back-pain">Back Pain</option>
+                                    <option value="sports-injury">Sports Injury</option>
+                                    <option value="fracture">Fracture/Injury</option>
+                                    <option value="other">Other</option>
+                                </select>
+                            </div>
+                            
+                            <div class="form-group form-check">
+                                <input type="checkbox" class="form-check-input" id="termsCheck" required>
+                                <label class="form-check-label" for="termsCheck">
+                                    I agree to the <a href="#" class="text-primary">terms and conditions</a> and 
+                                    <a href="#" class="text-primary">privacy policy</a>
+                                </label>
+                            </div>
+                        </form>
+                    </div>
+                    <div class="modal-footer">
+                        <button type="button" class="btn btn-secondary" data-dismiss="modal">
+                            <i class="fas fa-times mr-2"></i>Close
+                        </button>
+                        <button type="submit" form="appointmentForm" class="btn btn-primary" id="submitAppointment">
+                            <i class="fas fa-paper-plane mr-2"></i>
+                            <span class="btn-text">Book Appointment</span>
+                        </button>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- ABOUT SECTION -->
+        <section class="py-5 bg-white" id="about">
+            <div class="container">
+                <div class="text-center mb-5">
+                    <h2 class="display-4 font-weight-bold text-primary mb-3">About Dr. Karnalkar</h2>
+                    <p class="lead text-muted">Leading orthopedic specialist with years of experience</p>
+                </div>
+                <div class="row align-items-center">
+                    <div class="col-lg-6">
+                        <div class="p-4">
+                            <h3 class="text-primary mb-3">Expert Orthopedic Care</h3>
+                            <p class="text-muted mb-4">
+                                Dr. Karnalkar brings over 15 years of experience in orthopedic surgery and rehabilitation. 
+                                Specializing in joint replacement, sports medicine, and trauma care, our hospital is 
+                                committed to providing world-class medical treatment with compassionate care.
+                            </p>
+                            <ul class="list-unstyled">
+                                <li class="mb-2"><i class="fas fa-check-circle text-success mr-2"></i>Board Certified Orthopedic Surgeon</li>
+                                <li class="mb-2"><i class="fas fa-check-circle text-success mr-2"></i>15+ Years of Experience</li>
+                                <li class="mb-2"><i class="fas fa-check-circle text-success mr-2"></i>500+ Successful Surgeries</li>
+                                <li class="mb-2"><i class="fas fa-check-circle text-success mr-2"></i>State-of-the-art Equipment</li>
+                            </ul>
+                        </div>
+                    </div>
+                    <div class="col-lg-6">
+                        <div class="text-center">
+                            <img src="D:\website dr.kalnarkar\image.jpg" 
+                                 alt="Dr. Karnalkar" class="img-fluid rounded shadow-lg h-25 w-50">
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- CONTACT SECTION -->
+        <section class="py-5 bg-light" id="contact">
+            <div class="container">
+                <div class="text-center mb-5">
+                    <h2 class="display-4 font-weight-bold text-primary mb-3">Contact Us</h2>
+                    <p class="lead text-muted">Get in touch with our medical team</p>
+                </div>
+                <div class="row">
+                    <div class="col-lg-8 mx-auto">
+                        <div class="row">
+                            <div class="col-md-4 text-center mb-4">
+                                <div class="contact-item p-4 bg-white rounded shadow-sm h-100">
+                                    <i class="fas fa-map-marker-alt fa-2x text-primary mb-3"></i>
+                                    <h5>Location</h5>
+                                    <p class="text-muted">Near District General Hospital<br>Ganesh Peth, Sangli</p>
+                                </div>
+                            </div>
+                            <div class="col-md-4 text-center mb-4">
+                                <div class="contact-item p-4 bg-white rounded shadow-sm h-100">
+                                    <i class="fas fa-phone fa-2x text-primary mb-3"></i>
+                                    <h5>Phone</h5>
+                                    <p class="text-muted">Main: (617) 555-0100<br>Emergency: (617) 555-0199</p>
+                                </div>
+                            </div>
+                            <div class="col-md-4 text-center mb-4">
+                                <div class="contact-item p-4 bg-white rounded shadow-sm h-100">
+                                    <i class="fas fa-envelope fa-2x text-primary mb-3"></i>
+                                    <h5>Email</h5>
+                                    <p class="text-muted" style="font-size: x-small;">info@karnalkarhospital.com<br>appointments@karnalkarhospital.com</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- CHATBOT COMPONENTS -->
+        <div class="chat-icon" id="chatIcon">
+            <svg viewBox="0 0 24 24">
+                <path d="M20,2H4A2,2 0 0,0 2,4V22L6,18H20A2,2 0 0,0 22,16V4C22,2.89 21.1,2 20,2Z"/>
+            </svg>
+            <div class="notification-badge" id="notificationBadge" style="display: none;">1</div>
+        </div>
+
+        <div class="chat-container" id="chatContainer">
+            <div class="chat-header">
+                <div class="chat-title">
+                    <div class="message-avatar">🏥</div>
+                    <div>
+                        <h3>OrthoBot Assistant</h3>
+                        <small>Online • Ready to help</small>
+                    </div>
+                    <div class="status-indicator"></div>
+                </div>
+                <button class="close-btn" id="closeBtn">×</button>
+            </div>
+            
+            <div class="chat-messages" id="chatMessages">
+                <div class="message bot">
+                    <div class="message-avatar">🏥</div>
+                    <div class="message-content">
+                        Hello! I'm your OrthoBot assistant. I can help you with:
+                        <div class="quick-options">
+                            <div class="quick-option" onclick="selectQuickOption('appointment')">Book Appointment</div>
+                            <div class="quick-option" onclick="selectQuickOption('symptoms')">Check Symptoms</div>
+                            <div class="quick-option" onclick="selectQuickOption('services')">Our Services</div>
+                            <div class="quick-option" onclick="selectQuickOption('emergency')">Emergency Care</div>
+                        </div>
+                    </div>
+                </div>
+                <div class="typing-indicator" id="typingIndicator">
+                    OrthoBot is typing...
+                </div>
+            </div>
+            
+            <div class="chat-input-container">
+                <input type="text" class="chat-input" id="chatInput" placeholder="Ask about your orthopedic concerns...">
+                <button class="send-btn" id="sendBtn">
+                    <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor">
+                        <path d="M2,21L23,12L2,3V10L17,12L2,14V21Z"/>
+                    </svg>
+                </button>
+            </div>
+        </div>
+
+        <!-- COMPREHENSIVE FOOTER SECTION -->
+        <footer class="footer" id="footer">
+            <div class="container">
+                <div class="row">
+                    <!-- HOSPITAL BRANDING & OVERVIEW -->
+                    <div class="col-lg-3 col-md-6 mb-4">
+                        <div class="footer-section">
+                            <div class="footer-brand mb-4">
+                                <!-- Hospital Logo Placeholder -->
+                                <div class="logo-container mb-3">
+                                    <img src="https://via.placeholder.com/120x60/2c5aa0/ffffff?text=HOSPITAL+LOGO" 
+                                         alt="Dr. Karnalkar Hospital" class="footer-logo">
+                                </div>
+                                <h4 class="footer-brand-name">Dr. Karnalkar Orthopedic Hospital</h4>
+                            </div>
+                            <p class="footer-description">
+                                Dr. Karnalkar Backache Hospital private limited has been delivering exceptional healthcare with 
+                                compassion and innovation since 2008. We are committed to excellence in patient care, research, 
+                                and medical education.
+                            </p>
+                            <!-- Social Media Icons -->
+                            <div class="social-icons mt-4 mr-1">
+                                <a href="#" class="social-icon" aria-label="Facebook">
+                                    <i class="fab fa-facebook-f"></i>
+                                </a>
+                                <a href="#" class="social-icon" aria-label="Twitter">
+                                    <i class="fab fa-twitter"></i>
+                                </a>
+                                <a href="#" class="social-icon" aria-label="Instagram">
+                                    <i class="fab fa-instagram"></i>
+                                </a>
+                                <a href="#" class="social-icon" aria-label="LinkedIn">
+                                    <i class="fab fa-linkedin-in"></i>
+                                </a>
+                                <a href="#" class="social-icon" aria-label="YouTube">
+                                    <i class="fab fa-youtube"></i>
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- QUICK LINKS -->
+                    <div class="col-lg-2 col-md-6 mb-4">
+                        <div class="footer-section">
+                            <h3>Quick Links</h3>
+                            <nav class="footer-nav">
+                                <ul class="footer-links">
+                                    <li><a href="#home">Home</a></li>
+                                    <li><a href="#about">About Our Hospital</a></li>
+                                    <li><a href="#services">Medical Staff</a></li>
+                                    <li><a href="#services">Specialties & Services</a></li>
+                                    <li><a href="#contact">Patient & Visitors</a></li>
+                                    <li><a href="#">Health Library</a></li>
+                                    <li><a href="#">Clinical Trials</a></li>
+                                    <li><a href="#contact">Contact Directions</a></li>
+                                </ul>
+                            </nav>
+                        </div>
+                    </div>
+
+                    <!-- CLINICAL SERVICES AND TREATMENT -->
+                    <div class="col-lg-4 col-md-6 mb-4">
+                        <div class="footer-section">
+                            <h3>Clinical Services and Treatment</h3>
+                            <div class="row">
+                                <div class="col-6">
+                                    <h5 class="service-category-title">Treatments</h5>
+                                    <ul class="footer-links service-links">
+                                        <li><a href="#">Sinusitis</a></li>
+                                        <li><a href="#">Stammering</a></li>
+                                        <li><a href="#">Orbitak & Optic Nerve Decompression</a></li>
+                                        <li><a href="#">Cysts and Nodules of Vocal Fold</a></li>
+                                        <li><a href="#">Tonsillectomy</a></li>
+                                        <li><a href="#">Nasal Disorders</a></li>
+                                    </ul>
+                                </div>
+                                <div class="col-6">
+                                    <h5 class="service-category-title">Surgery</h5>
+                                    <ul class="footer-links service-links">
+                                        <li><a href="#">Parotid</a></li>
+                                        <li><a href="#">Nasal Endoscopy</a></li>
+                                        <li><a href="#">Laryngoscopy</a></li>
+                                        <li><a href="#">Stapedectomy</a></li>
+                                        <li><a href="#">Functional Endoscopic Sinus Surgery (FESS)</a></li>
+                                        <li><a href="#">Grommet Insertion Myringotomy</a></li>
+                                    </ul>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- CONTACT INFORMATION & LOCATION -->
+                    <div class="col-lg-3 col-md-6 mb-4">
+                        <div class="footer-section">
+                            <h3>Contact Information</h3>
+                            <div class="contact-info">
+                                <div class="contact-item">
+                                    <i class="fas fa-map-marker-alt contact-icon"></i>
+                                    <div class="contact-details">
+                                        <span>Near District General Hospital Ganesh Peth Sangli</span>
+                                    </div>
+                                </div>
+                                <div class="contact-item">
+                                    <i class="fas fa-phone contact-icon"></i>
+                                    <div class="contact-details">
+                                        <div>Main: (617) 555-0100</div>
+                                        <div>Emergency: (617) 555-0199</div>
+                                        <div>Appointments: (617) 555-0150</div>
+                                    </div>
+                                </div>
+                                <div class="contact-item">
+                                    <i class="fas fa-envelope contact-icon"></i>
+                                    <div class="contact-details">
+                                        <a href="mailto:karnalkar@gmail.com">karnalkar@gmail.com</a>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <!-- OUR LOCATION -->
+                            <div class="location-section mt-4">
+                                <h4>Our Location</h4>
+                                <div class="map-container embed-responsive embed-responsive-16by9">
+                                    <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3818.489197734292!2d74.57048127461574!3d16.85167811801784!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3bc11982258c23a3%3A0xcc6e87645c45a46a!2sDr.%20Karnalkar%20Backache%20Hospital%20Pvt.%20Ltd.!5e0!3m2!1sen!2sin!4v1750578782045!5m2!1sen!2sin" width="600" height="450" style="border:0;" allowfullscreen="" loading="lazy" class="embed-responsive-item" referrerpolicy="no-referrer-when-downgrade"></iframe>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- FOOTER BOTTOM -->
+                <div class="footer-bottom">
+                    <div class="row align-items-center">
+                        <div class="col-md-6">
+                            <p class="copyright">
+                                &copy; 2024 Dr. Karnalkar Orthopedic Hospital. All rights reserved.
+                            </p>
+                        </div>
+                        <div class="col-md-6 text-md-right">
+                            <div class="footer-bottom-links">
+                                <a href="#">Privacy Policy</a>
+                                <span class="separator">|</span>
+                                <a href="#">Terms of Service</a>
+                                <span class="separator">|</span>
+                                <a href="#">Sitemap</a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </footer>
+
+        <!-- ENHANCED JAVASCRIPT -->
+        <script>
+            // Navbar scroll effect
+            $(window).scroll(function() {
+                if ($(this).scrollTop() > 50) {
+                    $('#mainNavbar').addClass('scrolled');
+                } else {
+                    $('#mainNavbar').removeClass('scrolled');
+                }
+            });
+
+            // Smooth scrolling for anchor links
+            $('a[href^="#"]').on('click', function(event) {
+                var target = $(this.getAttribute('href'));
+                if( target.length ) {
+                    event.preventDefault();
+                    $('html, body').stop().animate({
+                        scrollTop: target.offset().top - 70
+                    }, 1000);
+                }
+            });
+
+            // Set minimum date to today for appointment form
+            $(document).ready(function() {
+                var today = new Date();
+                var dd = today.getDate();
+                var mm = today.getMonth() + 1;
+                var yyyy = today.getFullYear();
+                
+                if(dd < 10) {
+                    dd = '0' + dd;
+                }
+                if(mm < 10) {
+                    mm = '0' + mm;
+                }
+                
+                today = yyyy + '-' + mm + '-' + dd;
+                $('#appointmentDate').attr('min', today);
+            });
+
+            // Enhanced appointment form submission
+            $('#appointmentForm').on('submit', function(e) {
+                e.preventDefault();
+                
+                // Get form data
+                var formData = {
+                    name: $('#patientName').val(),
+                    age: $('#patientAge').val(),
+                    email: $('#patientEmail').val(),
+                    phone: $('#patientPhone').val(),
+                    gender: $('#patientGender').val(),
+                    date: $('#appointmentDate').val(),
+                    time: $('#appointmentTime').val(),
+                    issues: $('#medicalIssues').val(),
+                    reason: $('#appointmentReason').val()
+                };
+                
+                // Show loading state
+                var submitBtn = $('#submitAppointment');
+                var originalText = submitBtn.find('.btn-text').text();
+                submitBtn.prop('disabled', true);
+                submitBtn.find('.btn-text').html('<span class="loading"></span> Processing...');
+                
+                // Simulate API call (replace with actual backend integration)
+                setTimeout(function() {
+                    $('#appointmentMessage')
+                        .removeClass('alert-danger')
+                        .addClass('alert-success')
+                        .html('<i class="fas fa-check-circle mr-2"></i>Appointment submitted!')
+                        .show();
+
+                    $('#appointmentForm')[0].reset();
+                    submitBtn.prop('disabled', false);
+                    submitBtn.find('.btn-text').text(originalText);
+                }, 2000);
+            });
+
+            // Form validation enhancement
+            $('.form-control').on('blur', function() {
+                if ($(this).is(':invalid')) {
+                    $(this).addClass('is-invalid');
+                } else {
+                    $(this).removeClass('is-invalid').addClass('is-valid');
+                }
+            });
+
+            // Auto-hide alerts
+            $('.alert').delay(5000).fadeOut();
+
+            // Initialize tooltips (if using Bootstrap tooltips)
+            $('[data-toggle="tooltip"]').tooltip();
+
+            // Social media link tracking (for analytics)
+            $('.social-icon').on('click', function(e) {
+                var platform = $(this).find('i').attr('class').split('fa-')[1];
+                console.log('Social media click:', platform);
+            });
+
+            // Footer links hover effect enhancement
+            $('.footer-links a').hover(
+                function() {
+                    $(this).addClass('hovered');
+                },
+                function() {
+                    $(this).removeClass('hovered');
+                }
+            );
+
+            // Chatbot Implementation
+            $(document).ready(function() {
+                const chatIcon = document.getElementById('chatIcon');
+                const chatContainer = document.getElementById('chatContainer');
+                const closeBtn = document.getElementById('closeBtn');
+                const chatInput = document.getElementById('chatInput');
+                const sendBtn = document.getElementById('sendBtn');
+                const chatMessages = document.getElementById('chatMessages');
+                const typingIndicator = document.getElementById('typingIndicator');
+                const notificationBadge = document.getElementById('notificationBadge');
+
+                let isOpen = false;
+
+                const orthopedicResponses = {
+                    appointment: {
+                        response: "I'd be happy to help you book an appointment! Our orthopedic specialists are available Monday-Saturday. Please call us at (555) 123-ORTHO or visit our online booking portal. What type of orthopedic concern would you like to discuss?",
+                        followUp: ["Available doctors", "Insurance info", "Preparation tips"]
+                    },
+                    symptoms: {
+                        response: "I can help identify common orthopedic symptoms. Please describe your pain, discomfort, or mobility issues. Common symptoms we treat include joint pain, back pain, sports injuries, and fractures.",
+                        followUp: ["Joint pain", "Back pain", "Sports injury", "Fracture care"]
+                    },
+                    services: {
+                        response: "Our comprehensive orthopedic services include: Joint Replacement Surgery, Sports Medicine, Spine Care, Pediatric Orthopedics, Hand & Wrist Surgery, Foot & Ankle Care, and Physical Therapy. Which service interests you?",
+                        followUp: ["Joint replacement", "Sports medicine", "Spine care", "Physical therapy"]
+                    },
+                    emergency: {
+                        response: "For orthopedic emergencies like severe fractures, dislocations, or acute injuries, please call 911 or visit our ER immediately. For urgent but non-emergency issues, call our orthopedic hotline: (555) 123-URGENT",
+                        followUp: ["What counts as emergency", "Urgent care hours", "After-hours contact"]
+                    },
+                    "joint pain": {
+                        response: "Joint pain can affect knees, hips, shoulders, or other joints. Common causes include arthritis, injury, or overuse. Our specialists can diagnose and treat with medications, therapy, or surgery if needed. When did your joint pain start?",
+                        followUp: ["Knee pain", "Hip pain", "Shoulder pain", "Treatment options"]
+                    },
+                    "back pain": {
+                        response: "Back pain is very common and can range from muscle strain to serious spinal conditions. We offer comprehensive spine care including physical therapy, injections, and surgery when necessary. How long have you had back pain?",
+                        followUp: ["Lower back pain", "Upper back pain", "Spine surgery", "Physical therapy"]
+                    },
+                    "sports injury": {
+                        response: "Our sports medicine team treats athletes of all levels. Common injuries include ACL tears, rotator cuff injuries, tennis elbow, and stress fractures. We focus on getting you back to your sport safely. What sport were you playing when injured?",
+                        followUp: ["ACL injury", "Rotator cuff", "Recovery timeline", "Prevention tips"]
+                    }
+                };
+
+                function toggleChat() {
+                    isOpen = !isOpen;
+                    chatContainer.style.display = isOpen ? 'flex' : 'none';
+                    chatIcon.style.display = isOpen ? 'none' : 'flex';
+                    
+                    if (isOpen) {
+                        chatInput.focus();
+                        hideNotification();
+                    }
+                }
+
+                function showNotification() {
+                    notificationBadge.style.display = 'flex';
+                }
+
+                function hideNotification() {
+                    notificationBadge.style.display = 'none';
+                }
+
+                function addMessage(content, isBot = false) {
+                    const messageDiv = document.createElement('div');
+                    messageDiv.className = `message ${isBot ? 'bot' : 'user'}`;
+                    
+                    const avatar = document.createElement('div');
+                    avatar.className = 'message-avatar';
+                    avatar.textContent = isBot ? '🏥' : 'You';
+                    
+                    const contentDiv = document.createElement('div');
+                    contentDiv.className = 'message-content';
+                    contentDiv.innerHTML = content.replace(/\n/g, '<br>');
+                    
+                    messageDiv.appendChild(avatar);
+                    messageDiv.appendChild(contentDiv);
+                    
+                    chatMessages.insertBefore(messageDiv, typingIndicator);
+                    chatMessages.scrollTop = chatMessages.scrollHeight;
+                }
+
+                function showTyping() {
+                    typingIndicator.style.display = 'block';
+                    chatMessages.scrollTop = chatMessages.scrollHeight;
+                }
+
+                function hideTyping() {
+                    typingIndicator.style.display = 'none';
+                }
+
+                function addQuickOptions(options) {
+                    const optionsDiv = document.createElement('div');
+                    optionsDiv.className = 'quick-options';
+                    
+                    options.forEach(option => {
+                        const optionBtn = document.createElement('div');
+                        optionBtn.className = 'quick-option';
+                        optionBtn.textContent = option;
+                        optionBtn.onclick = () => {
+                            sendMessage(option, true);
+                        };
+                        optionsDiv.appendChild(optionBtn);
+                    });
+                    
+                    const lastMessage = chatMessages.querySelector('.message.bot:last-of-type .message-content');
+                    if (lastMessage) {
+                        lastMessage.appendChild(optionsDiv);
+                    }
+                }
+
+                function getBotResponse(userMessage) {
+                    const lowerMessage = userMessage.toLowerCase();
+                    
+                    // Check for specific keywords
+                    for (const [key, data] of Object.entries(orthopedicResponses)) {
+                        if (lowerMessage.includes(key)) {
+                            return data;
+                        }
+                    }
+                    
+                    // Default responses for common questions
+                    if (lowerMessage.includes('pain')) {
+                        return {
+                            response: "I understand you're experiencing pain. Can you tell me more about the location and type of pain? Is it in your joints, back, or elsewhere? This will help me provide better guidance.",
+                            followUp: ["Joint pain", "Back pain", "Muscle pain", "Book appointment"]
+                        };
+                    }
+                    
+                    if (lowerMessage.includes('doctor') || lowerMessage.includes('specialist')) {
+                        return {
+                            response: "Our orthopedic specialists include Dr. Smith (Joint Replacement), Dr. Johnson (Sports Medicine), Dr. Williams (Spine Care), and Dr. Brown (Pediatric Orthopedics). Would you like to book with a specific specialist?",
+                            followUp: ["View all doctors", "Book appointment", "Insurance accepted"]
+                        };
+                    }
+                    
+                    // Default response
+                    return {
+                        response: "I'm here to help with your orthopedic concerns! You can ask me about appointments, symptoms, our services, or emergency care. What would you like to know more about?",
+                        followUp: ["Book appointment", "Check symptoms", "Our services", "Emergency care"]
+                    };
+                }
+
+                function sendMessage(message = null, isQuickOption = false) {
+                    const userMessage = message || chatInput.value.trim();
+                    if (!userMessage) return;
+                    
+                    // Add user message
+                    if (!isQuickOption) {
+                        addMessage(userMessage, false);
+                        chatInput.value = '';
+                    }
+                    
+                    // Show typing indicator
+                    showTyping();
+                    sendBtn.disabled = true;
+                    
+                    // Simulate AI thinking time
+                    setTimeout(() => {
+                        hideTyping();
+                        const botData = getBotResponse(userMessage);
+                        addMessage(botData.response, true);
+                        
+                        // Add follow-up options if available
+                        if (botData.followUp && botData.followUp.length > 0) {
+                            setTimeout(() => {
+                                addQuickOptions(botData.followUp);
+                            }, 300);
+                        }
+                        
+                        sendBtn.disabled = false;
+                    }, 1000 + Math.random() * 1000);
+                }
+
+                // Global function for quick options
+                window.selectQuickOption = function(option) {
+                    sendMessage(option, true);
+                };
+
+                // Event listeners
+                chatIcon.addEventListener('click', toggleChat);
+                closeBtn.addEventListener('click', toggleChat);
+                sendBtn.addEventListener('click', () => sendMessage());
+                
+                chatInput.addEventListener('keypress', (e) => {
+                    if (e.key === 'Enter') {
+                        e.preventDefault();
+                        sendMessage();
+                    }
+                });
+
+                // Close chat when clicking outside
+                document.addEventListener('click', (e) => {
+                    if (isOpen && !chatContainer.contains(e.target) && !chatIcon.contains(e.target)) {
+                        toggleChat();
+                    }
+                });
+
+                // Show initial notification after 3 seconds
+                setTimeout(() => {
+                    if (!isOpen) {
+                        showNotification();
+                    }
+                }, 3000);
+            });
+        </script>
+    </body>
+</html>

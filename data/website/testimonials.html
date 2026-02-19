@@ -1,0 +1,602 @@
+﻿<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Patient Testimonials - Dr. Karnalkar Hospital</title>
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            background: linear-gradient(135deg, #f8fafc 0%, #e2e8f0 100%);
+            min-height: 100vh;
+            padding-top: 70px;
+        }
+
+        :root {
+            --primary-color: #2c5aa0;
+            --secondary-color: #4a90e2;
+            --accent-color: #00d4aa;
+            --dark-bg: #1a252f;
+            --light-bg: #f8f9fa;
+            --text-dark: #2c3e50;
+            --text-light: #6c757d;
+            --white: #ffffff;
+            --shadow: 0 10px 30px rgba(0,0,0,0.1);
+            --border-radius: 12px;
+            --transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+        }
+
+        /* ENHANCED NAVBAR WITH ANIMATIONS */
+        .navbar {
+            background: linear-gradient(135deg, var(--dark-bg) 0%, #243447 100%) !important;
+            box-shadow: 0 2px 20px rgba(0,0,0,0.1);
+            transition: var(--transition);
+            backdrop-filter: blur(10px);
+        }
+
+        .navbar.scrolled {
+            background: rgba(26, 37, 47, 0.95) !important;
+            backdrop-filter: blur(15px);
+        }
+
+        .navbar-brand {
+            font-weight: 700;
+            font-size: 1.5rem;
+            color: var(--white) !important;
+            text-decoration: none;
+            transition: var(--transition);
+            animation: slideInLeft 0.8s ease-out;
+        }
+
+        .navbar-brand:hover {
+            transform: scale(1.05);
+            color: var(--accent-color) !important;
+        }
+
+        .nav-link {
+            color: rgba(255, 255, 255, 0.9) !important;
+            font-weight: 500;
+            margin: 0 8px;
+            padding: 8px 16px !important;
+            border-radius: 25px;
+            transition: var(--transition);
+            position: relative;
+            overflow: hidden;
+        }
+
+        .nav-link::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: -100%;
+            width: 100%;
+            height: 100%;
+            background: linear-gradient(90deg, transparent, rgba(255,255,255,0.1), transparent);
+            transition: var(--transition);
+        }
+
+        .nav-link:hover {
+            color: var(--white) !important;
+            background: rgba(255, 255, 255, 0.1);
+            transform: translateY(-2px);
+        }
+
+        .nav-link:hover::before {
+            left: 100%;
+        }
+
+        @keyframes slideInLeft {
+            from {
+                opacity: 0;
+                transform: translateX(-30px);
+            }
+            to {
+                opacity: 1;
+                transform: translateX(0);
+            }
+        }
+
+        .testimonials-section {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 2rem;
+        }
+
+        .section-header {
+            text-align: center;
+            margin-bottom: 4rem;
+            opacity: 0;
+            animation: fadeInUp 1s ease-out forwards;
+        }
+
+        .section-title {
+            font-size: 2.5rem;
+            color: #1e40af;
+            margin-bottom: 1rem;
+            font-weight: 700;
+        }
+
+        .section-subtitle {
+            font-size: 1.1rem;
+            color: #64748b;
+            max-width: 600px;
+            margin: 0 auto;
+            line-height: 1.6;
+        }
+
+        .carousel-container {
+            position: relative;
+            background: white;
+            border-radius: 20px;
+            box-shadow: 0 25px 50px -12px rgba(0, 0, 0, 0.1);
+            overflow: hidden;
+            opacity: 0;
+            animation: fadeInUp 1s ease-out 0.3s forwards;
+        }
+
+        .carousel-wrapper {
+            display: flex;
+            transition: transform 0.5s ease-in-out;
+        }
+
+        .doctor-profile-name {
+            font-size: 1.8rem;
+            font-weight: 700;
+            color: #1e40af;
+            margin-bottom: 0.5rem;
+        }
+
+        .doctor-profile-title {
+            font-size: 1.1rem;
+            color: #64748b;
+            margin-bottom: 0.5rem;
+        }
+
+        .doctor-profile-experience {
+            font-size: 0.95rem;
+            color: #3b82f6;
+            font-weight: 500;
+        }
+
+        .testimonial-card {
+            min-width: 100%;
+            padding: 3rem;
+            background: linear-gradient(135deg, #ffffff 0%, #f8fafc 100%);
+        }
+
+        .doctor-profile {
+            text-align: center;
+            margin-bottom: 3rem;
+            padding: 2rem;
+            background: white;
+            border-radius: 20px;
+            box-shadow: 0 10px 25px -5px rgba(0, 0, 0, 0.1);
+        }
+
+        .doctor-image {
+            width: 150px;
+            height: 150px;
+            border-radius: 50%;
+            overflow: hidden;
+            border: 4px solid #3b82f6;
+            box-shadow: 0 10px 30px rgba(59, 130, 246, 0.3);
+            margin: 0 auto 1.5rem;
+            background: linear-gradient(135deg, #2c5aa0, #1e3a8a);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: white;
+            font-size: 3rem;
+            font-weight: bold;
+        }
+
+        .doctor-image img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
+
+        .testimonial-content {
+            text-align: center;
+            max-width: 800px;
+            margin: 0 auto;
+        }
+
+        .quote-icon {
+            font-size: 3rem;
+            color: #3b82f6;
+            margin-bottom: 1rem;
+            opacity: 0.7;
+        }
+
+        .testimonial-text {
+            font-size: 1.2rem;
+            line-height: 1.8;
+            color: #334155;
+            margin-bottom: 2rem;
+            font-style: italic;
+        }
+
+        .patient-info {
+            border-top: 1px solid #e2e8f0;
+            padding-top: 1.5rem;
+        }
+
+        .patient-name {
+            font-size: 1.1rem;
+            font-weight: 600;
+            color: #1e40af;
+            margin-bottom: 0.5rem;
+        }
+
+        .patient-details {
+            color: #64748b;
+            font-size: 0.95rem;
+        }
+
+        .carousel-nav {
+            position: absolute;
+            top: 50%;
+            transform: translateY(-50%);
+            background: rgba(59, 130, 246, 0.9);
+            color: white;
+            border: none;
+            width: 50px;
+            height: 50px;
+            border-radius: 50%;
+            cursor: pointer;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 1.2rem;
+            transition: all 0.3s ease;
+            box-shadow: 0 5px 15px rgba(59, 130, 246, 0.4);
+        }
+
+        .carousel-nav:hover {
+            background: #1e40af;
+            transform: translateY(-50%) scale(1.1);
+        }
+
+        .carousel-nav.prev {
+            left: 20px;
+        }
+
+        .carousel-nav.next {
+            right: 20px;
+        }
+
+        .carousel-indicators {
+            display: flex;
+            justify-content: center;
+            gap: 10px;
+            margin-top: 2rem;
+        }
+
+        .indicator {
+            width: 12px;
+            height: 12px;
+            border-radius: 50%;
+            background: #cbd5e1;
+            cursor: pointer;
+            transition: all 0.3s ease;
+        }
+
+        .indicator.active {
+            background: #3b82f6;
+            transform: scale(1.2);
+        }
+
+        .stats-section {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 2rem;
+            margin-top: 4rem;
+            opacity: 0;
+            animation: fadeInUp 1s ease-out 0.6s forwards;
+        }
+
+        .stat-card {
+            background: white;
+            padding: 2rem;
+            border-radius: 15px;
+            text-align: center;
+            box-shadow: 0 10px 25px -5px rgba(0, 0, 0, 0.1);
+            transition: transform 0.3s ease;
+        }
+
+        .stat-card:hover {
+            transform: translateY(-5px);
+        }
+
+        .stat-number {
+            font-size: 2.5rem;
+            font-weight: 700;
+            color: #1e40af;
+            margin-bottom: 0.5rem;
+        }
+
+        .stat-label {
+            color: #64748b;
+            font-weight: 500;
+        }
+
+        @keyframes fadeInUp {
+            from {
+                opacity: 0;
+                transform: translateY(30px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        /* Responsive Design */
+        @media (max-width: 768px) {
+            .testimonials-section {
+                padding: 1rem 1rem 2rem;
+            }
+
+            .testimonial-card {
+                flex-direction: column;
+                text-align: center;
+                padding: 2rem 1.5rem;
+            }
+
+            .doctor-image {
+                width: 120px;
+                height: 120px;
+            }
+
+            .section-title {
+                font-size: 2rem;
+            }
+
+            .testimonial-text {
+                font-size: 1.1rem;
+            }
+
+            .carousel-nav {
+                width: 40px;
+                height: 40px;
+            }
+
+            .carousel-nav.prev {
+                left: 10px;
+            }
+
+            .carousel-nav.next {
+                right: 10px;
+            }
+        }
+
+        @media (max-width: 480px) {
+            .section-title {
+                font-size: 1.8rem;
+            }
+            
+            .testimonial-text {
+                font-size: 1rem;
+            }
+            
+            .stat-card {
+                padding: 1.5rem;
+            }
+            
+            .stat-number {
+                font-size: 2rem;
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- Updated Navbar -->
+    <nav class="navbar navbar-expand-lg fixed-top" id="mainNavbar">
+        <div class="container">
+            <a class="navbar-brand d-flex align-items-center" href="#">`n                 <img src="image.jpg" alt="Knee Spine Revival" style="height:32px;width:auto;margin-right:10px;border-radius:4px;object-fit:contain;" />
+                <i class="fas fa-heartbeat mr-2"></i>
+                Dr. Karnalkar Hospital
+            </a>
+           
+            <div class="collapse navbar-collapse" id="navbarNav">
+                <ul class="navbar-nav ml-auto">
+                    <li class="nav-item">
+                        <a class="nav-link" href="D:\website dr.kalnarkar\enhanced_website.html">Home</a>  
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="D:\website dr.kalnarkar\services.html">Services</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="D:\website dr.kalnarkar\doc_info.html">About Dr. Karanalkar</a>
+                    </li>
+                    
+                    <li class="nav-item">
+                        <a class="nav-link active" href="D:\website dr.kalnarkar\testimonials.html">Testimonials</a>
+                    </li>
+                    
+                </ul>
+            </div>
+        </div>
+    </nav>
+
+    <div class="testimonials-section">
+        <div class="section-header">
+            <h1 class="section-title">Patient Testimonials</h1>
+            <p class="section-subtitle">Hear from Dr. Karnalkar's patients about their exceptional orthopedic care experiences</p>
+        </div>
+
+        <div class="doctor-profile">
+            <div class="doctor-image">
+                <img src="image.jpg" alt="Dr. Karnalkar"/>
+            </div>
+            <div class="doctor-profile-name">Dr. Karnalkar</div>
+            <div class="doctor-profile-title">Orthopedic Surgeon</div>
+            <div class="doctor-profile-experience">15+ Years Experience â€¢ Board Certified</div>
+        </div>
+
+        <div class="carousel-container">
+            <div class="carousel-wrapper" id="carousel">
+                <div class="testimonial-card">
+                    <div class="testimonial-content">
+                        <div class="quote-icon">"</div>
+                        <p class="testimonial-text">Dr. Karnalkar's expertise in knee replacement surgery changed my life completely. His precise surgical technique and comprehensive post-operative care helped me regain full mobility. I can now walk pain-free and enjoy activities I thought I'd never do again.</p>
+                        <div class="patient-info">
+                            <div class="patient-name">Rajesh Patil</div>
+                            <div class="patient-details">Knee Replacement Patient â€¢ Age 62 â€¢ Total Knee Replacement</div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="testimonial-card">
+                    <div class="testimonial-content">
+                        <div class="quote-icon">"</div>
+                        <p class="testimonial-text">After my sports injury, I was worried I'd never play cricket again. Dr. Karnalkar's advanced arthroscopic surgery and rehabilitation program got me back on the field stronger than ever. His dedication to sports medicine is truly exceptional.</p>
+                        <div class="patient-info">
+                            <div class="patient-name">Arjun Sharma</div>
+                            <div class="patient-details">Sports Injury Patient â€¢ Age 28 â€¢ ACL Reconstruction</div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="testimonial-card">
+                    <div class="testimonial-content">
+                        <div class="quote-icon">"</div>
+                        <p class="testimonial-text">Dr. Karnalkar performed my complex spinal fusion surgery with remarkable skill. His thorough explanation of the procedure and excellent follow-up care made all the difference. I'm now completely pain-free and back to my normal activities.</p>
+                        <div class="patient-info">
+                            <div class="patient-name">Priya Deshmukh</div>
+                            <div class="patient-details">Spine Surgery Patient â€¢ Age 45 â€¢ Lumbar Spinal Fusion</div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="testimonial-card">
+                    <div class="testimonial-content">
+                        <div class="quote-icon">"</div>
+                        <p class="testimonial-text">What impressed me most about Dr. Karnalkar was his patient approach to my hip replacement surgery. He took time to explain every detail and made sure I was comfortable throughout the process. His surgical expertise is matched by his compassionate care.</p>
+                        <div class="patient-info">
+                            <div class="patient-name">Ramesh Kulkarni</div>
+                            <div class="patient-details">Hip Replacement Patient â€¢ Age 68 â€¢ Total Hip Replacement</div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="testimonial-card">
+                    <div class="testimonial-content">
+                        <div class="quote-icon">"</div>
+                        <p class="testimonial-text">Dr. Karnalkar's innovative treatment for my shoulder injury was life-changing. His use of minimally invasive techniques meant faster recovery and less pain. I highly recommend him to anyone needing orthopedic care.</p>
+                        <div class="patient-info">
+                            <div class="patient-name">Sunita Joshi</div>
+                            <div class="patient-details">Shoulder Surgery Patient â€¢ Age 52 â€¢ Rotator Cuff Repair</div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <button class="carousel-nav prev" onclick="prevSlide()">â€¹</button>
+            <button class="carousel-nav next" onclick="nextSlide()">â€º</button>
+        </div>
+
+        <div class="carousel-indicators" id="indicators"></div>
+
+        <div class="stats-section">
+            <div class="stat-card">
+                <div class="stat-number">1,800+</div>
+                <div class="stat-label">Surgeries Performed</div>
+            </div>
+            <div class="stat-card">
+                <div class="stat-number">98.5%</div>
+                <div class="stat-label">Success Rate</div>
+            </div>
+            <div class="stat-card">
+                <div class="stat-number">15+</div>
+                <div class="stat-label">Years Experience</div>
+            </div>
+            <div class="stat-card">
+                <div class="stat-number">99%</div>
+                <div class="stat-label">Patient Satisfaction</div>
+            </div>
+        </div>
+    </div>
+
+    <!-- jQuery and Bootstrap JS -->
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.1/dist/umd/popper.min.js"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+
+    <script>
+        // Navbar scroll effect
+        $(window).scroll(function() {
+            if ($(this).scrollTop() > 50) {
+                $('#mainNavbar').addClass('scrolled');
+            } else {
+                $('#mainNavbar').removeClass('scrolled');
+            }
+        });
+
+        // Testimonials carousel functionality
+        let currentSlide = 0;
+        const slides = document.querySelectorAll('.testimonial-card');
+        const carousel = document.getElementById('carousel');
+        const indicatorsContainer = document.getElementById('indicators');
+        
+        // Create indicators
+        slides.forEach((slide, index) => {
+            const indicator = document.createElement('div');
+            indicator.classList.add('indicator');
+            if (index === 0) indicator.classList.add('active');
+            indicator.addEventListener('click', () => goToSlide(index));
+            indicatorsContainer.appendChild(indicator);
+        });
+        
+        function updateCarousel() {
+            carousel.style.transform = `translateX(-${currentSlide * 100}%)`;
+            
+            // Update indicators
+            document.querySelectorAll('.indicator').forEach((indicator, index) => {
+                if (index === currentSlide) {
+                    indicator.classList.add('active');
+                } else {
+                    indicator.classList.remove('active');
+                }
+            });
+        }
+        
+        function nextSlide() {
+            currentSlide = (currentSlide + 1) % slides.length;
+            updateCarousel();
+        }
+        
+        function prevSlide() {
+            currentSlide = (currentSlide - 1 + slides.length) % slides.length;
+            updateCarousel();
+        }
+        
+        function goToSlide(index) {
+            currentSlide = index;
+            updateCarousel();
+        }
+        
+        // Auto-rotate testimonials
+        let slideInterval = setInterval(nextSlide, 5000);
+        
+        // Pause on hover
+        carousel.addEventListener('mouseenter', () => {
+            clearInterval(slideInterval);
+        });
+        
+        carousel.addEventListener('mouseleave', () => {
+            slideInterval = setInterval(nextSlide, 5000);
+        });
+    </script>
+</body>
+</html>
